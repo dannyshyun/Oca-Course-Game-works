@@ -25,6 +25,7 @@ void GameInit()
 	//	各モデルデータの読み込み
 	ground_model = MV1LoadModel( "data/ground.mqoz" );
 	player_model = MV1LoadModel( "SampleData/Model/player00.mv1" );
+	// player_model = MV1LoadModel( "data/player.mqoz" );
 	npc_model = MV1LoadModel( "data/npc.mqoz" );
 
 	camera.Init();

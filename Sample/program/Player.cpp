@@ -23,14 +23,6 @@ void Player::Init(int model)
 void Player::Update()
 {
 	Vector3 r_vel = {0.f, 1.f, 0.f};
-	if (CheckHitKey(KEY_INPUT_D))
-	{
-		m_rot.y += PLAYER_ROT_SPEED;
-	}
-	if (CheckHitKey(KEY_INPUT_A))
-	{
-		m_rot.y -= PLAYER_ROT_SPEED;
-	}
 	m_rot.x = (GetMouseY() - SCREEN_H / 2.f) / SCREEN_H * 90.f;
 	m_rot.y = (GetMouseX() - SCREEN_W / 2.f) / SCREEN_W * 90.f;
 
@@ -38,6 +30,22 @@ void Player::Update()
 	{
 		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y));
 		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y));
+	}
+
+	if (CheckHitKey(KEY_INPUT_S)) {
+		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y + 180.f));
+		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y + 180.f));
+	}
+
+	if (CheckHitKey(KEY_INPUT_D))
+	{
+		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y + 90.f));
+		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y + 90.f));
+	}
+	if (CheckHitKey(KEY_INPUT_A))
+	{
+		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y - 90.f));
+		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y - 90.f));
 	}
 }
 //---------------------------------------------------------------------------------
