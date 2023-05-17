@@ -157,7 +157,6 @@
     <ClCompile Include="program\Ground.cpp" />
     <ClCompile Include="program\Hit.cpp" />
     <ClCompile Include="program\Main.cpp" />
-    <ClCompile Include="program\MouseController.cpp" />
     <ClCompile Include="program\Npc.cpp" />
     <ClCompile Include="program\Player.cpp" />
     <ClCompile Include="program\Random.cpp" />
@@ -171,7 +170,6 @@
     <ClInclude Include="program\Ground.h" />
     <ClInclude Include="program\Hit.h" />
     <ClInclude Include="program\Main.h" />
-    <ClInclude Include="program\MouseController.h" />
     <ClInclude Include="program\Npc.h" />
     <ClInclude Include="program\Player.h" />
     <ClInclude Include="program\Random.h" />

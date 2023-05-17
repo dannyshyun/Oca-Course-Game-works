@@ -1,4 +1,4 @@
-#include "WinMain.h"
+#include "Main.h"
 #include "Vector2.h"
 
 void Vector2::operator+=(const Vector2 &other)

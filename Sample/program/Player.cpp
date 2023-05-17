@@ -22,9 +22,14 @@ void Player::Init(int model)
 //---------------------------------------------------------------------------------
 void Player::Update()
 {
-	Vector3 r_vel = {0.f, 1.f, 0.f};
-	m_rot.x = (GetMouseY() - SCREEN_H / 2.f) / SCREEN_H * 90.f;
-	m_rot.y = (GetMouseX() - SCREEN_W / 2.f) / SCREEN_W * 90.f;
+	const float ROLL_SPEED = 90.f / SCREEN_H;
+	const float PITCH_SPEED = 90.f / SCREEN_W;
+	Vector2 mouse_mov = {
+		(GetMouseX() - SCREEN_W / 2), 
+		(GetMouseY() - SCREEN_H / 2) 
+	};
+	m_rot.x += mouse_mov.y * ROLL_SPEED;
+	m_rot.y += mouse_mov.x * PITCH_SPEED;
 
 	if (CheckHitKey(KEY_INPUT_W))
 	{
