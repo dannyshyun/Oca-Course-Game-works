@@ -2,16 +2,20 @@
 #include "Game.h"
 #include "Hit.h"
 
+#include "MouseController.h"
 #include "Camera.h"
 #include "Ground.h"
 #include "Player.h"
 #include "Npc.h"
+
+
 
 //	各モデルデータ用の変数
 int ground_model;
 int player_model;
 int npc_model;
 
+MouseCtrl mouse;
 Camera	camera;
 Ground	ground;
 Player	player;
@@ -28,10 +32,13 @@ void GameInit()
 	// player_model = MV1LoadModel( "data/player.mqoz" );
 	npc_model = MV1LoadModel( "data/npc.mqoz" );
 
+	mouse.Init();
 	camera.Init();
 	ground.Init( ground_model );
 	player.Init( player_model );
 	npc.Init( npc_model );
+	
+	
 }
 //---------------------------------------------------------------------------------
 //	更新処理
@@ -54,7 +61,7 @@ void GameRender()
 	ground.Render();
 	npc.Render();
 	player.Render();
-	
+	SetMouseDispFlag(FALSE);
 	DrawString( 20, 20, "←→キー：プレイヤーの回転", GetColor( 255, 255, 255 ) );
 	DrawString( 20, 40, "↑　キー：向いている方向に移動", GetColor( 255, 255, 255 ) );
 }

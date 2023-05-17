@@ -157,9 +157,11 @@
     <ClCompile Include="program\Ground.cpp" />
     <ClCompile Include="program\Hit.cpp" />
     <ClCompile Include="program\Main.cpp" />
+    <ClCompile Include="program\MouseController.cpp" />
     <ClCompile Include="program\Npc.cpp" />
     <ClCompile Include="program\Player.cpp" />
     <ClCompile Include="program\Random.cpp" />
+    <ClCompile Include="program\Vector2.cpp" />
     <ClCompile Include="program\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +171,11 @@
     <ClInclude Include="program\Ground.h" />
     <ClInclude Include="program\Hit.h" />
     <ClInclude Include="program\Main.h" />
+    <ClInclude Include="program\MouseController.h" />
     <ClInclude Include="program\Npc.h" />
     <ClInclude Include="program\Player.h" />
     <ClInclude Include="program\Random.h" />
+    <ClInclude Include="program\Vector2.h" />
     <ClInclude Include="program\Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

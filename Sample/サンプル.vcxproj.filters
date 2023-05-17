@@ -42,6 +42,12 @@
     <ClCompile Include="program\Vector3.cpp">
       <Filter>program\system</Filter>
     </ClCompile>
+    <ClCompile Include="program\MouseController.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Vector2.cpp">
+      <Filter>program\system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\Game.h">
@@ -72,6 +78,10 @@
       <Filter>program\system</Filter>
     </ClInclude>
     <ClInclude Include="program\Vector3.h">
+      <Filter>program\system</Filter>
+    </ClInclude>
+    <ClInclude Include="program\MouseController.h" />
+    <ClInclude Include="program\Vector2.h">
       <Filter>program\system</Filter>
     </ClInclude>
   </ItemGroup>
