@@ -10,6 +10,7 @@ class Camera
 public:
 	Vector3 m_pos;
 	Vector3 m_look;
+	Vector3 m_rot;
 
 	void Init();										 //	‰Šú‰»ˆ—
 	void Update(const Vector3 &pos, const Vector3 &rot); //	XVˆ—

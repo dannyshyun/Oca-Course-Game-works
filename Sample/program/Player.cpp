@@ -52,6 +52,9 @@ void Player::Update()
 		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y - 90.f));
 		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y - 90.f));
 	}
+	if(CheckMouseInput(MOUSE_INPUT_LEFT)){
+		
+	}
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
