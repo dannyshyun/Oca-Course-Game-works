@@ -13,6 +13,8 @@ void Npc::Init( int model )
 {
 	m_model = model;
 
+
+
 	m_pos.x = 0.0f;
 	m_pos.z = 10.0f;
 	m_rot.y = 90.0f;

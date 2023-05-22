@@ -45,6 +45,12 @@
     <ClCompile Include="program\Vector2.cpp">
       <Filter>program\system</Filter>
     </ClCompile>
+    <ClCompile Include="program\Coin.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Frisbee.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\Game.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="program\Vector2.h">
       <Filter>program\system</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Coin.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Frisbee.h">
+      <Filter>program\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

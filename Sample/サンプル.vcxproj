@@ -153,6 +153,8 @@
   <ItemGroup>
     <ClCompile Include="program\Base.cpp" />
     <ClCompile Include="program\Camera.cpp" />
+    <ClCompile Include="program\Coin.cpp" />
+    <ClCompile Include="program\Frisbee.cpp" />
     <ClCompile Include="program\Game.cpp" />
     <ClCompile Include="program\Ground.cpp" />
     <ClCompile Include="program\Hit.cpp" />
@@ -166,6 +168,8 @@
   <ItemGroup>
     <ClInclude Include="program\Base.h" />
     <ClInclude Include="program\Camera.h" />
+    <ClInclude Include="program\Coin.h" />
+    <ClInclude Include="program\Frisbee.h" />
     <ClInclude Include="program\Game.h" />
     <ClInclude Include="program\Ground.h" />
     <ClInclude Include="program\Hit.h" />

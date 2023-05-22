@@ -4,6 +4,7 @@
 
 #define PLAYER_MOV_SPEED 0.1f
 #define PLAYER_ROT_SPEED 1.0f
+#define POWER_SPEED 5.f
 
 //---------------------------------------------------------------------------------
 //	èâä˙âªèàóù
@@ -16,6 +17,8 @@ void Player::Init(int model)
 	m_rot.set(0.0f, 0.0f, 0.0f);
 
 	m_radius = 0.5f;
+
+	m_throw_power = 0.f;
 }
 //---------------------------------------------------------------------------------
 //	çXêVèàóù
@@ -52,9 +55,8 @@ void Player::Update()
 		m_pos.x += PLAYER_MOV_SPEED * sinf(TO_RADIAN(m_rot.y - 90.f));
 		m_pos.z += PLAYER_MOV_SPEED * cosf(TO_RADIAN(m_rot.y - 90.f));
 	}
-	if(CheckMouseInput(MOUSE_INPUT_LEFT)){
-		
-	}
+
+	
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù

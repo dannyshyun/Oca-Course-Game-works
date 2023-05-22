@@ -13,4 +13,6 @@ public:
 	void Update();		//	XVˆ—
 	void Render();		//	•`‰æˆ—
 	void Exit();		//	I—¹ˆ—
+
+	float m_throw_power;
 };
