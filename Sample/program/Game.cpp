@@ -43,6 +43,7 @@ void GameInit()
 	player.Init(player_model);
 	npc.Init(npc_model);
 	coin.Init(coin_model);
+	frisbee.Init(frisbee_model);
 }
 //---------------------------------------------------------------------------------
 //	çXêVèàóù
@@ -53,13 +54,7 @@ void GameUpdate()
 	player.Update();
 	npc.Update();
 	coin.Update();
-
-	
-	if (CheckMouseInput(MOUSE_INPUT_LEFT))
-	{
-		frisbee.Init(frisbee_model, player.m_pos, player.m_rot);
-	}
-	frisbee.Update();
+	frisbee.Update(player.m_pos, player.m_rot);
 
 	camera.Update(player.m_pos, player.m_rot);
 	SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);

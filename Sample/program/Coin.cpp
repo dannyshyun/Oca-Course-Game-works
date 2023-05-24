@@ -6,13 +6,14 @@ void Coin::Init(int model)
 {
 	m_model = model;
 
-	m_pos.set(0.f, 0.f, 0.f);
-	m_rot.set(0.f, 0.f, 0.f);
+	m_pos.set(0.f, 4.5f, 0.f);
+	m_rot.set(90.f, 0.f, 0.f);
 	m_radius = 0.5f;
 }
 
 void Coin::Update()
 {
+	m_rot.y ++;
 }
 
 void Coin::Render()

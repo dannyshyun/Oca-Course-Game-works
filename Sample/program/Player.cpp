@@ -31,7 +31,7 @@ void Player::Update()
 		(GetMouseX() - SCREEN_W / 2), 
 		(GetMouseY() - SCREEN_H / 2) 
 	};
-	m_rot.x += mouse_mov.y * ROLL_SPEED;
+	// m_rot.x += mouse_mov.y * ROLL_SPEED;
 	m_rot.y += mouse_mov.x * PITCH_SPEED;
 
 	if (CheckHitKey(KEY_INPUT_W))
