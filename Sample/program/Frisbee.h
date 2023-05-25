@@ -1,7 +1,7 @@
 #pragma once
 #include "Base.h"
 
-class Frisbee : Base
+class Frisbee : public Base
 {
 public:
 

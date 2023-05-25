@@ -1,7 +1,8 @@
+#include <vector>
 #include "Main.h"
 #include "Game.h"
 #include "Hit.h"
-
+#include "Base.h"
 #include "Camera.h"
 #include "Ground.h"
 #include "Player.h"
@@ -20,7 +21,7 @@ Camera camera;
 Ground ground;
 Player player;
 Npc npc;
-Coin coin;
+std::vector<Coin *> coins;
 Frisbee frisbee;
 
 //---------------------------------------------------------------------------------
@@ -32,7 +33,7 @@ void GameInit()
 	ground_model = MV1LoadModel("data/ground.mqoz");
 	// player_model = MV1LoadModel("SampleData/Model/player00.mv1");
 	// player_model = MV1LoadModel( "data/player.mqoz" );
-	npc_model = MV1LoadModel("SampleData/Model/coin.mv1");
+	npc_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
 	coin_model = MV1LoadModel("SampleData/Model/coin.mv1");
 	frisbee_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
 
@@ -42,7 +43,11 @@ void GameInit()
 	ground.Init(ground_model);
 	player.Init(player_model);
 	npc.Init(npc_model);
-	coin.Init(coin_model);
+	coins =
+		{
+			new Coin(coin_model, Vector3(3.f, 4.5f, 2.f)),
+			new Coin(coin_model, Vector3(-3.f, 4.5f, 2.f)),
+			new Coin(coin_model, Vector3(3.f, 4.5f, -2.f))};
 	frisbee.Init(frisbee_model);
 }
 //---------------------------------------------------------------------------------
@@ -53,12 +58,22 @@ void GameUpdate()
 	ground.Update();
 	player.Update();
 	npc.Update();
-	coin.Update();
+	for (auto &coin : coins)
+	{
+		if (coin)
+		{
+			coin->Update();
+			if (CheckBallHit(frisbee.m_pos, frisbee.m_radius, coin->m_pos, coin->m_radius))
+			{
+				delete coin;
+				coin = nullptr;
+			}
+		}
+	}
 	frisbee.Update(player.m_pos, player.m_rot);
 
 	camera.Update(player.m_pos, player.m_rot);
 	SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);
-
 }
 //---------------------------------------------------------------------------------
 //	•`‰æˆ—
@@ -69,7 +84,9 @@ void GameRender()
 
 	ground.Render();
 	npc.Render();
-	coin.Render();
+	for (auto &coin : coins)
+		if (coin)
+			coin->Render();
 	player.Render();
 	frisbee.Render();
 
@@ -84,7 +101,12 @@ void GameExit()
 	ground.Exit();
 	player.Exit();
 	npc.Exit();
-	coin.Exit();
+	for (auto &coin : coins)
+		if (coin)
+		{
+			coin->Exit();
+			delete coin;
+		}
 
 	MV1DeleteModel(ground_model);
 	MV1DeleteModel(player_model);
