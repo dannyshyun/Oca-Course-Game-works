@@ -31,8 +31,8 @@ void Npc::Update()
 	m_rot.y += NPC_ROT_SPEED;
 	loop_rot += 0.5f;
 
-	m_pos.x += NPC_MOV_SPEED * cosf(TO_RADIAN(loop_rot) * 2) / 2;
-	m_pos.z += NPC_MOV_SPEED * sinf(TO_RADIAN(loop_rot));
+	m_pos.z += NPC_MOV_SPEED * cosf(TO_RADIAN(loop_rot) * 2) / 2;
+	m_pos.x += NPC_MOV_SPEED * sinf(TO_RADIAN(loop_rot));
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù

@@ -41,7 +41,7 @@ void GameInit()
 	// player_model = MV1LoadModel("SampleData/Model/player00.mv1");
 	// player_model = MV1LoadModel( "data/player.mqoz" );
 	npc_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
-	coin_model = MV1LoadModel("SampleData/Model/coin.mv1");
+	coin_model = MV1LoadModel("SampleData/Model/ImageToStl.com_coin.mv1");
 	frisbee_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
 	game_mode = GAME_TITLE;
 	clear_frame_count = 3 * FRAME_PER_SECOND;
@@ -104,14 +104,14 @@ void GameUpdate()
 				coin->Update();
 				if (frisbee.CheckCoinHit(coin))
 				{
-					ui.ScoreAdd(100);
+					ui.ScoreAdd(500);
 					hit_coin_pos = coin->m_pos;
 					delete coin;
 					coin = nullptr;
 				}
 				if (frisbee.CheckCatch(player.m_pos, player.m_radius))
 				{
-					ui.ScoreAdd(100);
+					ui.ScoreAdd(500);
 				}
 			}
 		}

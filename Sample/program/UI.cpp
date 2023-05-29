@@ -8,7 +8,7 @@
 void UI::Init()
 {
     m_score = 0;
-    m_time = 180 * FRAME_PER_SECOND;
+    m_time = 150 * FRAME_PER_SECOND;
     m_pre_count = 4 * FRAME_PER_SECOND;
 }
 
@@ -135,7 +135,7 @@ void UI::DrawPreCount()
 
 void UI::DrawScore()
 {
-    std::string message = "SCORE : %04d";
+    std::string message = "SCORE : %05d";
     DrawFormatString2(SCREEN_W - GetDrawStringWidth(message.c_str(), -1) - 30, 30, WHITE, BLUE, message.c_str(), m_score);
 }
 
