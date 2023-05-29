@@ -51,6 +51,9 @@
     <ClCompile Include="program\Frisbee.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
+    <ClCompile Include="program\UI.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\Game.h">
@@ -90,6 +93,9 @@
       <Filter>program\game</Filter>
     </ClInclude>
     <ClInclude Include="program\Frisbee.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\UI.h">
       <Filter>program\game</Filter>
     </ClInclude>
   </ItemGroup>

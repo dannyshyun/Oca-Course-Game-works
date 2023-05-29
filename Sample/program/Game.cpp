@@ -9,6 +9,10 @@
 #include "Npc.h"
 #include "Coin.h"
 #include "Frisbee.h"
+#include "UI.h"
+
+#define COIN_NUM 20
+#define FRAME_PER_SECOND 60
 
 //	各モデルデータ用の変数
 int ground_model;
@@ -16,6 +20,8 @@ int player_model;
 int npc_model;
 int coin_model;
 int frisbee_model;
+int game_mode;
+int clear_frame_count;
 
 Camera camera;
 Ground ground;
@@ -23,6 +29,7 @@ Player player;
 Npc npc;
 std::vector<Coin *> coins;
 Frisbee frisbee;
+UI ui;
 
 //---------------------------------------------------------------------------------
 //	初期化処理
@@ -36,19 +43,18 @@ void GameInit()
 	npc_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
 	coin_model = MV1LoadModel("SampleData/Model/coin.mv1");
 	frisbee_model = MV1LoadModel("SampleData/Model/10505_Frisbee_v3_L3.mv1");
+	game_mode = GAME_TITLE;
+	clear_frame_count = 3 * FRAME_PER_SECOND;
 
-	SetMouseDispFlag(FALSE);
-	SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);
+	SetMouseDispFlag(TRUE);
 	camera.Init();
 	ground.Init(ground_model);
 	player.Init(player_model);
 	npc.Init(npc_model);
-	coins =
-		{
-			new Coin(coin_model, Vector3(3.f, 4.5f, 2.f)),
-			new Coin(coin_model, Vector3(-3.f, 4.5f, 2.f)),
-			new Coin(coin_model, Vector3(3.f, 4.5f, -2.f))};
+	for (int i = 0; i < COIN_NUM; i++)
+		coins.push_back(new Coin(coin_model));
 	frisbee.Init(frisbee_model);
+	ui.Init();
 }
 //---------------------------------------------------------------------------------
 //	更新処理
@@ -56,41 +62,123 @@ void GameInit()
 void GameUpdate()
 {
 	ground.Update();
-	player.Update();
-	npc.Update();
+	Vector3 hit_coin_pos;
+	int coin_count = 0;
 	for (auto &coin : coins)
 	{
 		if (coin)
+			coin_count++;
+	}
+	switch (game_mode)
+	{
+	case GAME_TITLE:
+		npc.Update();
+		if (ui.CheckHitStart())
 		{
-			coin->Update();
-			if (CheckBallHit(frisbee.m_pos, frisbee.m_radius, coin->m_pos, coin->m_radius))
+			game_mode = GAME_PRE_COUNT;
+		}
+		break;
+	case GAME_PRE_COUNT:
+		player.Update();
+		SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);
+		for (auto &coin : coins)
+		{
+			if (coin)
 			{
-				delete coin;
-				coin = nullptr;
+				coin->Update();
 			}
 		}
+		if (ui.GetPreCount() <= 0)
+		{
+			game_mode = GAME_START;
+		}
+		break;
+	case GAME_START:
+		player.Update();
+		SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);
+
+		for (auto &coin : coins)
+		{
+			if (coin)
+			{
+				coin->Update();
+				if (frisbee.CheckCoinHit(coin))
+				{
+					ui.ScoreAdd(100);
+					hit_coin_pos = coin->m_pos;
+					delete coin;
+					coin = nullptr;
+				}
+				if (frisbee.CheckCatch(player.m_pos, player.m_radius))
+				{
+					ui.ScoreAdd(100);
+				}
+			}
+		}
+		frisbee.Update(player.m_pos, player.m_rot, hit_coin_pos);
+		if (ui.GetTime() <= 0 || coin_count == 0)
+		{
+			game_mode = GAME_CLEAR;
+		}
+		break;
+	case GAME_CLEAR:
+		clear_frame_count--;
+		if (clear_frame_count <= 0)
+		{
+			game_mode = GAME_RESULT;
+		}
+		break;
+	case GAME_RESULT:
+		break;
 	}
-	frisbee.Update(player.m_pos, player.m_rot);
 
 	camera.Update(player.m_pos, player.m_rot);
-	SetMousePoint(SCREEN_W / 2, SCREEN_H / 2);
+	ui.Update(coin_count, game_mode);
 }
 //---------------------------------------------------------------------------------
 //	描画処理
 //---------------------------------------------------------------------------------
 void GameRender()
 {
-	camera.Render();
-
 	ground.Render();
-	npc.Render();
+	int coin_count = 0;
 	for (auto &coin : coins)
+	{
 		if (coin)
-			coin->Render();
-	player.Render();
-	frisbee.Render();
-
-	SetMouseDispFlag(FALSE);
+			coin_count++;
+	}
+	switch (game_mode)
+	{
+	case GAME_TITLE:
+		npc.Render();
+		break;
+	case GAME_PRE_COUNT:
+		SetMouseDispFlag(false);
+		for (auto &coin : coins)
+		{
+			if (coin)
+				coin->Render();
+		}
+		player.Render();
+		break;
+	case GAME_START:
+		SetMouseDispFlag(false);
+		for (auto &coin : coins)
+		{
+			if (coin)
+				coin->Render();
+		}
+		player.Render();
+		frisbee.Render();
+		break;
+	case GAME_CLEAR:
+		break;
+	case GAME_RESULT:
+		SetMouseDispFlag(true);
+		break;
+	}
+	camera.Render();
+	ui.Render(coin_count, game_mode);
 }
 //---------------------------------------------------------------------------------
 //	終了処理

@@ -8,9 +8,10 @@
 class Npc : public Base
 {
 public:
+	void Init(int model); //	初期化処理
+	void Update();		  //	更新処理
+	void Render();		  //	描画処理
+	void Exit();		  //	終了処理
 
-	void Init( int model );		//	初期化処理
-	void Update();		//	更新処理
-	void Render();		//	描画処理
-	void Exit();		//	終了処理
+	float loop_rot;
 };

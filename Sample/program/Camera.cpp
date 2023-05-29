@@ -22,10 +22,9 @@ void Camera::Update(const Vector3 &pos, const Vector3 &rot)
 	pos0.z = pos.z + 5.f * sinf(TO_RADIAN(rot.y));
 	pos0.x = pos.x + 5.f * cosf(TO_RADIAN(rot.y));*/
 
-	const float L = 5.f;
 	m_rot = rot;
 	m_pos = pos;
-	m_pos.y += L;
+
 	// relative vector from player to camera look
 	// Vector3 vec0 = {0.f, 0.f, 1.f};
 
@@ -55,7 +54,6 @@ void Camera::Update(const Vector3 &pos, const Vector3 &rot)
 	/*float back_rot = rot.y + 180.f;
 	m_pos.x = m_look.x + CAMERA_LENGTH * sinf(TO_RADIAN(back_rot));
 	m_pos.z = m_look.z + CAMERA_LENGTH * cosf(TO_RADIAN(back_rot));*/
-	
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
