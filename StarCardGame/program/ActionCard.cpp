@@ -34,6 +34,6 @@ void ActionCard::Release()
 
 unsigned int ActionCard::GetType() const
 {
-    return type_;
+    return type;
 }
 

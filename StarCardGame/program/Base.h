@@ -15,8 +15,8 @@ public:
 	virtual void Release();
 
 protected:
-	Vector2	pos_;
-	Vector2	rot_;
-	int		model_;
-	float	radius_;
+	Vector2	pos;
+	Vector2	rot;
+	int		model;
+	float	radius;
 };

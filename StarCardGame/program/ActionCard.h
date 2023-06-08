@@ -23,5 +23,5 @@ class ActionCard : public CardBase
         unsigned int GetType() const;
         
     protected:
-        unsigned int type_ = 0;
+        unsigned int type = 0;
 }; 

@@ -10,7 +10,7 @@
 #include "Base.h"
 #include "CardBase.h"
 #include "ActionCard.h"
-#include "EnvironmentCard.h""
+#include "EnvironmentCard.h"
 #include "ItemCard.h"
 //	モデルデータ
 int ground_model;

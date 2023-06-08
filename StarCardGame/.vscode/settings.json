@@ -106,73 +106,14 @@
     "editor.formatOnType": true,
     "editor.suggest.preview": true,
     "files.encoding": "shiftjis",
-    "virtual-folders.folders": [
-        {
-            "name": "Headers",
-            "files": [
-                "**/*.h"
-            ]
-        },
-        {
-            "name": "Source",
-            "files": [
-                "**/*.cpp"
-            ]
-        }
-    ],
     "files.exclude": {
         "x64": true,
         ".vs": true
     },
-    "fileGroup.groups": {
-        "baseClass": {
-            "detail": "aaa",
-            "files": [
-                "${workspaceFolder:}/program/Base.cpp",
-                "${workspaceFolder:}/program/Base.h",
-                "${workspaceFolder:}/program/CardBase.cpp",
-                "${workspaceFolder:}/program/CardBase.h"
-            ]
-        },
-        "Cards": {
-            "files": [
-                "${workspaceFolder:}/program/ActionCard.cpp",
-                "${workspaceFolder:}/program/ActionCard.h",
-                "${workspaceFolder:}/program/EnvironmentCard.cpp",
-                "${workspaceFolder:}/program/EnvironmentCard.h",
-                "${workspaceFolder:}/program/ItemCard.cpp",
-                "${workspaceFolder:}/program/ItemCard.h"
-            ]
-        },
-        "Characters": {
-            "files": [
-                "${workspaceFolder:}/program/Player.cpp",
-                "${workspaceFolder:}/program/Player.h",
-                "${workspaceFolder:}/program/Npc.cpp",
-                "${workspaceFolder:}/program/Npc.h"
-            ]
-        },
-        "Game": {
-            "files": [
-                "${workspaceFolder:}/program/Game.cpp",
-                "${workspaceFolder:}/program/Game.h",
-                "${workspaceFolder:}/program/Main.cpp",
-                "${workspaceFolder:}/program/Main.h"
-            ]
-        },
-        "System": {
-            "files": [
-                "${workspaceFolder:}/program/Hit.cpp",
-                "${workspaceFolder:}/program/Hit.h",
-                "${workspaceFolder:}/program/Vector2.cpp",
-                "${workspaceFolder:}/program/Vector2.h",
-                "${workspaceFolder:}/program/Vector3.cpp",
-                "${workspaceFolder:}/program/Vector3.h"
-            ]
-        }
-    },
     "explorer.fileNesting.patterns":{
         "*.sln" : "${capture}.vcxproj,${capture}.vcxproj.filters"
     },
-    "favorites.groupsFirst" : false
+    "favorites.groupsFirst" : false,
+    "workbench.tree.indent": 20,
+    "explorer.fileNesting.enabled": true
 }

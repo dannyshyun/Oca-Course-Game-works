@@ -1,5 +1,5 @@
 #pragma once
-class HpPlusCard : public ItemCard
+class HandPlusCard : public ItemCard
 {
 public:
     void Init() override;
