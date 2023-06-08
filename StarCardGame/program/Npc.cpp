@@ -11,32 +11,32 @@
 //---------------------------------------------------------------------------------
 void Npc::Init( int model )
 {
-	m_model = model;
+	model_ = model;
 
-	m_pos.x = -5.0f;
-	m_pos.z = 10.0f;
-	m_rot.y = 90.0f;
+	pos_.x = -5.0f;
+	pos_.y = 10.0f;
+	rot_.y = 90.0f;
 
-	m_radius = 0.5f;
+	radius_ = 0.5f;
 }
 //---------------------------------------------------------------------------------
 //	çXêVèàóù
 //---------------------------------------------------------------------------------
 void Npc::Update()
 {
-	m_rot.y += NPC_ROT_SPEED;
+	rot_.y += NPC_ROT_SPEED;
 
-	m_pos.x += NPC_MOV_SPEED * sinf( TO_RADIAN( m_rot.y ) );
-	m_pos.z += NPC_MOV_SPEED * cosf( TO_RADIAN( m_rot.y ) );
+	pos_.x += NPC_MOV_SPEED * sinf( TO_RADIAN( rot_.y ) );
+	pos_.y += NPC_MOV_SPEED * cosf( TO_RADIAN( rot_.y ) );
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
 //---------------------------------------------------------------------------------
 void Npc::Render()
 {
-	MV1SetPosition( m_model, VGet( m_pos.x, m_pos.y, m_pos.z ) );
-	MV1SetRotationXYZ( m_model, VGet( TO_RADIAN( m_rot.x ), TO_RADIAN( m_rot.y ), TO_RADIAN( m_rot.z ) ) );
-	MV1DrawModel( m_model );
+	// MV1SetPosition( model_, VGet( pos_.x, pos_.y, pos_.y ) );
+	// MV1SetRotationXYZ( model_, VGet( TO_RADIAN( rot_.x ), TO_RADIAN( rot_.y ), TO_RADIAN( rot_.z ) ) );
+	// MV1DrawModel( model_ );
 }
 //---------------------------------------------------------------------------------
 //	èIóπèàóù

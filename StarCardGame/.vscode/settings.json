@@ -172,5 +172,7 @@
         }
     },
     "explorer.fileNesting.patterns":{
-    }
+        "*.sln" : "${capture}.vcxproj,${capture}.vcxproj.filters"
+    },
+    "favorites.groupsFirst" : false
 }

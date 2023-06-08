@@ -20,6 +20,6 @@ class CardBase : public Base
       virtual unsigned int GetCardVal() const;
 
   protected: 
-      unsigned int valume_ = 0;
+      unsigned int value_ = 0;
       unsigned int part_ = 0;
 };

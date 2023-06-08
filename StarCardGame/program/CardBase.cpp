@@ -22,5 +22,5 @@ void CardBase::Release()
 
 unsigned int CardBase::GetCardVal() const
 {
-  return valume_;
+  return value_;
 }
