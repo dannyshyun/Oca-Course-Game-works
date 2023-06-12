@@ -5,7 +5,9 @@ enum StarPart
     STAR_RIGHT_HAND,
     STAR_LEFT_HAND,
     STAR_RIGHT_LEG,
-    STAR_LEFT_HAND
+    STAR_LEFT_LEG,
+
+    STAR_NUM_MAX
 };
 
 class CardBase : public Base

@@ -1,5 +1,5 @@
 #pragma once
-#include "CardBase.h"
+
 class EnvironmentCard : public CardBase
 {
     public:

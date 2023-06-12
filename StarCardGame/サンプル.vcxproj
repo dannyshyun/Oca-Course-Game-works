@@ -150,9 +150,17 @@
   <ItemGroup>
     <ClCompile Include="program\Base.cpp" />
     <ClCompile Include="program\Camera.cpp" />
+    <ClCompile Include="program\CardBase.cpp" />
+    <ClCompile Include="program\Deck.cpp" />
+    <ClCompile Include="program\EnvironmentCard.cpp" />
+    <ClCompile Include="program\EventCard.cpp" />
     <ClCompile Include="program\Game.cpp" />
     <ClCompile Include="program\Ground.cpp" />
+    <ClCompile Include="program\HandDropCard.cpp" />
+    <ClCompile Include="program\HandPlusCard.cpp" />
     <ClCompile Include="program\Hit.cpp" />
+    <ClCompile Include="program\HpPlusCard.cpp" />
+    <ClCompile Include="program\ItemCard.cpp" />
     <ClCompile Include="program\Main.cpp" />
     <ClCompile Include="program\Npc.cpp" />
     <ClCompile Include="program\Player.cpp" />
@@ -163,9 +171,17 @@
   <ItemGroup>
     <ClInclude Include="program\Base.h" />
     <ClInclude Include="program\Camera.h" />
+    <ClInclude Include="program\CardBase.h" />
+    <ClInclude Include="program\Deck.h" />
+    <ClInclude Include="program\EnvironmentCard.h" />
+    <ClInclude Include="program\EventCard.h" />
     <ClInclude Include="program\Game.h" />
     <ClInclude Include="program\Ground.h" />
+    <ClInclude Include="program\HandDropCard.h" />
+    <ClInclude Include="program\HandPlusCard.h" />
     <ClInclude Include="program\Hit.h" />
+    <ClInclude Include="program\HpPlusCard.h" />
+    <ClInclude Include="program\ItemCard.h" />
     <ClInclude Include="program\Main.h" />
     <ClInclude Include="program\Npc.h" />
     <ClInclude Include="program\Player.h" />

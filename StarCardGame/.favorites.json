@@ -406,5 +406,13 @@
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "utV398N7WZDqUbKp"
+    },
+    {
+        "type": "Group",
+        "name": "GameObjects",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "Hf8viB3k54CwWsFq"
     }
 ]

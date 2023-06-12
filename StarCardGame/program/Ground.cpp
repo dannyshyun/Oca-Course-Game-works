@@ -7,10 +7,10 @@
 //---------------------------------------------------------------------------------
 void Ground::Init( int model )
 {
-	m_model = model;
+	this->model = model;
 
-	m_pos.clear();
-	m_rot.clear();
+	this->pos.clear();
+	this->rot.clear();
 }
 //---------------------------------------------------------------------------------
 //	XVˆ—
@@ -23,9 +23,9 @@ void Ground::Update()
 //---------------------------------------------------------------------------------
 void Ground::Render()
 {
-	MV1SetPosition( m_model, VGet( m_pos.x, m_pos.y, m_pos.z ) );
-	MV1SetRotationXYZ( m_model, VGet( TO_RADIAN( m_rot.x ), TO_RADIAN( m_rot.y ), TO_RADIAN( m_rot.z ) ) );
-	MV1DrawModel( m_model );
+	/*MV1SetPosition( this->model, VGet( this->pos.x, this->pos.y, this->pos.z ) );
+	MV1SetRotationXYZ( this->model, VGet( TO_RADIAN( this->rot.x ), TO_RADIAN( this->rot.y ), TO_RADIAN( this->rot.z ) ) );
+	MV1DrawModel( this->model );*/
 
 	DrawLine3D( VGet( -50.0f, 0.0f,   0.0f ), VGet( 50.0f, 0.0f,  0.0f ), GetColor( 255, 0,   0 ) );
 	DrawLine3D( VGet(   0.0f, 0.0f, -50.0f ), VGet(  0.0f, 0.0f, 50.0f ), GetColor(   0, 0, 255 ) );

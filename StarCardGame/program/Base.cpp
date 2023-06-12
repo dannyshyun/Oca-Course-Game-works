@@ -6,10 +6,10 @@
 //---------------------------------------------------------------------------------
 Base::Base()
 {
-	model_ = -1;
-	pos_.clear();
-	rot_.clear();
-	radius_ = 0.0f;
+	this->model = -1;
+	this->pos.clear();
+	this->rot.clear();
+	this->radius = 0.0f;
 }
 
 void Base::Init()

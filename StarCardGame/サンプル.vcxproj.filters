@@ -45,6 +45,30 @@
     <ClCompile Include="program\Vector2.cpp">
       <Filter>program\system</Filter>
     </ClCompile>
+    <ClCompile Include="program\CardBase.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\EnvironmentCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\EventCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\HandDropCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\HandPlusCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\HpPlusCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\ItemCard.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Deck.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\Game.h">
@@ -79,6 +103,30 @@
     </ClInclude>
     <ClInclude Include="program\Vector2.h">
       <Filter>program\system</Filter>
+    </ClInclude>
+    <ClInclude Include="program\ItemCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\CardBase.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\EnvironmentCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\EventCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\HandDropCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\HandPlusCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\HpPlusCard.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Deck.h">
+      <Filter>program\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
