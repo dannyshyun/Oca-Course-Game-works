@@ -15,7 +15,7 @@ void Hand::Update()
 {
 }
 
-void Hand::Render( bool is_player )
+void Hand::Render()
 {
 
     uint16_t i = 0;
@@ -39,7 +39,10 @@ Cards Hand::Fold( Cards cards )
 
 void Hand::Draw( Cards cards )
 {
-    for ( auto& card: cards ) hand->push_back( card );
+    for ( auto& card: cards ) {
+        card->pos = Vector2( 60, 40 );
+        hand->push_back( card );
+    }
 }
 
 uint16_t Hand::GetHandNum()

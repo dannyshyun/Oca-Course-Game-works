@@ -18,31 +18,46 @@ void Player::Init()
 //---------------------------------------------------------------------------------
 //	XVˆ—
 //---------------------------------------------------------------------------------
-void Player::Update( uint16_t turn )
+void Player::Update()
 {
-    /*switch ( turn )
+    switch ( Turn )
     {
-        case LOAD_TURN:
-
+        case LOAD_TURN :
+            if ( deck->LOAD() )
+                Turn = SHUFFLE_TURN;
             break;
-        case SHUFFLE_TURN: break;
+
+        case SHUFFLE_TURN :
+            if ( deck->Shuffle() )
+                Turn = DEAL_TURN;
+            break;
+
         case DEAL_TURN :
-            uint16_t num = hand->GetHandNum();
-            if ( num < HAND_MAX )
+
+            if ( hand->GetHandNum() < HAND_MAX )
             {
-                hand->Draw( deck->Deal( HAND_MAX - num ) );
+                hand->Init();
+                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ) );
             }
             break;
-        case MOVE_TURN: break;
-        case PLAYER_ATTACK_TURN: break;
-        case PLAYER_DEFENSE_TURN: break;
-        case NPC_ATTACK_TURN: break;
-        case NPC_DEFESE_TURN: break;
-        case RESULT_TURN: break;
-        case TURN_MAX: break;
-        default: ;
-    }*/
-    deck->Update( turn );
+
+        case MOVE_TURN : break;
+
+        case PLAYER_ATTACK_TURN : break;
+
+        case PLAYER_DEFENSE_TURN : break;
+
+        case NPC_ATTACK_TURN : break;
+
+        case NPC_DEFESE_TURN : break;
+
+        case RESULT_TURN : break;
+
+        case TURN_MAX : break;
+
+        default :;
+    }
+    deck->Update();
 }
 //---------------------------------------------------------------------------------
 //	•`‰æˆ—
@@ -50,7 +65,7 @@ void Player::Update( uint16_t turn )
 void Player::Render()
 {
     deck->Render();
-    hand->Render(true);
+    hand->Render( true );
 }
 //---------------------------------------------------------------------------------
 //	I—¹ˆ—

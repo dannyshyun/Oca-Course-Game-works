@@ -34,37 +34,20 @@ Deck::~Deck()
 }
 void Deck::Init()
 {
-    this->image = IMGctrl.GetUIIMGdata( "deck" );
+    this->image    = IMGctrl.GetUIIMGdata( "deck" );
     this->card_num = 0;
     LoadCardsIMG();
     Shuffle();
 }
 
-void Deck::Update( uint16_t turn )
+void Deck::Update()
 {
-    switch ( turn )
-    {
-        case LOAD_TURN : 
-        if(card_num < deck->size())
-            card_num++;
-        break;
-        case SHUFFLE_TURN : break;
-        case DEAL_TURN : break;
-        case MOVE_TURN : break;
-        case PLAYER_ATTACK_TURN : break;
-        case PLAYER_DEFENSE_TURN : break;
-        case NPC_ATTACK_TURN : break;
-        case NPC_DEFESE_TURN : break;
-        case RESULT_TURN : break;
-
-        default :;
-    }
 }
 
 void Deck::Render()
 {
     DrawRotaGraph( 60, 40, 1, 0, image, true );
-    DrawFormatString( 80, 30, WHITE, (const TCHAR*)"%2d", card_num );
+    DrawFormatString( 85, 30, WHITE, (const TCHAR*)"%2d", card_num );
 }
 
 void Deck::Release()
@@ -92,18 +75,34 @@ Cards Deck::Deal( uint16_t num )
     }
 }
 
+uint16_t Deck::GetCardNum() const
+{
+    return card_num;
+}
+
 void Deck::Revoke( Cards cards )
 {
     for ( auto& card: cards ) { deck->push_back( card ); }
 }
 
-void Deck::Shuffle()
+bool Deck::LOAD()
+{
+    if ( card_num < deck->size() )
+    {
+        card_num++;
+        return false;
+    }
+    return true;
+}
+
+bool Deck::Shuffle()
 {
     for ( auto& card: *deck )
     {
         uint16_t rand = GetRand( deck->size() - 1 );
         std::swap( card, *( deck->begin() + rand ) );
     }
+    return true;
 }
 
 void Deck::LoadCardsIMG()

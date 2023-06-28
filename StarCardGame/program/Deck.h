@@ -7,13 +7,16 @@ public:
     Deck( int image );
     ~Deck();
     void Init() override;
-    void Update(uint16_t turn);
+    void Update() override;
     void Render() override;
     void Release() override;
 
-    Cards Deal( uint16_t num );
     void  Revoke( Cards cards );
-    void  Shuffle();
+    bool  LOAD();
+    bool  Shuffle();
+    Cards Deal( uint16_t num );
+
+    uint16_t GetCardNum() const;
 
 private:
     void      LoadCardsIMG();

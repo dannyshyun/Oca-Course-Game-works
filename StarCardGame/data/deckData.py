@@ -1,5 +1,5 @@
 import json
-with open('data/imagePath.json', "r") as jfile:
+with open('data/ImgPathDatas/Cards.json', "r") as jfile:
     path_data = json.load(fp=jfile)
 
 x = []

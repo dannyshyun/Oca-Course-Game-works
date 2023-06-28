@@ -22,7 +22,8 @@
 //	モデルデータ
 
 //	クラス宣言
-uint16_t                turn;
+IMGcontroller IMGctrl;
+int                Turn;
 std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
 std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
 //---------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
 void GameInit()
 {
     IMGctrl.Init();
-    turn = LOAD_TURN;
+    Turn = LOAD_TURN;
     player->Init();
     npc->Init();
 }
@@ -40,8 +41,8 @@ void GameInit()
 //---------------------------------------------------------------------------------
 void GameUpdate()
 {
-    player->Update( turn );
-    npc->Update( turn );
+    player->Update();
+    npc->Update( Turn );
 }
 //---------------------------------------------------------------------------------
 //	描画処理

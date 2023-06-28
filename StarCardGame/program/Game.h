@@ -1,6 +1,6 @@
 #pragma once
 
-#define SCREEN_FRAME  60
+#define SCREEN_FRAME 60
 
 #define SCREEN_W     1280
 #define SCREEN_H     720
@@ -30,3 +30,5 @@ enum GAME_TURN
 
     TURN_MAX
 };
+extern IMGcontroller IMGctrl;
+extern int           Turn;

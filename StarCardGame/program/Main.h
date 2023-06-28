@@ -28,4 +28,4 @@ int   GetMouseMoveX();
 int   GetMouseMoveY();
 float TO_RADIAN( float degree );
 float TO_DEGREE( float radian );
-extern  IMGcontroller IMGctrl;
+

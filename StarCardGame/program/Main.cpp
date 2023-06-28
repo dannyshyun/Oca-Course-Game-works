@@ -11,7 +11,6 @@ int NowMouseY;
 int BeforeMouseX;
 int BeforeMouseY;
 
-IMGcontroller IMGctrl;
 
 //---------------------------------------------------------------------------------
 //	WinMain
