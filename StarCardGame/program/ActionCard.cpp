@@ -2,9 +2,12 @@
 #include "CardBase.h"
 #include "ActionCard.h"
 
-ActionCard::ActionCard()
+ActionCard::ActionCard( int         image,
+                        uint32_t    value,
+                        uint32_t    part,
+                        std::string suit ) :
+    CardBase( image, value, part ) , suit( suit )
 {
-  Init();
 }
 
 ActionCard::~ActionCard()
@@ -27,7 +30,7 @@ void ActionCard::Release()
 {
 }
 
-unsigned int ActionCard::GetType() const
+std::string ActionCard::GetSuit() const
 {
-  return type;
+    return suit;
 }

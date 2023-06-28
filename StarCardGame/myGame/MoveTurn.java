@@ -5,14 +5,14 @@ public class MoveTurn {
 			
 		}
 //		MoveTurn
-//		¥XµP
+//		o”v
 		
 
 		
 
 		
 		
-//		±N¤âµP©ñ¤J¥XµPÄE
+//		›’è”v•ú“üo”v??E
 		String [] selcard = new String[7];
 		public String[] getSelcard() {
 			return selcard;
@@ -27,7 +27,7 @@ public class MoveTurn {
 			}
 		}
 		
-//		­pºâ²¾°Ê­È
+//		ŒvZˆÚ“®?
 
 
 
@@ -54,7 +54,7 @@ public class MoveTurn {
 			System.out.print(c + " ");
 		}
 		System.out.println();
-//		pc¥XµP
+//		pco”v
 		String [] p2selcard = new String[7];
 		int p2move = 0;
 		for (int i = 0; i < p2cards.length; i++) {
@@ -67,7 +67,7 @@ public class MoveTurn {
 			}else p2selcard[i] = null;
 			
 		}
-//		pc¤è¦V
+//		pc•ûŒü
 		String p2dir;
 		if((int)(Math.random()*2)==0) {
 			p2dir = "-";
@@ -85,7 +85,7 @@ public class MoveTurn {
 		System.out.println();
 		System.out.println(p2dir + p2move);
 		
-//		§P©w¶ZÂE
+//		”»’è‹—??E
 		int dist = 1;
 		switch(dir) { 
 		case "+" : dist += p1move;break;

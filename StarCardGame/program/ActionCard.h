@@ -1,6 +1,7 @@
 #pragma once
+#include <string>
 
-enum ActionType
+enum ActionSuit
 {
     ACTION_MOVE = 0,
     ACTION_SWORD,
@@ -13,15 +14,15 @@ enum ActionType
 class ActionCard : public CardBase
 {
     public:
-        ActionCard();
+    ActionCard( int image, uint32_t value, uint32_t part, std::string suit );
         ~ActionCard();
         void Init() override;
         void Update() override;
         void Render() override;
         void Release() override;
 
-        unsigned int GetType() const;
+        std::string GetSuit() const;
         
     protected:
-        unsigned int type = 0;
+        std::string suit = 0;
 }; 

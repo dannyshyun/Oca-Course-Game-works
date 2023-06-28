@@ -1,0 +1,42 @@
+[
+    {
+        "suit" : "sword",
+        "max_value": 5,
+        "path" : "data/CardPics/sword"
+    },
+    {
+        "suit" : "gun",
+        "max_value": 5,
+        "path" : "data/CardPics/gun"
+    },
+    {
+        "suit" : "shield",
+        "max_value": 5,
+        "path" : "data/CardPics/shield"
+    },
+    {
+        "suit" : "move",
+        "max_value": 3,
+        "path" : "data/CardPics/move"
+    },
+    {
+        "suit" : "star",
+        "max_value": 5,
+        "path" : "data/CardPics/star"
+    },
+    {
+        "suit" : "chance",
+        "max_value": 3,
+        "path" : "data/CardPics/chance"
+    },
+    {
+        "suit" : "curse",
+        "max_value": 3,
+        "path" : "data/CardPics/curse"
+    },
+    {
+        "suit" : "hpPlus",
+        "max_value": 3,
+        "path" : "data/CardPics/hpPlus"
+    }
+]

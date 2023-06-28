@@ -5,7 +5,7 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "workbench.colorTheme": "Zenburn Dark Matter - Deep Sea - Aquamarine",
+    "workbench.colorTheme": "Zenburn Dark Matter - Equinox - Viserion",
     "workbench.iconTheme": "vscode-icons",
     "glassit.alpha": 240,
     "editor.tokenColorCustomizations": {
@@ -110,10 +110,10 @@
         "x64": true,
         ".vs": true
     },
-    "explorer.fileNesting.patterns":{
-        "*.sln" : "${capture}.vcxproj,${capture}.vcxproj.filters"
+    "explorer.fileNesting.patterns": {
+        "*.sln": "${capture}.vcxproj,${capture}.vcxproj.filters"
     },
-    "favorites.groupsFirst" : false,
+    "favorites.groupsFirst": false,
     "workbench.tree.indent": 20,
     "explorer.fileNesting.enabled": true,
     "files.associations": {
@@ -184,6 +184,16 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "any": "cpp",
+        "filesystem": "cpp",
+        "functional": "cpp",
+        "codecvt": "cpp",
+        "fstream": "cpp",
+        "iostream": "cpp",
+        "numeric": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "valarray": "cpp"
     }
 }

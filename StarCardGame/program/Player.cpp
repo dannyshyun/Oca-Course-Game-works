@@ -1,34 +1,64 @@
 #include "Main.h"
 #include "Game.h"
+#include "Base.h"
 #include "Player.h"
 
-#define PLAYER_MOV_SPEED	0.1f
-#define PLAYER_ROT_SPEED	3.0f
-
+Player::Player( int image ) : Base( image )
+{
+    deck = std::make_unique<Deck>( 0 );
+    hand = std::make_unique<Hand>( 0 );
+}
 //---------------------------------------------------------------------------------
 //	èâä˙âªèàóù
 //---------------------------------------------------------------------------------
-void Player::Init( int model )
+void Player::Init()
 {
-	
+    deck->Init();
 }
 //---------------------------------------------------------------------------------
 //	çXêVèàóù
 //---------------------------------------------------------------------------------
-void Player::Update()
+void Player::Update( uint16_t turn )
 {
-	
+    /*switch ( turn )
+    {
+        case LOAD_TURN:
+
+            break;
+        case SHUFFLE_TURN: break;
+        case DEAL_TURN :
+            uint16_t num = hand->GetHandNum();
+            if ( num < HAND_MAX )
+            {
+                hand->Draw( deck->Deal( HAND_MAX - num ) );
+            }
+            break;
+        case MOVE_TURN: break;
+        case PLAYER_ATTACK_TURN: break;
+        case PLAYER_DEFENSE_TURN: break;
+        case NPC_ATTACK_TURN: break;
+        case NPC_DEFESE_TURN: break;
+        case RESULT_TURN: break;
+        case TURN_MAX: break;
+        default: ;
+    }*/
+    deck->Update( turn );
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
 //---------------------------------------------------------------------------------
 void Player::Render()
 {
-	
+    deck->Render();
+    hand->Render(true);
 }
 //---------------------------------------------------------------------------------
 //	èIóπèàóù
 //---------------------------------------------------------------------------------
-void Player::Exit()
+void Player::Release()
+{
+}
+
+void Player::SelectCard( CardBase card )
 {
 }

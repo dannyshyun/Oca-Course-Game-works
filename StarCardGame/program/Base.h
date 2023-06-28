@@ -8,15 +8,16 @@
 class Base
 {
 public:
-	Base();
-	virtual void Init();
-	virtual void Update();
-	virtual void Render();
-	virtual void Release();
+    Base(int image);
+    virtual void Init();
+    virtual void Update();
+    virtual void Render();
+    virtual void Release();
 
+    Vector2 pos;
+    Vector2 rot;
+    float   radius;
 protected:
-	Vector2	pos;
-	Vector2	rot;
-	int		model;
-	float	radius;
+    int     model;
+    int     image;
 };

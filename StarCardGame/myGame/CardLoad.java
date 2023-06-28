@@ -43,7 +43,7 @@ public class CardLoad {
 
 
 
-		//	¬~µP
+		//	ô”v
 		public void shuffle() {
 			int nums = 52;
 			int[] cards = new int [52];
@@ -107,7 +107,7 @@ public class CardLoad {
 		System.out.println();
 		System.out.println("------");
 			
-//		µoµP
+//		á¢”v
 		public void deal() {
 		int cardslimit = 7;
 		int p1cards = 0;

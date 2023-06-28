@@ -10,6 +10,9 @@
     <Filter Include="program\system">
       <UniqueIdentifier>{f2d9841c-2bea-4299-8e16-cc43044bae54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="program\game\Cards">
+      <UniqueIdentifier>{6c7dac3e-694d-41af-a54b-1462dbc5f438}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="program\Game.cpp">
@@ -54,10 +57,10 @@
     <ClCompile Include="program\EventCard.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
-    <ClCompile Include="program\HandDropCard.cpp">
+    <ClCompile Include="program\CurseCard.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
-    <ClCompile Include="program\HandPlusCard.cpp">
+    <ClCompile Include="program\ChanceCard.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
     <ClCompile Include="program\HpPlusCard.cpp">
@@ -67,6 +70,15 @@
       <Filter>program\game</Filter>
     </ClCompile>
     <ClCompile Include="program\Deck.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
+    <ClCompile Include="program\ActionCard.cpp">
+      <Filter>program\game\Cards</Filter>
+    </ClCompile>
+    <ClCompile Include="program\imageDatas.cpp">
+      <Filter>program\system</Filter>
+    </ClCompile>
+    <ClCompile Include="program\Hand.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,16 +128,28 @@
     <ClInclude Include="program\EventCard.h">
       <Filter>program\game</Filter>
     </ClInclude>
-    <ClInclude Include="program\HandDropCard.h">
+    <ClInclude Include="program\CurseCard.h">
       <Filter>program\game</Filter>
     </ClInclude>
-    <ClInclude Include="program\HandPlusCard.h">
+    <ClInclude Include="program\ChanceCard.h">
       <Filter>program\game</Filter>
     </ClInclude>
     <ClInclude Include="program\HpPlusCard.h">
       <Filter>program\game</Filter>
     </ClInclude>
     <ClInclude Include="program\Deck.h">
+      <Filter>program\game</Filter>
+    </ClInclude>
+    <ClInclude Include="program\json.h">
+      <Filter>program\system</Filter>
+    </ClInclude>
+    <ClInclude Include="program\ActionCard.h">
+      <Filter>program\game\Cards</Filter>
+    </ClInclude>
+    <ClInclude Include="program\imageDatas.h">
+      <Filter>program\system</Filter>
+    </ClInclude>
+    <ClInclude Include="program\Hand.h">
       <Filter>program\game</Filter>
     </ClInclude>
   </ItemGroup>

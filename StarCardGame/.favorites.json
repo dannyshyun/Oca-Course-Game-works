@@ -17,18 +17,18 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Base.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Base.cpp",
         "parent_id": "ESM83vAKYuJGmec2",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Base.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Base.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "Y2K7xaPGMS1zOy0X"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Base.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Base.h",
         "parent_id": "ESM83vAKYuJGmec2",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Base.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Base.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "KnmBD3lfESa7pN20"
@@ -43,36 +43,36 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Player.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Player.cpp",
         "parent_id": "At3GqSUhbHlv6CR5",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Player.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Player.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "M3R4GcX9BHvd2koh"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Player.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Player.h",
         "parent_id": "At3GqSUhbHlv6CR5",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Player.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Player.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "40KVUDB8X5LfPvsx"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Npc.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Npc.cpp",
         "parent_id": "At3GqSUhbHlv6CR5",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Npc.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Npc.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "PhQMiIjXWZKvA58m"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Npc.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Npc.h",
         "parent_id": "At3GqSUhbHlv6CR5",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Npc.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Npc.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "bBUNmhrpKw5eDoiQ"
@@ -87,36 +87,36 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector2.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector2.cpp",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector2.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector2.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "CQJYEdfIV87Byz2a"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector2.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector2.h",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector2.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector2.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "H1LowEYSfOaiVBKT"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector3.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector3.cpp",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector3.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector3.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "BTpXRqjZKYta6y01"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector3.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector3.h",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Vector3.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Vector3.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "S2rlxqmIBQkacVFT"
@@ -131,27 +131,27 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Random.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Random.h",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Random.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Random.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "gafkOASFWH1yiqPC"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Hit.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hit.cpp",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Hit.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hit.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "niYgQOUdLByvt439"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Hit.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hit.h",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Hit.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hit.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "cEpW98IjPL324nAl"
@@ -176,36 +176,36 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.cpp",
         "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "TgpH5wvaFXnEmZys"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.h",
         "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ItemCard.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "8QTlni5cjmDrzEAh"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.cpp",
         "parent_id": "usK2eNnaohREvHlX",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "9h5gQlpqFfAkGz2L"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.h",
         "parent_id": "usK2eNnaohREvHlX",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EnvironmentCard.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "Azq0D15bPvOCtlKr"
@@ -221,54 +221,54 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.cpp",
         "parent_id": "sYqTa49c1jvZgKt7",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "ryZBfLecjmEAklDX"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.h",
         "parent_id": "sYqTa49c1jvZgKt7",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ActionCard.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "HqtbviNFCGeYkOah"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\CardBase.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CardBase.cpp",
         "parent_id": "7UYvD1tyO3lecfME",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\CardBase.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CardBase.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "dVCYt3qHvF6cfJkr"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\CardBase.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CardBase.h",
         "parent_id": "7UYvD1tyO3lecfME",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\CardBase.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CardBase.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "1wmbBzEU38eS4AMn"
     },
     {
         "type": "Directory",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\data",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\data",
         "parent_id": null,
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\data",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\data",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "tvmPFyeZzWs14S7q"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\.vscode\\settings.json",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\.vscode\\settings.json",
         "parent_id": null,
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\.vscode\\settings.json",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\.vscode\\settings.json",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "xp1iTw9ENBbrCvoP"
@@ -283,36 +283,36 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Game.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Game.cpp",
         "parent_id": "InFQY89Zpf2OTbRt",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Game.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Game.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "6gHO9QIc308Yjfz1"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Game.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Game.h",
         "parent_id": "InFQY89Zpf2OTbRt",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Game.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Game.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "WaJ2v6B4HzNCDQpn"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Main.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Main.cpp",
         "parent_id": "InFQY89Zpf2OTbRt",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Main.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Main.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "iCHQus0X9DzYwkBV"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Main.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Main.h",
         "parent_id": "InFQY89Zpf2OTbRt",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\Main.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Main.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "2odDNeO0EkpAvjPt"
@@ -328,81 +328,45 @@
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EventCard.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EventCard.cpp",
         "parent_id": "sxTPyikofHeMaK0c",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EventCard.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EventCard.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "rCH0IovEm3Ox5qAM"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EventCard.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EventCard.h",
         "parent_id": "sxTPyikofHeMaK0c",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\EventCard.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\EventCard.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "LczE5w8kmlfD9bPO"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.cpp",
         "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "ZHu0DhoY9CeXW62M"
     },
     {
         "type": "File",
-        "name": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.h",
         "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\Shyun\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\HpPlusCard.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "kaUFZb2Y0XjMyJqA"
     },
     {
         "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandDropCard.cpp",
-        "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandDropCard.cpp",
-        "workspaceRoot": null,
-        "workspacePath": null,
-        "id": "OyU0porqNf4Y1Fu8"
-    },
-    {
-        "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandDropCard.h",
-        "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandDropCard.h",
-        "workspaceRoot": null,
-        "workspacePath": null,
-        "id": "YJS8Mt7zUNyLViWE"
-    },
-    {
-        "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandPlusCard.cpp",
-        "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandPlusCard.cpp",
-        "workspaceRoot": null,
-        "workspacePath": null,
-        "id": "WBqvoNw6KROASCz7"
-    },
-    {
-        "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandPlusCard.h",
-        "parent_id": "rgbs69d2cIm4WR7J",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\HandPlusCard.h",
-        "workspaceRoot": null,
-        "workspacePath": null,
-        "id": "7lVqWE0ypOD5LixJ"
-    },
-    {
-        "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Random.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Random.cpp",
         "parent_id": "ZR6rjFzV8KA7CxM1",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Random.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Random.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "utV398N7WZDqUbKp"
@@ -417,20 +381,92 @@
     },
     {
         "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Deck.cpp",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Deck.cpp",
         "parent_id": "Hf8viB3k54CwWsFq",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Deck.cpp",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Deck.cpp",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "HT4swn6GjdlBDrgo"
     },
     {
         "type": "File",
-        "name": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Deck.h",
+        "name": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Deck.h",
         "parent_id": "Hf8viB3k54CwWsFq",
-        "fsPath": "d:\\shyun\\oca-course-gameworks\\StarCardGame\\program\\Deck.h",
+        "fsPath": "C:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Deck.h",
         "workspaceRoot": null,
         "workspacePath": null,
         "id": "7uqYzPKwjOASGbBc"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ChanceCard.cpp",
+        "parent_id": "rgbs69d2cIm4WR7J",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ChanceCard.cpp",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "mDphHiQvOFNEwVXY"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ChanceCard.h",
+        "parent_id": "rgbs69d2cIm4WR7J",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\ChanceCard.h",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "NEUnmPXsrbl7BKiy"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CurseCard.cpp",
+        "parent_id": "rgbs69d2cIm4WR7J",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CurseCard.cpp",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "YGF3U9HNPMVIwCWm"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CurseCard.h",
+        "parent_id": "rgbs69d2cIm4WR7J",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\CurseCard.h",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "BTFpEOyND36rAt2Z"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hand.cpp",
+        "parent_id": "Hf8viB3k54CwWsFq",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hand.cpp",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "g49aRTXvzeWxulni"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hand.h",
+        "parent_id": "Hf8viB3k54CwWsFq",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\Hand.h",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "gOMRTj0Cz7lPtswS"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\imageDatas.cpp",
+        "parent_id": "ZR6rjFzV8KA7CxM1",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\imageDatas.cpp",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "IXN48Pe6iDHqgF17"
+    },
+    {
+        "type": "File",
+        "name": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\imageDatas.h",
+        "parent_id": "ZR6rjFzV8KA7CxM1",
+        "fsPath": "c:\\Users\\Admin\\Desktop\\GitHub\\oca-course-gameworks\\StarCardGame\\program\\imageDatas.h",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "9PnoHlLBOpdsC4hz"
     }
 ]

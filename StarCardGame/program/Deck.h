@@ -1,22 +1,23 @@
 #pragma once
 #include "CardBase.h"
-#include <vector>
-#include <memory>
-typedef std::vector<std::shared_ptr<CardBase>> cards;
-typedef std::unique_ptr<cards>				   ptr_cards;
+
 class Deck : public Base
 {
 public:
-	Deck();
-	~Deck();
-	void Init() override;
-	void Update() override;
-	void Render() override;
-	void Release() override;
+    Deck( int image );
+    ~Deck();
+    void Init() override;
+    void Update(uint16_t turn);
+    void Render() override;
+    void Release() override;
 
-	cards Deal( int num );
-	void				   Revoke( int num );
+    Cards Deal( uint16_t num );
+    void  Revoke( Cards cards );
+    void  Shuffle();
 
 private:
-	ptr_cards deck;
+    void      LoadCardsIMG();
+    ptr_cards deck;
+    // the number of card in deck
+    uint16_t  card_num;
 };

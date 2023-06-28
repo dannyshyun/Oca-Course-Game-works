@@ -1,34 +1,55 @@
 #include "Main.h"
 #include "Game.h"
 #include "Random.h"
+#include "Base.h"
+#include "Player.h"
 #include "Npc.h"
 
 
 
+Npc::Npc( int image ) : Player( image )
+{
+    deck = std::make_unique<Deck>( 0 );
+    hand = std::make_unique<Hand>( 0 );
+}
 //---------------------------------------------------------------------------------
 //	èâä˙âªèàóù
 //---------------------------------------------------------------------------------
-void Npc::Init( int model )
+void Npc::Init()
 {
-
+    deck->Init();
 }
 //---------------------------------------------------------------------------------
 //	çXêVèàóù
 //---------------------------------------------------------------------------------
-void Npc::Update()
+void Npc::Update( uint16_t turn )
 {
-	
+    switch ( turn )
+    {
+        case DEAL_TURN :
+            uint16_t num = hand->GetHandNum();
+            if ( num < HAND_MAX )
+            {
+                hand->Draw( deck->Deal( HAND_MAX - num ) );
+            }
+            break;
+    }
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
 //---------------------------------------------------------------------------------
 void Npc::Render()
 {
-
+    deck->Render();
+    hand->Render(false);
 }
 //---------------------------------------------------------------------------------
 //	èIóπèàóù
 //---------------------------------------------------------------------------------
-void Npc::Exit()
+void Npc::Release()
+{
+}
+
+void Npc::SelectCard( CardBase card )
 {
 }
