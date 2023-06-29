@@ -15,7 +15,7 @@ void Hand::Update()
 {
 }
 
-void Hand::Render()
+void Hand::Render( bool is_player )
 {
 
     uint16_t i = 0;

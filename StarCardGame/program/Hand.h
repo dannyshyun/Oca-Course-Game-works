@@ -8,7 +8,7 @@ public:
     Hand( int image );
     void Init() override;
     void Update() override;
-    void Render() override;
+    void Render(bool is_player);
     void Release() override;
 
     Cards Fold( Cards cards );
