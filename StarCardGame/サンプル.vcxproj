@@ -150,13 +150,17 @@
   <ItemGroup>
     <ClCompile Include="program\ActionCard.cpp" />
     <ClCompile Include="program\Base.cpp" />
-    <ClCompile Include="program\Camera.cpp" />
+    <ClCompile Include="program\Camera.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="program\CardBase.cpp" />
     <ClCompile Include="program\Deck.cpp" />
     <ClCompile Include="program\EnvironmentCard.cpp" />
     <ClCompile Include="program\EventCard.cpp" />
     <ClCompile Include="program\Game.cpp" />
-    <ClCompile Include="program\Ground.cpp" />
+    <ClCompile Include="program\Ground.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="program\CurseCard.cpp" />
     <ClCompile Include="program\ChanceCard.cpp" />
     <ClCompile Include="program\Hand.cpp" />
@@ -174,13 +178,17 @@
   <ItemGroup>
     <ClInclude Include="program\ActionCard.h" />
     <ClInclude Include="program\Base.h" />
-    <ClInclude Include="program\Camera.h" />
+    <ClInclude Include="program\Camera.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="program\CardBase.h" />
     <ClInclude Include="program\Deck.h" />
     <ClInclude Include="program\EnvironmentCard.h" />
     <ClInclude Include="program\EventCard.h" />
     <ClInclude Include="program\Game.h" />
-    <ClInclude Include="program\Ground.h" />
+    <ClInclude Include="program\Ground.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="program\CurseCard.h" />
     <ClInclude Include="program\ChanceCard.h" />
     <ClInclude Include="program\Hand.h" />

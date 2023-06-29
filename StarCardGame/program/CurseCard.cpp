@@ -16,9 +16,9 @@ void CurseCard::Update()
     ItemCard::Update();
 }
 
-void CurseCard::Render()
+void CurseCard::Render(bool is_show)
 {
-    ItemCard::Render();
+    ItemCard::Render(is_show);
 }
 
 void CurseCard::Release()

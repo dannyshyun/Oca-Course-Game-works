@@ -22,8 +22,8 @@
 //	モデルデータ
 
 //	クラス宣言
-IMGcontroller IMGctrl;
-int                Turn;
+IMGcontroller           IMGctrl;
+int                     Turn;
 std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
 std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
 //---------------------------------------------------------------------------------

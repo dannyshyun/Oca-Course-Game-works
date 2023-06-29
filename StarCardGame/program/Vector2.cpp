@@ -1,163 +1,129 @@
 #include "Main.h"
 #include "Vector2.h"
 
-//---------------------------------------------------------------------------------
-//	コンストラクタ
-//---------------------------------------------------------------------------------
-Vector2::Vector2()
+Vector2::Vector2( int x, int y ) : x(x), y(y)
 {
-	x = 0.0f;
-	y = 0.0f;
 }
-Vector2::Vector2( float x, float y )
+void Vector2::operator+=(const Vector2 &other)
 {
-	this->x = x;
-	this->y = y;
+    x += other.x;
+    y += other.y;
 }
-//---------------------------------------------------------------------------------
-//	ゼロ初期化
-//---------------------------------------------------------------------------------
-void Vector2::clear()
+void Vector2F::operator+=(const Vector2F &other)
 {
-	x = 0.0f;
-	y = 0.0f;
-}
-//---------------------------------------------------------------------------------
-//	値のセット
-//---------------------------------------------------------------------------------
-void Vector2::set( float x, float y )
-{
-	this->x = x;
-	this->y = y;
-}
-//---------------------------------------------------------------------------------
-//	値のセット
-//---------------------------------------------------------------------------------
-void Vector2::set( Vector2 &v )
-{
-	x = v.x;
-	y = v.y;
-}
-//---------------------------------------------------------------------------------
-//	長さ取得
-//---------------------------------------------------------------------------------
-float Vector2::GetLength()
-{
-	return sqrtf( x * x + y * y );
-}
-//---------------------------------------------------------------------------------
-//	正規化（ベクトルの長さを１にする）
-//---------------------------------------------------------------------------------
-void Vector2::normalize()
-{
-	float length = GetLength();
-	if( length > 0.0f ){
-		x = x / length;
-		y = y / length;
-	}
-}
-//---------------------------------------------------------------------------------
-//	長さ設定
-//---------------------------------------------------------------------------------
-void Vector2::SetLength( float length )
-{
-	normalize();
-	x = x * length;
-	y = y * length;
+    x += other.x;
+    y += other.y;
 }
 
-//---------------------------------------------------------------------------------
-//	= 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2& Vector2::operator = ( const Vector2 &v )
+void Vector2::operator-=(const Vector2 &other)
 {
-	x = v.x;
-	y = v.y; 
-	return *this; 
-}
-//---------------------------------------------------------------------------------
-//	+= 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2& Vector2::operator += ( const Vector2 &v )
-{
-	x += v.x;
-	y += v.y;
-	return *this;
-}
-//---------------------------------------------------------------------------------
-//	-= 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2& Vector2::operator -= ( const Vector2 &v )
-{
-	x -= v.x;
-	y -= v.y;
-	return *this;
-}
-//---------------------------------------------------------------------------------
-//	*= 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2& Vector2::operator *= ( const float f )
-{
-	x *= f;
-	y *= f;
-	return *this;
-}
-//---------------------------------------------------------------------------------
-//	/= 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2& Vector2::operator /= ( const float f )
-{
-	x /= f;
-	y /= f;
-	return *this;
+    x -= other.x;
+    y -= other.y;
 }
 
-//---------------------------------------------------------------------------------
-//	+ 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2 operator + ( const Vector2 &v0, const Vector2 &v1 )
+void Vector2F::operator-=(const Vector2F &other)
 {
-	Vector2 v;
-	v.x = v0.x + v1.x;
-	v.y = v0.y + v1.y;
-	return v;
-}
-//---------------------------------------------------------------------------------
-//	- 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2 operator - ( const Vector2 &v0, const Vector2 &v1 )
-{
-	Vector2 v;
-	v.x = v0.x - v1.x;
-	v.y = v0.y - v1.y;
-	return v;
-}
-//---------------------------------------------------------------------------------
-//	* 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2 operator * ( const Vector2 &v, const float f )
-{
-	Vector2 r;
-	r.x = v.x * f;
-	r.y = v.y * f;
-	return r;
-}
-//---------------------------------------------------------------------------------
-//	/ 演算子のオーバーロード
-//---------------------------------------------------------------------------------
-Vector2 operator / ( const Vector2 &v, const float f )
-{
-	Vector2 r;
-	r.x = v.x / f;
-	r.y = v.y / f;
-	return r;
+    x -= other.x;
+    y -= other.y;
 }
 
-//---------------------------------------------------------------------------------
-//	２つの Vector2 の距離を求める
-//---------------------------------------------------------------------------------
-float GetVector2Distance( Vector2 &p0, Vector2 &p1 )
+void Vector2::operator+=(const int other)
 {
-	Vector2 v = p0 - p1;
-	return v.GetLength();
+    x += other;
+    y += other;
+}
+void Vector2F::operator+=(const float other)
+{
+    x += other;
+    y += other;
+}
+void Vector2::operator-=(const int other)
+{
+    x -= other;
+    y -= other;
+}
+void Vector2F::operator-=(const float other)
+{
+    x -= other;
+    y -= other;
+}
+
+Vector2 Vector2::operator+(const int other)
+{
+    return {
+        x + other,
+        y + other};
+}
+
+Vector2F Vector2F::operator+(const float other)
+{
+    return {
+        x + other,
+        y + other};
+}
+
+Vector2 Vector2::operator-(const int other)
+{
+    return {
+        x - other,
+        y - other};
+}
+Vector2F Vector2F::operator-(const float other)
+{
+    return {
+        x - other,
+        y - other};
+}
+
+Vector2 Vector2::operator+(const Vector2 &other)
+{
+    return {
+        x - other.x,
+        y - other.y};
+}
+
+
+Vector2F Vector2F::operator+( const Vector2F &other )
+{
+    return {
+        x - other.x,
+        y - other.y};
+}
+Vector2 Vector2::operator-(const Vector2 &other)
+{
+    return {
+        x + other.x,
+        y + other.y};
+}
+
+Vector2F Vector2F::operator-(const Vector2F &other)
+{
+    return {
+        x + other.x,
+        y + other.y};
+}
+
+Vector2 Vector2::operator*(const int other)
+{
+    return {
+        x * other,
+        y * other};
+}
+Vector2F Vector2F::operator*(const float other)
+{
+    return {
+        x * other,
+        y * other};
+}
+
+void Vector2::operator=(const int other)
+{
+    x = other;
+    y = other;
+}
+
+void Vector2F::operator=(const float other)
+{
+    x = other;
+    y = other;
 }

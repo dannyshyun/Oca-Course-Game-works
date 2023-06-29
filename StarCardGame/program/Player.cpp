@@ -20,6 +20,7 @@ void Player::Init()
 //---------------------------------------------------------------------------------
 void Player::Update()
 {
+
     switch ( Turn )
     {
         case LOAD_TURN :
@@ -37,15 +38,27 @@ void Player::Update()
             if ( hand->GetHandNum() < HAND_MAX )
             {
                 hand->Init();
-                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ) ,true);
+                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ), true );
+            }
+            Turn = MOVE_TURN;
+            break;
+
+        case MOVE_TURN :
+            for ( auto& card: hand->GetHandCards() )
+            {
+                CheckTouch( card );
+                if ( PushMouseInput( MOUSE_INPUT_LEFT ) )
+                    SelectCard( card );
             }
             break;
 
-        case MOVE_TURN : break;
+        case PLAYER_ATTACK_TURN :
+            for ( auto& card: hand->GetHandCards() ) { CheckTouch( card ); }
+            break;
 
-        case PLAYER_ATTACK_TURN : break;
-
-        case PLAYER_DEFENSE_TURN : break;
+        case PLAYER_DEFENSE_TURN :
+            for ( auto& card: hand->GetHandCards() ) { CheckTouch( card ); }
+            break;
 
         case NPC_ATTACK_TURN : break;
 
@@ -58,6 +71,7 @@ void Player::Update()
         default :;
     }
     deck->Update();
+    hand->Update();
 }
 //---------------------------------------------------------------------------------
 //	ï`âÊèàóù
@@ -74,6 +88,22 @@ void Player::Release()
 {
 }
 
-void Player::SelectCard( CardBase card )
+void Player::SelectCard( std::shared_ptr<CardBase> card )
 {
+    if ( card->is_touch )
+        card->is_select = ! card->is_select;
+}
+
+void Player::CheckTouch( std::shared_ptr<CardBase> card )
+{
+    Vector2 mouse_pos( GetMouseX(), GetMouseY() );
+    // check mouse in screen
+    if ( mouse_pos.x < 0 || mouse_pos.x > SCREEN_W || mouse_pos.y < 0 ||
+         mouse_pos.y > SCREEN_H )
+        return;
+    // check mouse in touchable card area
+    card->is_touch = ( mouse_pos.x <= ( card->pos.x + card->size.x * 0.5 ) &&
+                       mouse_pos.x >= ( card->pos.x - card->size.x * 0.5 ) &&
+                       mouse_pos.y <= ( card->pos.y + card->size.y * 0.5 ) &&
+                       mouse_pos.y >= ( card->pos.y - card->size.y * 0.5 ) );
 }

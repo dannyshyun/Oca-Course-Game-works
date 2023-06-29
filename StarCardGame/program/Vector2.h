@@ -1,40 +1,37 @@
 #pragma once
-
-//---------------------------------------------------------------------------------
-//	Vector2 クラス
-//---------------------------------------------------------------------------------
-class Vector2
+struct Vector2
 {
-public:
-	float x;
-	float y;
+    int x;
+    int y;
+    Vector2( int x, int y );
+    void operator+=( const Vector2 &other );
+    void operator-=(const Vector2 &other);
+    void operator+=(const int other);
+    void operator-=(const int other);
 
-	Vector2();									//	コンストラクタ
-	Vector2( float x, float y );
-	void clear();								//	ゼロ初期化
-	void set( float x, float y );				//	値のセット
-	void set( Vector2 &v );
+    Vector2 operator+(const int other);
+    Vector2 operator-(const int other);
+    Vector2 operator*(const int other);
 
-	float GetLength();							//	長さ取得
-	void normalize();							//	正規化
-	void SetLength( float length );				//	長さ設定
-
-	Vector2& operator = ( const Vector2 &v );	//	= 演算子のオーバーロード
-
-	Vector2& operator += ( const Vector2 &v );	//	+= 演算子のオーバーロード
-	Vector2& operator -= ( const Vector2 &v );	//	-= 演算子のオーバーロード
-	Vector2& operator *= ( const float f );		//	*= 演算子のオーバーロード
-	Vector2& operator /= ( const float f );		//	/= 演算子のオーバーロード
+    Vector2 operator+(const Vector2 &other);
+    Vector2 operator-(const Vector2 &other);
+    void operator=(const int other);
 };
 
-//	+ 演算子のオーバーロード
-Vector2 operator + ( const Vector2 &v0, const Vector2 &v1 );
-//	- 演算子のオーバーロード
-Vector2 operator - ( const Vector2 &v0, const Vector2 &v1 );
-//	* 演算子のオーバーロード
-Vector2 operator * ( const Vector2 &v, const float f );
-//	/ 演算子のオーバーロード
-Vector2 operator / ( const Vector2 &v, const float f );
+struct Vector2F
+{
+    float x;
+    float y;
+    void operator+=(const Vector2F &other);
+    void operator-=(const Vector2F &other);
+    void operator+=(const float other);
+    void operator-=(const float other);
 
-//	２つの Vector2 の距離を求める
-float GetVector2Distance( Vector2 &p0, Vector2 &p1 );
+    Vector2F operator+(const float other);
+    Vector2F operator-(const float other);
+    Vector2F operator*(const float other);
+
+    Vector2F operator+(const Vector2F &other);
+    Vector2F operator-(const Vector2F &other);
+    void operator=(const float other);
+};

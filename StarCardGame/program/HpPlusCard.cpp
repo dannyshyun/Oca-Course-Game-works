@@ -13,9 +13,9 @@ void HpPlusCard::Update()
     ItemCard::Update();
 }
 
-void HpPlusCard::Render()
+void HpPlusCard::Render(bool is_show)
 {
-    ItemCard::Render();
+    ItemCard::Render(is_show);
 }
 
 void HpPlusCard::Release()

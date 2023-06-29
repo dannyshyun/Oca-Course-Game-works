@@ -16,6 +16,7 @@ public:
 
     Vector2 pos;
     Vector2 rot;
+    Vector2  size;
     float   radius;
 protected:
     int     model;

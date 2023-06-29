@@ -18,7 +18,7 @@ class ActionCard : public CardBase
         ~ActionCard();
         void Init() override;
         void Update() override;
-        void Render() override;
+        void Render(bool is_show) override;
         void Release() override;
 
         std::string GetSuit() const;

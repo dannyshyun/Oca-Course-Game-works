@@ -9,7 +9,7 @@ public:
     IMGcontroller();
     void Init();
     void Release();
-    int  GetCardIMGdata( std::string suit, uint16_t value);
+    int  GetCardIMGdata( std::string suit, uint16_t value = 1);
     int  GetUIIMGdata( std::string name );
 
 private:

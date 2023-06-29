@@ -19,7 +19,7 @@ void Camera::Update()
 {
 	const float MOVE_SPEED = 0.1f;
 	if(CheckMouseInput(MOUSE_INPUT_LEFT)){
-		Vector2 move = {
+		Vector2F move = {
 			(float)GetMouseMoveX(),
 			(float)GetMouseMoveY()
 		};

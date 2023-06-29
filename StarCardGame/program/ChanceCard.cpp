@@ -18,9 +18,9 @@ void ChanceCard::Update()
     ItemCard::Update();
 }
 
-void ChanceCard::Render()
+void ChanceCard::Render(bool is_show)
 {
-    ItemCard::Render();
+    ItemCard::Render(is_show);
 }
 
 void ChanceCard::Release()

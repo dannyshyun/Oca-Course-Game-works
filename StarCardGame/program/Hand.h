@@ -8,14 +8,14 @@ public:
     Hand( int image );
     void Init() override;
     void Update() override;
-    void Render(bool is_player);
+    void Render( bool is_player );
     void Release() override;
 
-    Cards Fold( Cards cards );
-    void  Draw(Cards cards, bool is_player);
-    uint16_t  GetHandNum();
+    Cards    Fold( Cards cards );
+    void     Draw( Cards cards, bool is_player );
+    uint16_t GetHandNum() const;
+    Cards    GetHandCards() const;
 
 private:
     ptr_cards hand;
-     
 };

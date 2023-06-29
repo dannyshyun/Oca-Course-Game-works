@@ -24,9 +24,9 @@ void ActionCard::Update()
     CardBase::Update();
 }
 
-void ActionCard::Render()
+void ActionCard::Render(bool is_show)
 {
-    CardBase::Render();
+    CardBase::Render(is_show);
 }
 
 void ActionCard::Release()

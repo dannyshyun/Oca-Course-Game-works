@@ -17,9 +17,9 @@ void ItemCard::Update()
     CardBase::Update();
 }
 
-void ItemCard::Render()
+void ItemCard::Render(bool is_show)
 {
-    CardBase::Render();
+    CardBase::Render(is_show);
 }
 
 void ItemCard::Release()
