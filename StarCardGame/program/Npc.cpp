@@ -22,25 +22,31 @@ void Npc::Init()
 //---------------------------------------------------------------------------------
 //	XVˆ—
 //---------------------------------------------------------------------------------
-void Npc::Update( uint16_t turn )
+void Npc::Update()
 {
-    switch ( turn )
+    switch ( Turn )
     {
+        case LOAD_TURN : deck->Load(); break;
+
+        case SHUFFLE_TURN : deck->Shuffle(); break;
+
         case DEAL_TURN :
-            uint16_t num = hand->GetHandNum();
-            if ( num < HAND_MAX )
+
+            if ( hand->GetHandNum() < HAND_MAX )
             {
-                hand->Draw( deck->Deal( HAND_MAX - num ) );
+                hand->Init();
+                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ),false );
             }
             break;
     }
+    deck->Update();
 }
 //---------------------------------------------------------------------------------
 //	•`‰æˆ—
 //---------------------------------------------------------------------------------
 void Npc::Render()
 {
-    deck->Render();
+    deck->Render(false);
     hand->Render(false);
 }
 //---------------------------------------------------------------------------------

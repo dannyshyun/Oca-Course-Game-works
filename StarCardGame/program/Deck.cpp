@@ -24,6 +24,7 @@
     std::make_shared<HpPlusCard>( \
         IMGctrl.GetCardIMGdata( suit, value ), value, 0 )
 using json = nlohmann::json;
+
 Deck::Deck( int image ) : Base( image )
 {
     deck = std::make_unique<Cards>();
@@ -32,6 +33,7 @@ Deck::Deck( int image ) : Base( image )
 Deck::~Deck()
 {
 }
+
 void Deck::Init()
 {
     this->image    = IMGctrl.GetUIIMGdata( "deck" );
@@ -42,37 +44,19 @@ void Deck::Init()
 
 void Deck::Update()
 {
+    if ( Turn != LOAD_TURN )
+        card_num = deck->size();
 }
 
-void Deck::Render()
+void Deck::Render( bool is_player )
 {
-    DrawRotaGraph( 60, 40, 1, 0, image, true );
-    DrawFormatString( 85, 30, WHITE, (const TCHAR*)"%2d", card_num );
+    uint16_t y = is_player ? SCREEN_H - 40 : 40;
+    DrawRotaGraph( 60, y, 1, 0, image, true );
+    DrawFormatString( 85, y - 10, WHITE, (const TCHAR*)"%2d", card_num );
 }
 
 void Deck::Release()
 {
-}
-
-Cards Deck::Deal( uint16_t num )
-{
-    if ( deck->empty() )
-    {
-        return Cards();
-    }
-    else if ( deck->size() < num )
-    {
-        // todo
-        Cards temp( deck->begin(), deck->end() );
-        Cards().swap( *deck );
-        return temp;
-    }
-    else
-    {
-        Cards temp( deck->begin(), deck->begin() + num );
-        deck->erase( deck->begin(), deck->begin() + num );
-        return temp;
-    }
 }
 
 uint16_t Deck::GetCardNum() const
@@ -85,7 +69,7 @@ void Deck::Revoke( Cards cards )
     for ( auto& card: cards ) { deck->push_back( card ); }
 }
 
-bool Deck::LOAD()
+bool Deck::Load()
 {
     if ( card_num < deck->size() )
     {
@@ -103,6 +87,26 @@ bool Deck::Shuffle()
         std::swap( card, *( deck->begin() + rand ) );
     }
     return true;
+}
+
+Cards Deck::Deal( uint16_t num )
+{
+    if ( deck->empty() )
+    {
+        return Cards();
+    }
+    else if ( deck->size() < num )
+    {
+        Cards temp( deck->begin(), deck->end() );
+        Cards().swap( *deck );
+        return temp;
+    }
+    else
+    {
+        Cards temp( deck->begin(), deck->begin() + num );
+        deck->erase( deck->begin(), deck->begin() + num );
+        return temp;
+    }
 }
 
 void Deck::LoadCardsIMG()

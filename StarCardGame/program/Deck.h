@@ -8,11 +8,11 @@ public:
     ~Deck();
     void Init() override;
     void Update() override;
-    void Render() override;
+    void Render(bool is_player);
     void Release() override;
 
     void  Revoke( Cards cards );
-    bool  LOAD();
+    bool  Load();
     bool  Shuffle();
     Cards Deal( uint16_t num );
 

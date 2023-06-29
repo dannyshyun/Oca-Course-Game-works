@@ -20,6 +20,7 @@ void CardBase::Update()
 
 void CardBase::Render()
 {
+    DrawRotaGraph( pos.x, pos.y, 1, 0, image, true );
 }
 
 void CardBase::Release()

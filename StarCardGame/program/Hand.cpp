@@ -17,15 +17,7 @@ void Hand::Update()
 
 void Hand::Render( bool is_player )
 {
-
-    uint16_t i = 0;
-    for ( auto& card: *hand )
-    {
-        uint16_t x = SCREEN_W / 2 + ( i - (uint16_t)hand->size() / 2 ) * 100;
-        uint16_t y = is_player ? SCREEN_H - 100 : 100;
-        DrawRotaGraph( x, y, 1.5, 0, card->GetImage(), true );
-        i++;
-    }
+    for ( auto& card: *hand ) { card->Render(); }
 }
 
 void Hand::Release()
@@ -37,11 +29,17 @@ Cards Hand::Fold( Cards cards )
     return cards;
 }
 
-void Hand::Draw( Cards cards )
+void Hand::Draw( Cards cards ,bool is_player)
 {
+    uint16_t i = 0;
+    uint16_t size = cards.size();
     for ( auto& card: cards ) {
-        card->pos = Vector2( 60, 40 );
+        uint16_t offset = 80;
+        uint16_t x = SCREEN_W / 2 + ( i - size / 2 ) * offset;
+        uint16_t y = is_player ? SCREEN_H - 100 : 100;
+        card->pos = Vector2( x, y );
         hand->push_back( card );
+        i++;
     }
 }
 

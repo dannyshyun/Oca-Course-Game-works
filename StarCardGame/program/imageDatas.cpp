@@ -12,7 +12,7 @@ using json = nlohmann::json;
 IMGcontroller::IMGcontroller()
 {
     card_IMG_list = std::make_unique<std::map<std::string, std::vector<int>>>();
-    UI_IMG_list = std::make_unique<std::map<std::string, int>>();
+    UI_IMG_list   = std::make_unique<std::map<std::string, int>>();
 }
 void IMGcontroller::Init()
 {
@@ -31,8 +31,11 @@ void IMGcontroller::Init()
             for ( uint16_t i = 0; i < max_value; i++ )
             {
                 // get path from json file
-                std::string path = obj["path"].template get<std::string>() +
-                                   std::to_string( i + 1 ) + ".jpg";
+                std::string path =
+                    suit == "back"
+                        ? obj["path"].template get<std::string>() + ".jpg"
+                        : obj["path"].template get<std::string>() +
+                              std::to_string( i + 1 ) + ".jpg";
                 // load image
                 int img = LoadGraph( (const TCHAR*)path.c_str() );
                 // push to the suit vector
@@ -67,7 +70,7 @@ int IMGcontroller::GetCardIMGdata( std::string suit, uint16_t value )
     return ( *card_IMG_list )[suit][value - 1];
 }
 
-int IMGcontroller::GetUIIMGdata(std::string name)
+int IMGcontroller::GetUIIMGdata( std::string name )
 {
     return ( *UI_IMG_list )[name];
 }

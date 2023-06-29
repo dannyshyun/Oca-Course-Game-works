@@ -12,7 +12,7 @@ public:
     void Release() override;
 
     Cards Fold( Cards cards );
-    void  Draw(Cards cards);
+    void  Draw(Cards cards, bool is_player);
     uint16_t  GetHandNum();
 
 private:

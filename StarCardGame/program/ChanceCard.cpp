@@ -10,21 +10,21 @@ ItemCard(image, value, part)
 }
 void ChanceCard::Init()
 {
-    
+    ItemCard::Init();
 }
 
 void ChanceCard::Update()
 {
-    
+    ItemCard::Update();
 }
 
 void ChanceCard::Render()
 {
-    
+    ItemCard::Render();
 }
 
 void ChanceCard::Release()
 {
-    
+    ItemCard::Release();
 }
 

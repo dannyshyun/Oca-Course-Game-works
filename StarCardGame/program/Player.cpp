@@ -23,7 +23,7 @@ void Player::Update()
     switch ( Turn )
     {
         case LOAD_TURN :
-            if ( deck->LOAD() )
+            if ( deck->Load() )
                 Turn = SHUFFLE_TURN;
             break;
 
@@ -37,7 +37,7 @@ void Player::Update()
             if ( hand->GetHandNum() < HAND_MAX )
             {
                 hand->Init();
-                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ) );
+                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ) ,true);
             }
             break;
 
@@ -64,7 +64,7 @@ void Player::Update()
 //---------------------------------------------------------------------------------
 void Player::Render()
 {
-    deck->Render();
+    deck->Render( true );
     hand->Render( true );
 }
 //---------------------------------------------------------------------------------

@@ -38,5 +38,10 @@
         "suit" : "hpPlus",
         "max_value": 3,
         "path" : "data/CardPics/hpPlus"
+    },
+    {
+        "suit" : "back",
+        "max_value" : 1,
+        "path" : "data/CardPics/cardBackBlack"
     }
 ]

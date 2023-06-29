@@ -8,16 +8,20 @@ CurseCard::CurseCard( int image, uint32_t value, uint32_t part ) :
 }
 void CurseCard::Init()
 {
+    ItemCard::Init();
 }
 
 void CurseCard::Update()
 {
+    ItemCard::Update();
 }
 
 void CurseCard::Render()
 {
+    ItemCard::Render();
 }
 
 void CurseCard::Release()
 {
+    ItemCard::Release();
 }
