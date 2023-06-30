@@ -170,8 +170,10 @@
     <ClCompile Include="program\ItemCard.cpp" />
     <ClCompile Include="program\Main.cpp" />
     <ClCompile Include="program\Npc.cpp" />
+    <ClCompile Include="program\OkButton.cpp" />
     <ClCompile Include="program\Player.cpp" />
     <ClCompile Include="program\Random.cpp" />
+    <ClCompile Include="program\UI.cpp" />
     <ClCompile Include="program\Vector2.cpp" />
     <ClCompile Include="program\Vector3.cpp" />
   </ItemGroup>
@@ -199,8 +201,10 @@
     <ClInclude Include="program\json.h" />
     <ClInclude Include="program\Main.h" />
     <ClInclude Include="program\Npc.h" />
+    <ClInclude Include="program\OkButton.h" />
     <ClInclude Include="program\Player.h" />
     <ClInclude Include="program\Random.h" />
+    <ClInclude Include="program\UI.h" />
     <ClInclude Include="program\Vector2.h" />
     <ClInclude Include="program\Vector3.h" />
   </ItemGroup>

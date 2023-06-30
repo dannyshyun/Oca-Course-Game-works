@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class GameUtil {
 
 	public static void main(String[] args) {
-//		¨ú±o¨¤¦â¸EÆ
+//		æ“¾ŠpF??E?
 //		int p = (int)Math.random()*5;
 //		Object ch = CharSel(p);
 		
-//		µoµP
+//		á¢”v
 		
 		CardLoad cl = new CardLoad();
 		cl.shuffle();
@@ -20,7 +20,7 @@ public class GameUtil {
 //		}
 		cl.deal();
 		
-		System.out.println("p1ªº¤âµP");
+		System.out.println("p1“Iè”v");
 		String[] p1cards = cl.getP1handcards();
 		for (String c : p1cards) {
 			System.out.print(c + " ");
@@ -34,16 +34,16 @@ public class GameUtil {
 //		}
 		
 //		MoveTurn
-//		¥XµP
+//		o”v
 		
-//		¿é¤J¥XµP¨Ã§PÂ_¿é¤J­È¬O§_¦Xªk
+//		—A“üo”v•À”»Ğ—A“ü?¥”Û‡–@
 		String sel;
 		do{Scanner input= new Scanner(System.in);
 		System.out.println("select cards :");
 		sel = input.next();
 		}while(containRepeatChar(sel)||isStringInteger(sel,8)==false);
 		
-//		¿é¤J¤è¦V
+//		—A“ü•ûŒü
 		String dir;
 		do{Scanner input = new Scanner(System.in);
 		System.out.println("select diraction :");
@@ -51,7 +51,7 @@ public class GameUtil {
 		}while(dir.matches("[+-0]") == false);
 		
 		
-//		±N¤âµP©ñ¤J¥XµPÄE
+//		›’è”v•ú“üo”v??E
 		String [] selcard = new String[7];
 		for(int i =0 ; i < sel.length() ; i++) {
 			int c = Integer.parseInt(sel.substring(i, i+1));
@@ -60,8 +60,8 @@ public class GameUtil {
 			p1cards [c-1] = null;
 		}
 		
-//		­pºâ²¾°Ê­È
-		System.out.println("Move turn ¥XªºµP:");
+//		ŒvZˆÚ“®?
+		System.out.println("Move turn o“I”v:");
 		int p1move = 0;
 		for ( String c : selcard) {
 			System.out.print(c + " ");
@@ -72,18 +72,18 @@ public class GameUtil {
 			}
 		}
 		System.out.println();
-		System.out.print("²¾°Ê­È :");
+		System.out.print("ˆÚ“®? :");
 		if(dir.equals("0")) {
 			System.out.println(p1move);
 		}else 
 		System.out.println(dir + p1move);
 		System.out.println();
-		System.out.println("p1³Ñ¾lªºµP");
+		System.out.println("p1™”éP“I”v");
 		for ( String c : p1cards) {
 			System.out.print(c + " ");
 		}
 		System.out.println();
-//		pc¥XµP
+//		pco”v
 		String [] p2selcard = new String[7];
 		int p2move = 0;
 		for (int i = 0; i < p2cards.length; i++) {
@@ -96,34 +96,34 @@ public class GameUtil {
 			}else p2selcard[i] = null;
 			
 		}
-//		pc¤è¦V
+//		pc•ûŒü
 		String p2dir;
 		if((int)(Math.random()*2)==0) {
 			p2dir = "-";
 		}else p2dir = "+";
 		
 		System.out.println();
-		System.out.println("Move turn p2¥XªºµP:");
+		System.out.println("Move turn p2o“I”v:");
 		System.out.println();
 		for (String c : p2selcard) {
 			System.out.print(c + " ");
 		}
 		System.out.println();
-		System.out.print("²¾°Ê­È:");
+		System.out.print("ˆÚ“®?:");
 		System.out.println(p2dir + p2move);
 		System.out.println();
 		System.out.println("------");
 //		for (String c : p2cards) {
 //			System.out.print(c + " ");
 //		}
-		System.out.println("p1³Ñ¾lªºµP");
+		System.out.println("p1™”éP“I”v");
 		for ( String c : p1cards) {
 			System.out.print(c + " ");
 		}
 		System.out.println();
 		
 		
-//		§P©w¶ZÂE
+//		”»’è‹—??E
 		int dist = 1;
 		switch(dir) { 
 		case "+" : dist += p1move;break;
@@ -138,20 +138,20 @@ public class GameUtil {
 		if(dist >= 2)dist = 2;
 		else if(dist < 1)dist = 0;
 		System.out.println();
-		System.out.println("¶ZÂE "+dist);
+		System.out.println("‹—??E "+dist);
 		
-//		§P©w¥ı§E
+//		”»’èæ??E
 		
 
-//		ª±®a§ğÀ»¦^¦X		
-//		¿é¤J¥XµP¨Ã§PÂ_¿é¤J­È¬O§_¦Xªk
+//		Šß‰ÆU?‰ñ‡		
+//		—A“üo”v•À”»Ğ—A“ü?¥”Û‡–@
 		String atksel;
 		do{Scanner input= new Scanner(System.in);
 		System.out.println("select Atk cards :");
 		atksel = input.next();
 		}while(containRepeatChar(atksel)||isStringInteger(atksel,8)==false);
 		
-//		±N¤âµP©ñ¤J¥XµPÄE
+//		›’è”v•ú“üo”v??E
 		String [] atkselcard = new String[7];
 		for(int i =0 ; i < atksel.length() ; i++) {
 			int c = Integer.parseInt(atksel.substring(i, i+1));
@@ -160,7 +160,7 @@ public class GameUtil {
 			p1cards [c-1] = null;
 		}
 		
-//		­pºâ§ğÀ»­È
+//		ŒvZU??
 		int p1atk = 0;
 		switch(dist) {
 		case 0 : for ( String c : atkselcard) {
@@ -183,14 +183,14 @@ public class GameUtil {
 		
 		
 		System.out.println();
-		System.out.println("Atk turn p1¥XªºµP:");
+		System.out.println("Atk turn p1o“I”v:");
 		System.out.println(p1atk);
 		
 //		
-//		ÂY»E
+//		±??E
 
 		String p1atkrs[] = new String[p1atk] ;
-		int p1atks = 0;  //§ğÀ»¦¨¥\­È
+		int p1atks = 0;  //U?¬Œ÷?
 		for(int i = 0; i < p1atk; i++) {
 			
 			int j = (int)(Math.random()*3);
@@ -200,17 +200,17 @@ public class GameUtil {
 			}else p1atkrs[i] = "x";
 		}
 		System.out.println();
-		System.out.println("p1§ğÀ» : ");
+		System.out.println("p1U? : ");
 		for (String c: p1atkrs){
 			System.out.print(c+" ");
 			}
 		System.out.println();
-		System.out.println("¦¨¥\¶Ë®` : ");
+		System.out.println("¬Œ÷ŠQ : ");
 		System.out.println(p1atks);
 		
 		
-//		¹q¸£¨¾¦u¦^¦X
-//		pc¨¾¦u¥XµP
+//		“däI–hç‰ñ‡
+//		pc–hço”v
 		String [] p2defselcard = new String[7];
 		int p2def = 0;
 		for (int i = 0; i < p2cards.length; i++) {
@@ -222,14 +222,14 @@ public class GameUtil {
 				
 			}else p2defselcard[i] = null;
 		}
-		System.out.println("p2¨¾¦u : ");	
+		System.out.println("p2–hç : ");	
 		for(String c:p2defselcard){
 			
 			System.out.print(c + " ");
 		}
 		System.out.println();
 		System.out.println(p2def);
-//		¹q¸£¨¾¿mÂY»E
+//		“däI–h‹š±??E
 		
 		String p2defrs[] = new String[p2def] ;
 		int p2defs = 0;
@@ -242,22 +242,22 @@ public class GameUtil {
 			}else p2defrs[i] = "x";
 		}
 		System.out.println();
-		System.out.println("¦¨¥\¨¾¦u : ");
+		System.out.println("¬Œ÷–hç : ");
 		for (String c: p2defrs){
 			System.out.print(c+" ");
 			}
 		System.out.println();
 		System.out.println(p2defs);
 		
-//		ª±®a¨¾¦u¦^¦X
-//		¿é¤J¥XµP¨Ã§PÂ_¿é¤J­È¬O§_¦Xªk
+//		Šß‰Æ–hç‰ñ‡
+//		—A“üo”v•À”»Ğ—A“ü?¥”Û‡–@
 		String defsel;
 		do{Scanner input= new Scanner(System.in);
 		System.out.println("select Def cards :");
 		defsel = input.next();
 		}while(containRepeatChar(defsel)||isStringInteger(defsel,8)==false);
 		
-//		±N¤âµP©ñ¤J¥XµPÄE
+//		›’è”v•ú“üo”v??E
 		String [] defselcard = new String[7];
 		for(int i =0 ; i < defsel.length() ; i++) {
 			int c = Integer.parseInt(defsel.substring(i, i+1));
@@ -265,7 +265,7 @@ public class GameUtil {
 			defselcard[c-1] = p1cards [c-1];
 			p1cards [c-1] = null;
 		}
-//		­pºâ¨¾¦u­È
+//		ŒvZ–hç?
 		int p1def = 0;
 		for ( String c : defselcard) {
 					System.out.print(c + " ");
@@ -276,10 +276,10 @@ public class GameUtil {
 		System.out.println();
 		System.out.println(p1def);
 
-//		ÂY»E
+//		±??E
 
 		String p1defrs[] = new String[p1def] ;
-		int p1defs = 0;  //§ğÀ»¦¨¥\­È
+		int p1defs = 0;  //U?¬Œ÷?
 		for(int i = 0; i < p1def; i++) {
 			
 			int j = (int)(Math.random()*3);
@@ -289,16 +289,16 @@ public class GameUtil {
 			}else p1defrs[i] = "x";
 		}
 		System.out.println();
-		System.out.println("p1¨¾¦u : ");
+		System.out.println("p1–hç : ");
 		for (String c: p1defrs){
 			System.out.print(c+" ");
 			}
 		System.out.println();
-		System.out.println("¦¨¥\¨¾¦u : ");
+		System.out.println("¬Œ÷–hç : ");
 		System.out.println(p1defs);
 
-//		¹q¸£¨¾¦u¦^¦X
-//		pc¨¾¦u¥XµP
+//		“däI–hç‰ñ‡
+//		pc–hço”v
 		String [] p2atkselcard = new String[7];
 		int p2atk = 0;
 		switch(dist) {
@@ -321,14 +321,14 @@ public class GameUtil {
 				}break;
 		}
 
-		System.out.println("p2§ğÀ» : ");	
+		System.out.println("p2U? : ");	
 		for(String c:p2atkselcard){
 			
 			System.out.print(c + " ");
 		}
 		System.out.println();
 		System.out.println(p2atk);
-//		¹q¸£§ğÀ»ÂY»E
+//		“däIU?±??E
 		
 		String p2atkrs[] = new String[p2atk] ;
 		int p2atks = 0;
@@ -341,7 +341,7 @@ public class GameUtil {
 			}else p2atkrs[i] = "x";
 		}
 		System.out.println();
-		System.out.println("¦¨¥\§ğÀ» : ");
+		System.out.println("¬Œ÷U? : ");
 		for (String c: p2atkrs){
 			System.out.print(c+" ");
 			}

@@ -5,7 +5,7 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Zenburn Dark Matter - Insomnia - Viserion",
     "workbench.iconTheme": "vscode-icons",
     "glassit.alpha": 240,
     "[cpp]": {
@@ -104,5 +104,6 @@
         "ranges": "cpp",
         "span": "cpp",
         "valarray": "cpp"
-    }
+    },
+    
 }

@@ -7,6 +7,7 @@
 #include "Ground.h"
 #include "Player.h"
 #include "Npc.h"
+#include "UI.h"
 
 #include "Base.h"
 #include "CardBase.h"
@@ -26,6 +27,7 @@ IMGcontroller           IMGctrl;
 int                     Turn;
 std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
 std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
+std::unique_ptr<UI>    ui    = std::make_unique<UI>(0);
 //---------------------------------------------------------------------------------
 //	‰Šú‰»ˆ—
 //---------------------------------------------------------------------------------
@@ -51,6 +53,7 @@ void GameRender()
 {
     npc->Render();
     player->Render();
+    ui->Render();
 }
 //---------------------------------------------------------------------------------
 //	I—¹ˆ—

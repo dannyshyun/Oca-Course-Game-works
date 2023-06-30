@@ -18,12 +18,13 @@ void CardBase::Init()
 
 void CardBase::Update()
 {
-    bool is_player = pos.y > SCREEN_H * 0.5;
+    bool           is_player = pos.y > SCREEN_H * 0.5;
+    const uint16_t offset( 200 );
     
     pos.y = is_select                            //
                 ? is_player                      //!< true
-                      ? SCREEN_H - 100           //!< true
-                      : SCREEN_H + 100           //!< false
+                      ? SCREEN_H - offset        //!< true
+                      : SCREEN_H + offset        //!< false
                                                  //
                 : is_touch                       //!< false
                       ? SCREEN_H - size.y * 0.5  //!< true
