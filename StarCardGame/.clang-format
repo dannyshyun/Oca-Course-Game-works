@@ -8,7 +8,7 @@ AlignConsecutiveMacros: AcrossEmptyLinesAndComments
 AlignEscapedNewlines: Left
 AlignOperands: Align
 AlignTrailingComments: true
-AllowAllArgumentsOnNextLine: true
+AllowAllArgumentsOnNextLine: false
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Always
 AllowShortCaseLabelsOnASingleLine: true
@@ -16,11 +16,11 @@ AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: Empty
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: MultiLine
-BasedOnStyle:  Google
+BasedOnStyle:  Microsoft
 BinPackArguments: false
 BinPackParameters: false
 BitFieldColonSpacing: Both
@@ -68,7 +68,7 @@ SpaceBeforeCaseColon: true
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
-SpaceBeforeParens: ControlStatementsExceptControlMacros
+SpaceBeforeParens: Never
 SpaceBeforeRangeBasedForLoopColon: false
 SpaceBeforeSquareBrackets: false
 SpaceInEmptyBlock: false
@@ -88,6 +88,7 @@ BraceWrapping:
   AfterEnum: true
   AfterFunction: true
   AfterNamespace: true
+  AfterObjCDeclaration : true
   AfterStruct: true
   AfterUnion: true
   AfterExternBlock: true
