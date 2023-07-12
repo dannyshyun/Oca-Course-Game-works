@@ -20,7 +20,8 @@
         ".vs": true
     },
     "explorer.fileNesting.patterns": {
-        "*.sln": "${capture}.vcxproj,${capture}.vcxproj.filters"
+        "*.sln": "${capture}.vcxproj,${capture}.vcxproj.filters,${capture}.vcxproj.user",
+        "premake5.lua" : "*.bat,README.md"
     },
     "favorites.groupsFirst": false,
     "workbench.tree.indent": 20,
@@ -105,5 +106,4 @@
         "span": "cpp",
         "valarray": "cpp"
     },
-    
 }

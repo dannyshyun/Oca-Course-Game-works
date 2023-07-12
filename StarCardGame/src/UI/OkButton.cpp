@@ -1,5 +1,5 @@
-#include "Main.h"
-#include "Base.h"
+﻿#include "Main/Main.h"
+#include "BaseClass/Base.h"
 #include "OkButton.h"
 
 OkBtn::OkBtn( int image ) : Base( image )

@@ -1,6 +1,6 @@
 ﻿#include <Main/Main.h>
 #include <Main/Game.h>
-#include <System/Random.h>
+#include <GameSystem/Random.h>
 #include <BaseClass/Base.h>
 #include "Player.h"
 #include "Npc.h"

@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 #include <stdint.h>
-#include "CardBase.h"
+#include "Cards/CardBase.h"
 #define HAND_MAX 7
 class Hand : Base
 {

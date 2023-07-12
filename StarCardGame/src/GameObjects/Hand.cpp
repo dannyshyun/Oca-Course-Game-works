@@ -1,6 +1,6 @@
-#include "Main.h"
-#include "Game.h"
-#include "Base.h"
+﻿#include "Main/Main.h"
+#include "Main/Game.h"
+#include "BaseClass/Base.h"
 #include "Hand.h"
 Hand::Hand( int image ) : Base( image )
 {

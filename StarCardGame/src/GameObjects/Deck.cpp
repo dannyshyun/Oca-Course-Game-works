@@ -1,13 +1,14 @@
-﻿#include <Main/Game.h>
-#include <BaseClass/Base.h>
-#include <Cards/CardBase.h>
-#include <Cards/Action/ActionCard.h>
-#include <Cards/Item/ItemCard.h>
-#include <Cards/Item/ChanceCard.h>
-#include "CurseCard.h"
-#include "HpPlusCard.h"
+﻿#include "Main/Main.h"
+#include "Main/Game.h"
+#include "BaseClass/Base.h"
+#include "Cards/CardBase.h"
+#include "Cards/Action/ActionCard.h"
+#include "Cards/Item/ItemCard.h"
+#include "Cards/Item/ChanceCard.h"
+#include "Cards/Item/CurseCard.h"
+#include "Cards/Item/HpPlusCard.h"
 #include "Deck.h"
-#include "json.h"
+#include <nlohmann/json.hpp>
 #include <fstream>
 #include <utility>
 #define NewActionCard std::make_shared<ActionCard>( IMGctrl.GetCardIMGdata( suit, value ), value, 0, suit )

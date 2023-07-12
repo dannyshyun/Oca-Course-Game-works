@@ -425,9 +425,9 @@ config_project("BaseProject", "WindowedApp")
 		IMGUI_PATH,				-- ImGui
 		"opensource",			-- オープンソース
 		"opensource/cereal/include",
+		"opensource/json/include",
 		"opensource/JoltPhysics",
 		SAMPLE_PATH,
-		
 	}
 
 	-- ライブラリディレクトリ

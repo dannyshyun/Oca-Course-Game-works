@@ -2,7 +2,7 @@
 #include <Cards/CardBase.h>
 #include "ActionCard.h"
 
-ActionCard::ActionCard( int image, uint32_t value, uint32_t part, std::string suit ) :
+ActionCard::ActionCard( int image, u32 value, u32 part, std::string suit ) :
     CardBase( image, value, part ), suit( suit )
 {
 }

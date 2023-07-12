@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 #include <stdint.h>
-#include "Base.h"
+
 class OkBtn : public Base
 {
 public:

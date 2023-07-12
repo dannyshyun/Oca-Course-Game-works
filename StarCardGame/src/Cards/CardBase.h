@@ -1,7 +1,10 @@
-#pragma once
+﻿#pragma once
 #include <stdint.h>
 #include <vector>
 #include <memory>
+
+#include "BaseClass/Base.h"
+
 enum StarPart
 {
     STAR_HEAD = 0,

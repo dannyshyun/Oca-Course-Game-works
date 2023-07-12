@@ -1,5 +1,5 @@
-#pragma once
-#include "CardBase.h"
+﻿#pragma once
+#include "Cards/CardBase.h"
 
 class Deck : public Base
 {

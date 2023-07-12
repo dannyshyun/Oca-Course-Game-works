@@ -1,35 +1,32 @@
-#include "json.h"
-#include "Main.h"
+ï»¿#include "Main.h"
 #include "Game.h"
-#include "Hit.h"
+#include "GameSystem//Hit.h"
 
-#include "Camera.h"
-#include "Ground.h"
-#include "Player.h"
-#include "Npc.h"
-#include "UI.h"
+#include "Characters/Player.h"
+#include "Characters/Npc.h"
+#include "UI/UI.h"
 
-#include "Base.h"
-#include "CardBase.h"
-#include "ActionCard.h"
-#include "EnvironmentCard.h"
-#include "ItemCard.h"
-#include "ChanceCard.h"
-#include "CurseCard.h"
-#include "HpPlusCard.h"
-#include "Deck.h"
+#include "BaseClass/Base.h"
+#include "Cards/CardBase.h"
+#include "Cards/Action/ActionCard.h"
+#include "Cards/Environment/EnvironmentCard.h"
+#include "Cards/Item/ItemCard.h"
+#include "Cards/Item/ChanceCard.h"
+#include "Cards/Item/CurseCard.h"
+#include "Cards/Item/HpPlusCard.h"
+#include "GameObjects//Deck.h"
 #include <memory>
 #include <vector>
-//	ƒ‚ƒfƒ‹ƒf[ƒ^
+//	ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿
 
-//	ƒNƒ‰ƒXéŒ¾
+//	ã‚¯ãƒ©ã‚¹å®£è¨€
 IMGcontroller           IMGctrl;
 int                     Turn;
 std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
 std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
 std::unique_ptr<UI>     ui     = std::make_unique<UI>( 0 );
 //---------------------------------------------------------------------------------
-//	‰Šú‰»ˆ—
+//	åˆæœŸåŒ–å‡¦ç†
 //---------------------------------------------------------------------------------
 void GameInit()
 {
@@ -39,7 +36,7 @@ void GameInit()
     player->Init();
 }
 //---------------------------------------------------------------------------------
-//	XVˆ—
+//	æ›´æ–°å‡¦ç†
 //---------------------------------------------------------------------------------
 void GameUpdate()
 {
@@ -47,7 +44,7 @@ void GameUpdate()
     player->Update();
 }
 //---------------------------------------------------------------------------------
-//	•`‰æˆ—
+//	æç”»å‡¦ç†
 //---------------------------------------------------------------------------------
 void GameRender()
 {
@@ -56,7 +53,7 @@ void GameRender()
     ui->Render();
 }
 //---------------------------------------------------------------------------------
-//	I—¹ˆ—
+//	çµ‚äº†å‡¦ç†
 //---------------------------------------------------------------------------------
 void GameExit()
 {

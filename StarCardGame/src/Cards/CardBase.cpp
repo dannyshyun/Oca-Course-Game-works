@@ -1,9 +1,10 @@
-#include "Main.h"
-#include "Game.h"
-#include "Base.h"
+﻿#include "Main/Main.h"
+#include "Main/Game.h"
+#include "BaseClass/Base.h"
 #include "CardBase.h"
+
 CardBase::CardBase( int image, uint32_t value, uint32_t part ) :
-    Base( image ), value( value ), part( part ), is_select( false )
+    ::Base( image ), value( value ), part( part ), is_select( false )
 {
     GetGraphSize( image, &size.x, &size.y );
 }

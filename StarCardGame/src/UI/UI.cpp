@@ -1,6 +1,6 @@
-#include "Main.h"
-#include "Game.h"
-#include "Base.h"
+﻿#include "Main/Main.h"
+#include "Main/Game.h"
+#include "BaseClass/Base.h"
 #include "UI.h"
 
 UI::UI( int image ) : Base( image )

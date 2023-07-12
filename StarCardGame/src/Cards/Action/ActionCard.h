@@ -1,5 +1,4 @@
-#pragma once
-#include <string>
+﻿#pragma once
 
 enum ActionSuit
 {
@@ -14,14 +13,14 @@ enum ActionSuit
 class ActionCard : public CardBase
 {
 public:
-    ActionCard( int image, uint32_t value, uint32_t part, std::string suit );
+    ActionCard( int image, u32 value, u32 part, std::string suit );
     ~ActionCard();
     void Init() override;
     void Update() override;
     void Render( bool is_show ) override;
     void Release() override;
 
-    std::string GetSuit() const;
+    [[nodiscard]] std::string GetSuit() const;
 
 protected:
     std::string suit = 0;

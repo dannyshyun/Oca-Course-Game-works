@@ -1,9 +1,9 @@
-#pragma once
-#include <System/Vector2.h>
-#include <System/Vector3.h>
+ï»¿#pragma once
+#include <GameSystem/Vector2.h>
+#include <GameSystem/Vector3.h>
 
 //---------------------------------------------------------------------------------
-//	Šî–{ƒNƒ‰ƒX
+//	åŸºæœ¬ã‚¯ãƒ©ã‚¹
 //---------------------------------------------------------------------------------
 class Base
 {
