@@ -1,5 +1,5 @@
-﻿#include <Main/Main.h>
-#include <Main/Game.h>
+﻿#include <WinMain.h>
+#include <Game/GameMain.h>
 #include <BaseClass/Base.h>
 #include "Player.h"
 
@@ -47,7 +47,7 @@ void Player::Update()
             for( auto& card: hand->GetHandCards() )
             {
                 CheckTouch( card );
-                if( PushMouseInput( MOUSE_INPUT_LEFT ) )
+                if( IsMouseOn( MOUSE_INPUT_LEFT ) )
                     SelectCard( card );
             }
             break;
@@ -104,7 +104,7 @@ void Player::CheckTouch( std::shared_ptr<CardBase> card )
 {
     Vector2 mouse_pos( GetMouseX(), GetMouseY() );
     // check mouse in screen
-    if( mouse_pos.x < 0 || mouse_pos.x > SCREEN_W || mouse_pos.y < 0 || mouse_pos.y > SCREEN_H )
+    if( mouse_pos.x < 0 || mouse_pos.x > WINDOW_W || mouse_pos.y < 0 || mouse_pos.y > WINDOW_H )
         return;
     // check mouse in touchable card area
     card->is_touch =

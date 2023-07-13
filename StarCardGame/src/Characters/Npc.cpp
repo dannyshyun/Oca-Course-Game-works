@@ -1,5 +1,5 @@
-﻿#include <Main/Main.h>
-#include <Main/Game.h>
+﻿#include <WinMain.h>
+#include <Game/GameMain.h>
 #include <GameSystem/Random.h>
 #include <BaseClass/Base.h>
 #include "Player.h"

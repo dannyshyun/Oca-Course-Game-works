@@ -3,6 +3,9 @@
 #include "ItemCard.h"
 #include "HpPlusCard.h"
 
+HpPlusCard::HpPlusCard( int image, u32 value, u32 part ) : ItemCard( image, value, part )
+{
+}
 void HpPlusCard::Init()
 {
     ItemCard::Init();
@@ -21,8 +24,4 @@ void HpPlusCard::Render( bool is_show )
 void HpPlusCard::Release()
 {
     ItemCard::Release();
-}
-
-HpPlusCard::HpPlusCard( int image, uint32_t value, uint32_t part ) : ItemCard( image, value, part )
-{
 }

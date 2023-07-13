@@ -3,7 +3,7 @@
 //! @brief	ゲームメイン
 //---------------------------------------------------------------------------
 #pragma once
-
+#include "GameSystem/imageDatas.h"
 //	初期化
 bool GameInit();
 

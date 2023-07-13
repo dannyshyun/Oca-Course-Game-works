@@ -1,9 +1,9 @@
-﻿#include "Main/Main.h"
-#include "Main/Game.h"
+﻿#include "WinMain.h"
+#include "Game/GameMain.h"
 #include "BaseClass/Base.h"
 #include "CardBase.h"
 
-CardBase::CardBase( int image, uint32_t value, uint32_t part ) :
+CardBase::CardBase( int image, u32 value, u32 part ) :
     ::Base( image ), value( value ), part( part ), is_select( false )
 {
     GetGraphSize( image, &size.x, &size.y );
@@ -19,17 +19,17 @@ void CardBase::Init()
 
 void CardBase::Update()
 {
-    bool           is_player = pos.y > SCREEN_H * 0.5;
+    bool           is_player = pos.y > WINDOW_H * 0.5;
     const uint16_t offset( 200 );
 
     pos.y = is_select                           //
                 ? is_player                     //!< true
-                      ? SCREEN_H - offset       //!< true
-                      : SCREEN_H + offset       //!< false
+                      ? WINDOW_H - offset       //!< true
+                      : WINDOW_H + offset       //!< false
                                                 //
                 : is_touch                      //!< false
-                      ? SCREEN_H - size.y * 0.5 //!< true
-                      : SCREEN_H;               //!< false
+                      ? WINDOW_H - size.y * 0.5 //!< true
+                      : WINDOW_H;               //!< false
 }
 
 void CardBase::Render( bool is_show )

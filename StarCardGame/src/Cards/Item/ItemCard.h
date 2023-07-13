@@ -1,10 +1,8 @@
 #pragma once
-#include <stdint.h>
-
 class ItemCard : public CardBase
 {
 public:
-    ItemCard( int image, uint32_t value, uint32_t part );
+    ItemCard( int image, u32 value, u32 part );
     virtual void Init() override;
     virtual void Update() override;
     virtual void Render( bool is_show ) override;

@@ -1,7 +1,6 @@
-﻿#include "Main/Main.h"
-#include "Main/Game.h"
+﻿#include "WinMain.h"
+#include "Game/GameMain.h"
 #include "BaseClass/Base.h"
-#include "Cards/CardBase.h"
 #include "Cards/Action/ActionCard.h"
 #include "Cards/Item/ItemCard.h"
 #include "Cards/Item/ChanceCard.h"
@@ -11,10 +10,7 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <utility>
-#define NewActionCard std::make_shared<ActionCard>( IMGctrl.GetCardIMGdata( suit, value ), value, 0, suit )
-#define NewChanceCard std::make_shared<ChanceCard>( IMGctrl.GetCardIMGdata( suit, value ), value, 0 )
-#define NewHpPlusCard std::make_shared<HpPlusCard>( IMGctrl.GetCardIMGdata( suit, value ), value, 0 )
-#define NewCurseCard  std::make_shared<CurseCard>( IMGctrl.GetCardIMGdata( suit, value ), value, 0 )
+
 using json = nlohmann::json;
 
 Deck::Deck( int image ) : Base( image )
@@ -45,9 +41,9 @@ void Deck::Update()
 
 void Deck::Render( bool is_player )
 {
-    uint16_t y = is_player           //!< the position of deck
-                     ? SCREEN_H - 40 //!< player
-                     : 40;           //!< npc
+    uint16_t y = is_player            //!< the position of deck
+                     ? WINDOW_H - 40  //!< player
+                     : 40;            //!< npc
     // render image
     DrawRotaGraph( 60, y, 1, 0, image, true );
     // render num
@@ -117,6 +113,34 @@ Cards Deck::Deal( uint16_t num )
         return temp;
     }
 }
+Card<CardBase> Deck::NewActionCard( std::string suit, u32 value )
+{
+    return std::make_shared<ActionCard>( IMGctrl.GetCardIMGdata( suit, value ),
+                                         value,
+                                         0,
+                                         suit );
+}
+
+Card<CardBase> Deck::NewChanceCard( std::string suit, u32 value )
+{
+    return std::make_shared<ChanceCard>( IMGctrl.GetCardIMGdata( suit, value ),
+                                         value,
+                                         0 );
+}
+
+Card<CardBase> Deck::NewHpPlusCard( std::string suit, u32 value )
+{
+    return std::make_shared<HpPlusCard>( IMGctrl.GetCardIMGdata( suit, value ),
+                                         value,
+                                         0 );
+}
+
+Card<CardBase> Deck::NewCurseCard( std::string suit, u32 value )
+{
+    return std::make_shared<CurseCard>( IMGctrl.GetCardIMGdata( suit, value ),
+                                        value,
+                                        0 );
+}
 
 void Deck::LoadCardsIMG()
 {
@@ -133,11 +157,12 @@ void Deck::LoadCardsIMG()
         for( uint16_t i = 0; i < num; i++ )
         {
             // check suit and new class
-            ( suit == "sword" || suit == "gun" || suit == "shield" || suit == "move" || suit == "star" )
-                ? deck->push_back( NewActionCard )
-            : suit == "chance" ? deck->push_back( NewChanceCard )
-            : suit == "curse"  ? deck->push_back( NewCurseCard )
-            : suit == "hpPlus" ? deck->push_back( NewHpPlusCard )
+            ( suit == "sword" || suit == "gun" || suit == "shield" ||
+              suit == "move" || suit == "star" )
+                ? deck->push_back( NewActionCard( suit, value ) )
+            : suit == "chance" ? deck->push_back( NewChanceCard( suit, value ) )
+            : suit == "curse"  ? deck->push_back( NewCurseCard( suit, value ) )
+            : suit == "hpPlus" ? deck->push_back( NewHpPlusCard( suit, value ) )
                                : deck->push_back( nullptr );
         }
     }

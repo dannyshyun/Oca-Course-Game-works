@@ -3,7 +3,6 @@
 //! @brief	ゲームメイン
 //---------------------------------------------------------------------------
 #include "GameMain.h"
-#include "GameSystem/imageDatas.h"
 #include "Characters/Player.h"
 #include "Characters/Npc.h"
 #include "UI/UI.h"
@@ -18,9 +17,8 @@
 #include "Cards/Item/HpPlusCard.h"
 #include "GameObjects/Deck.h"
 
-
-IMGcontroller           IMGctrl;
-int                     Turn;
+IMGcontroller IMGctrl;
+int           Turn;
 //---------------------------------------------------------------------------------
 //!	初期化
 //---------------------------------------------------------------------------------

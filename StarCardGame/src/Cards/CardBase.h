@@ -1,7 +1,4 @@
 ﻿#pragma once
-#include <stdint.h>
-#include <vector>
-#include <memory>
 
 #include "BaseClass/Base.h"
 
@@ -19,21 +16,22 @@ enum StarPart
 class CardBase : public Base
 {
 public:
-    CardBase( int image, uint32_t value, uint32_t part );
+    CardBase( int image, u32 value, u32 part );
     ~CardBase();
     virtual void         Init() override;
     virtual void         Update() override;
     virtual void         Render( bool is_show );
     virtual void         Release() override;
     virtual unsigned int GetCardVal() const;
-    virtual uint32_t     GetImage() const;
+    virtual u32     GetImage() const;
 
     bool is_select = false;
     bool is_touch  = false;
 
 protected:
-    uint32_t value = 0;
-    uint32_t part  = 0;
+    u32 value = 0;
+    u32 part  = 0;
 };
+template<class T> using Card = std::shared_ptr<T>;
 typedef std::vector<std::shared_ptr<CardBase>> Cards;
 typedef std::unique_ptr<Cards>                 ptr_cards;

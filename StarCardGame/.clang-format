@@ -20,7 +20,7 @@ AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: MultiLine
-BasedOnStyle:  Microsoft
+BasedOnStyle:  Google
 BinPackArguments: false
 BinPackParameters: false
 BitFieldColonSpacing: Both

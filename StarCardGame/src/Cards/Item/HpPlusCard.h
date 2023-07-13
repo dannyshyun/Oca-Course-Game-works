@@ -2,7 +2,7 @@
 class HpPlusCard : public ItemCard
 {
 public:
-    HpPlusCard( int image, uint32_t value, uint32_t part );
+    HpPlusCard( int image, u32 value, u32 part );
     void Init() override;
     void Update() override;
     void Render( bool is_show ) override;

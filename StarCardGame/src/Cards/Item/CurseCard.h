@@ -1,9 +1,8 @@
 #pragma once
-#include <stdint.h>
 class CurseCard : public ItemCard
 {
 public:
-    CurseCard( int image, uint32_t value, uint32_t part );
+    CurseCard( int image, u32 value, u32 part );
     void Init() override;
     void Update() override;
     void Render( bool is_show ) override;

@@ -24,7 +24,11 @@ public:
     uint16_t GetCardNum() const;
 
 private:
-    void LoadCardsIMG();
+    Card<CardBase> NewActionCard( std::string suit, u32 value );
+    Card<CardBase> NewChanceCard( std::string suit, u32 value );
+    Card<CardBase> NewHpPlusCard( std::string suit, u32 value );
+    Card<CardBase> NewCurseCard( std::string suit, u32 value );
+    void           LoadCardsIMG();
     // card container
     ptr_cards deck;
     // the number of card to render
