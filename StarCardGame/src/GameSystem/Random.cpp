@@ -1,6 +1,4 @@
-﻿#include "Main/Main.h"
-#include "Main/Game.h"
-#include "Random.h"
+﻿#include "Random.h"
 
 //---------------------------------------------------------------------------------
 //	０～ i_max までのランダムな値を返す関数（ int 型）

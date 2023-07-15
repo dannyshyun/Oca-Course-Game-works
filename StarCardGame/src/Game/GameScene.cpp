@@ -3,7 +3,6 @@
 #include "GameScene.h"
 using namespace MainScene;
 
-
 BP_CLASS_IMPL( TestScene, u8"Test" );
 
 bool TestScene::Init()

@@ -1,5 +1,5 @@
-﻿#include "Main/Main.h"
-#include "Main/Game.h"
+﻿#include "WinMain.h"
+#include "Game/GameMain.h"
 #include "BaseClass/Base.h"
 #include "UI.h"
 
@@ -43,15 +43,15 @@ void UI::DrawMove()
     const uint16_t height = 30;
     std::string    name   = "MOVE TURN";
     u32            n_x =
-        ( SCREEN_W - GetDrawStringWidth( (const TCHAR*)name.c_str(), -1 ) ) / 2;
+        ( WINDOW_W - GetDrawStringWidth( (const TCHAR*)name.c_str(), -1 ) ) / 2;
     SetDrawBlendMode( DX_BLENDMODE_ALPHA, 128 );
     DrawBox( 0,
-             SCREEN_H / 2 - height,
-             SCREEN_W,
-             SCREEN_H / 2 + height,
+             WINDOW_H / 2 - height,
+             WINDOW_W,
+             WINDOW_H / 2 + height,
              WHITE,
              true );
     SetDrawBlendMode( DX_BLENDMODE_NOBLEND, -1 );
-    DrawString( n_x, SCREEN_H / 2 - 20, (const TCHAR*)name.c_str(), WHITE );
+    DrawString( n_x, WINDOW_H / 2 - 20, (const TCHAR*)name.c_str(), WHITE );
     SetFontSize( 20 );
 }

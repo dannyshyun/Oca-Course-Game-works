@@ -1,5 +1,4 @@
-﻿#include "Main/Main.h"
-#include "Main/Game.h"
+﻿#include "WinMain.h"
 #include "BaseClass/Base.h"
 #include "Hand.h"
 Hand::Hand( int image ) : Base( image )
@@ -41,8 +40,8 @@ void Hand::Draw( Cards cards, bool is_player )
     for( auto& card: cards )
     {
         u32 offset = 80;
-        u32 x      = SCREEN_W / 2 + ( i - card_num / 2 ) * offset;
-        u32 y      = is_player ? SCREEN_H : 0;
+        u32 x      = WINDOW_W / 2 + ( i - card_num / 2 ) * offset;
+        u32 y      = is_player ? WINDOW_H : 0;
         card->pos  = Vector2( x, y );
         hand->push_back( card );
         i++;
