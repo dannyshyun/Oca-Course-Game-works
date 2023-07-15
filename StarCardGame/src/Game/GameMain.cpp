@@ -8,14 +8,8 @@
 #include "UI/UI.h"
 
 #include "BaseClass/Base.h"
-#include "Cards/CardBase.h"
 #include "Cards/Action/ActionCard.h"
 #include "Cards/Environment/EnvironmentCard.h"
-#include "Cards/Item/ItemCard.h"
-#include "Cards/Item/ChanceCard.h"
-#include "Cards/Item/CurseCard.h"
-#include "Cards/Item/HpPlusCard.h"
-#include "GameObjects/Deck.h"
 
 IMGcontroller IMGctrl;
 int           Turn;
@@ -39,6 +33,7 @@ void GameUpdate()
 //---------------------------------------------------------------------------------
 void GameDraw()
 {
+    
 }
 
 //---------------------------------------------------------------------------------

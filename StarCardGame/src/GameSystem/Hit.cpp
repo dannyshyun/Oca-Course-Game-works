@@ -5,7 +5,10 @@
 //---------------------------------------------------------------------------------
 //	球同士の当たり判定
 //---------------------------------------------------------------------------------
-bool CheckBallHit( Vector3 center1, float radius1, Vector3 center2, float radius2 )
+bool CheckBallHit( Vector3 center1,
+                   float   radius1,
+                   Vector3 center2,
+                   float   radius2 )
 {
     float length = GetVector3Distance( center1, center2 );
     float radius = radius1 + radius2;
@@ -19,7 +22,10 @@ bool CheckBallHit( Vector3 center1, float radius1, Vector3 center2, float radius
 //	ボックス同士の当たり判定
 //	（座標 pos を中心にサイズ size 分プラスマイナスしたボックス：２Ｄのような左上からの大きさでの判定ではないので注意）
 //---------------------------------------------------------------------------------
-bool CheckBoxHit3D( Vector3 box_pos1, Vector3 box_size1, Vector3 box_pos2, Vector3 box_size2 )
+bool CheckBoxHit3D( Vector3 box_pos1,
+                    Vector3 box_size1,
+                    Vector3 box_pos2,
+                    Vector3 box_size2 )
 {
     float right1 = box_pos1.x + box_size1.x;
     float left1  = box_pos1.x - box_size1.x;

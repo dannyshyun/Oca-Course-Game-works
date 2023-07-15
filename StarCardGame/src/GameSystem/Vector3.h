@@ -10,23 +10,23 @@ public:
     float y;
     float z;
 
-    Vector3(); //	コンストラクタ
+    Vector3();  //	コンストラクタ
     Vector3( float x, float y, float z );
 
-    void clear();                          //	ゼロ初期化
-    void set( float x, float y, float z ); //	値のセット
+    void clear();                           //	ゼロ初期化
+    void set( float x, float y, float z );  //	値のセット
     void set( Vector3 &v );
 
-    float GetLength();               //	長さ取得
-    void  normalize();               //	正規化
-    void  SetLength( float length ); //	長さ設定
+    float GetLength();                //	長さ取得
+    void  normalize();                //	正規化
+    void  SetLength( float length );  //	長さ設定
 
-    Vector3 &operator=( const Vector3 &v ); //	= 演算子のオーバーロード
+    Vector3 &operator=( const Vector3 &v );  //	= 演算子のオーバーロード
 
-    Vector3 &operator+=( const Vector3 &v ); //	+= 演算子のオーバーロード
-    Vector3 &operator-=( const Vector3 &v ); //	-= 演算子のオーバーロード
-    Vector3 &operator*=( const float f );    //	*= 演算子のオーバーロード
-    Vector3 &operator/=( const float f );    //	/= 演算子のオーバーロード
+    Vector3 &operator+=( const Vector3 &v );  //	+= 演算子のオーバーロード
+    Vector3 &operator-=( const Vector3 &v );  //	-= 演算子のオーバーロード
+    Vector3 &operator*=( const float f );     //	*= 演算子のオーバーロード
+    Vector3 &operator/=( const float f );     //	/= 演算子のオーバーロード
 };
 
 //	+ 演算子のオーバーロード

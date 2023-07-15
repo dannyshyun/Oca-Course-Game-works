@@ -36,22 +36,22 @@ Cards Hand::Fold( Cards cards )
 
 void Hand::Draw( Cards cards, bool is_player )
 {
-    uint16_t i    = 0;
-    uint16_t size = cards.size();
+    u32 i        = 0;
+    u32 card_num = (u32)( cards.size() );
     for( auto& card: cards )
     {
-        uint16_t offset = 80;
-        uint16_t x      = SCREEN_W / 2 + ( i - size / 2 ) * offset;
-        uint16_t y      = is_player ? SCREEN_H : 0;
-        card->pos       = Vector2( x, y );
+        u32 offset = 80;
+        u32 x      = SCREEN_W / 2 + ( i - card_num / 2 ) * offset;
+        u32 y      = is_player ? SCREEN_H : 0;
+        card->pos  = Vector2( x, y );
         hand->push_back( card );
         i++;
     }
 }
 
-uint16_t Hand::GetHandNum() const
+u32 Hand::GetHandNum() const
 {
-    return hand->size();
+    return (u32)( hand->size() );
 }
 
 Cards Hand::GetHandCards() const

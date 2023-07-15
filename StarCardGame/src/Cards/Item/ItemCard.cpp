@@ -2,7 +2,8 @@
 #include <Cards/CardBase.h>
 #include "ItemCard.h"
 
-ItemCard::ItemCard( int image, u32 value, u32 part ) : CardBase( image, value, part )
+ItemCard::ItemCard( int image, u32 value, u32 part ) :
+    CardBase( image, value, part )
 {
 }
 void ItemCard::Init()

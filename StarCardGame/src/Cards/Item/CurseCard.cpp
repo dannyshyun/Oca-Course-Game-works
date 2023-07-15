@@ -2,7 +2,8 @@
 #include <Cards/CardBase.h>
 #include "ItemCard.h"
 #include "CurseCard.h"
-CurseCard::CurseCard( int image, u32 value, u32 part ) : ItemCard( image, value, part )
+CurseCard::CurseCard( int image, u32 value, u32 part ) :
+    ItemCard( image, value, part )
 {
 }
 void CurseCard::Init()

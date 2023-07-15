@@ -21,12 +21,20 @@ class Object;
 //! @param id 個別ID
 //! @return 表示できたか
 //------------------------------------------------------------
-bool ShowGizmo( float* matrix, ImGuizmo::OPERATION ope, ImGuizmo::MODE mode, uint64_t id = 0 );
+bool ShowGizmo( float*              matrix,
+                ImGuizmo::OPERATION ope,
+                ImGuizmo::MODE      mode,
+                uint64_t            id = 0 );
 
 // ImGuizmoのMatrixからEulerに変換する際に全軸に180度変換がかかってしまうため修正
-extern void DecomposeMatrixToComponents( const float* matx, float* translation, float* rotation, float* scale );
-extern void
-    RecomposeMatrixFromComponents( const float* translation, const float* rotation, const float* scale, float* matx );
+extern void DecomposeMatrixToComponents( const float* matx,
+                                         float*       translation,
+                                         float*       rotation,
+                                         float*       scale );
+extern void RecomposeMatrixFromComponents( const float* translation,
+                                           const float* rotation,
+                                           const float* scale,
+                                           float*       matx );
 
 template<class T> class IMatrix
 {
@@ -220,7 +228,9 @@ public:
     //! @param position 向きたいポジション
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto SetRotationToPosition( float3 position, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToPosition( float3 position,
+                                float3 up        = { 0, 1, 0 },
+                                bool   up_change = false )
     {
         float3 vec = position - GetMatrix().translate();
         return SetRotationToVectorOnParent( vec, up, up_change );
@@ -230,17 +240,29 @@ public:
     //! @param position 向きたいベクトル
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto SetRotationToVector( float3 vec, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToVector( float3 vec,
+                              float3 up        = { 0, 1, 0 },
+                              bool   up_change = false )
     {
-        auto mat = HelperLib::Math::CreateMatrixByFrontVector( -vec, up, up_change );
+        auto mat =
+            HelperLib::Math::CreateMatrixByFrontVector( -vec, up, up_change );
 
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
         float matrixTranslationVec[3], matrixRotationVec[3], matrixScaleVec[3];
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
-        DecomposeMatrixToComponents( mat.f32_128_0, matrixTranslationVec, matrixRotationVec, matrixScaleVec );
+        DecomposeMatrixToComponents( mat.f32_128_0,
+                                     matrixTranslationVec,
+                                     matrixRotationVec,
+                                     matrixScaleVec );
 
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotationVec, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotationVec,
+                                       matrixScale,
+                                       GetMatrixFloat() );
 
         return SharedThis();
     }
@@ -249,11 +271,14 @@ public:
     //! @param position 向きたいベクトル
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto SetRotationToVectorOnParent( float3 vec, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToVectorOnParent( float3 vec,
+                                      float3 up        = { 0, 1, 0 },
+                                      bool   up_change = false )
     {
-#if 1 // Transformコンポーネントでなければ親の影響分は差し引く
+#if 1  // Transformコンポーネントでなければ親の影響分は差し引く
         matrix mat_tmp = matrix::identity();
-        if( ! dynamic_cast<ComponentTransform*>( this ) && ! dynamic_cast<Object*>( this ) )
+        if( ! dynamic_cast<ComponentTransform*>( this ) &&
+            ! dynamic_cast<Object*>( this ) )
         {
             if( auto cmp = dynamic_cast<Component*>( this ) )
                 mat_tmp = cmp->GetOwner()->GetMatrix();
@@ -270,10 +295,16 @@ public:
     //! @param position 向きたいポジション
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto SetRotationToPositionWithLimit( float3 position, float limit, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToPositionWithLimit( float3 position,
+                                         float  limit,
+                                         float3 up        = { 0, 1, 0 },
+                                         bool   up_change = false )
     {
         float3 vec = position - GetMatrix().translate();
-        return SetRotationToVectorOnParentWithLimit( vec, limit, up, up_change );
+        return SetRotationToVectorOnParentWithLimit( vec,
+                                                     limit,
+                                                     up,
+                                                     up_change );
     }
 
     //! @brief ベクトルの方向へ向ける
@@ -281,7 +312,10 @@ public:
     //! @param limit 向ける限界角度
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto SetRotationToVectorWithLimit( float3 vec, float limit, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToVectorWithLimit( float3 vec,
+                                       float  limit,
+                                       float3 up        = { 0, 1, 0 },
+                                       bool   up_change = false )
     {
         float delta = GetDeltaTime60();
         limit       = limit * delta;
@@ -290,16 +324,23 @@ public:
         auto now_mat = GetMatrix();
 
         // 向きたい方向のマトリクス
-        auto mat = HelperLib::Math::CreateMatrixByFrontVector( -vec, up, up_change );
+        auto mat =
+            HelperLib::Math::CreateMatrixByFrontVector( -vec, up, up_change );
 
         // 現在の姿勢
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
         // 向きたい姿勢
         float matrixTranslationVec[3], matrixRotationVec[3], matrixScaleVec[3];
 
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
-        DecomposeMatrixToComponents( mat.f32_128_0, matrixTranslationVec, matrixRotationVec, matrixScaleVec );
+        DecomposeMatrixToComponents( mat.f32_128_0,
+                                     matrixTranslationVec,
+                                     matrixRotationVec,
+                                     matrixScaleVec );
 
         float rot_x = matrixRotationVec[0] - matrixRotation[0];
         if( rot_x > 180 )
@@ -335,7 +376,10 @@ public:
         matrixRotationVec[0] = rot_x + matrixRotation[0];
         matrixRotationVec[1] = rot_y + matrixRotation[1];
         matrixRotationVec[2] = rot_z + matrixRotation[2];
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotationVec, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotationVec,
+                                       matrixScale,
+                                       GetMatrixFloat() );
         return SharedThis();
     }
 
@@ -344,12 +388,15 @@ public:
     //! @param limit 向ける限界角度
     //! @param up_change Y軸も変更するか?
     //! @return 自分のSharedPtr
-    auto
-        SetRotationToVectorOnParentWithLimit( float3 vec, float limit, float3 up = { 0, 1, 0 }, bool up_change = false )
+    auto SetRotationToVectorOnParentWithLimit( float3 vec,
+                                               float  limit,
+                                               float3 up        = { 0, 1, 0 },
+                                               bool   up_change = false )
     {
-#if 1 // Transformコンポーネントでなければ親の影響分は差し引く
+#if 1  // Transformコンポーネントでなければ親の影響分は差し引く
         matrix mat_tmp = matrix::identity();
-        if( ! dynamic_cast<ComponentTransform*>( this ) && ! dynamic_cast<Object*>( this ) )
+        if( ! dynamic_cast<ComponentTransform*>( this ) &&
+            ! dynamic_cast<Object*>( this ) )
         {
             if( auto cmp = dynamic_cast<Component*>( this ) )
                 mat_tmp = cmp->GetOwner()->GetMatrix();
@@ -368,13 +415,19 @@ public:
     auto SetRotationAxisXYZ( float3 xyz )
     {
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         matrixRotation[0] = xyz.x;
         matrixRotation[1] = xyz.y;
         matrixRotation[2] = xyz.z;
 
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotation, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotation,
+                                       matrixScale,
+                                       GetMatrixFloat() );
         return SharedThis();
     }
 
@@ -385,13 +438,19 @@ public:
     {
         float delta = GetDeltaTime60();
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         matrixRotation[0] += xyz.x * delta;
         matrixRotation[1] += xyz.y * delta;
         matrixRotation[2] += xyz.z * delta;
 
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotation, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotation,
+                                       matrixScale,
+                                       GetMatrixFloat() );
         return SharedThis();
     }
 
@@ -405,7 +464,10 @@ public:
             mat = GetWorldMatrix();
 
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( mat.f32_128_0, matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( mat.f32_128_0,
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         return *(float3*)matrixRotation;
     }
@@ -416,13 +478,19 @@ public:
     auto SetScaleAxisXYZ( float3 scale )
     {
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         matrixScale[0] = scale.x;
         matrixScale[1] = scale.y;
         matrixScale[2] = scale.z;
 
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotation, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotation,
+                                       matrixScale,
+                                       GetMatrixFloat() );
         return SharedThis();
     }
 
@@ -432,13 +500,19 @@ public:
     auto MulScaleAxisXYZ( float3 scale )
     {
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( GetMatrixFloat(), matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( GetMatrixFloat(),
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         matrixScale[0] *= scale.x;
         matrixScale[1] *= scale.y;
         matrixScale[2] *= scale.z;
 
-        RecomposeMatrixFromComponents( matrixTranslation, matrixRotation, matrixScale, GetMatrixFloat() );
+        RecomposeMatrixFromComponents( matrixTranslation,
+                                       matrixRotation,
+                                       matrixScale,
+                                       GetMatrixFloat() );
         return SharedThis();
     }
 
@@ -452,7 +526,10 @@ public:
             mat = GetWorldMatrix();
 
         float matrixTranslation[3], matrixRotation[3], matrixScale[3];
-        DecomposeMatrixToComponents( mat.f32_128_0, matrixTranslation, matrixRotation, matrixScale );
+        DecomposeMatrixToComponents( mat.f32_128_0,
+                                     matrixTranslation,
+                                     matrixRotation,
+                                     matrixScale );
 
         return *(float3*)matrixScale;
     }
@@ -493,7 +570,7 @@ public:
     ComponentTransform() { Matrix() = matrix::identity(); }
 
     virtual void PostUpdate() override;
-    virtual void GUI() override; //!< GUI処理
+    virtual void GUI() override;  //!< GUI処理
 
     //---------------------------------------------------------------------------
     //! @name IMatrixインターフェースの利用するための定義
@@ -506,7 +583,8 @@ public:
 
     ComponentTransformPtr SharedThis() override
     {
-        return std::dynamic_pointer_cast<ComponentTransform>( shared_from_this() );
+        return std::dynamic_pointer_cast<ComponentTransform>(
+            shared_from_this() );
     }
 
     //! @brief ワールドMatrixの取得
@@ -515,18 +593,22 @@ public:
 
     //! @brief 1フレーム前のワールドMatrixの取得
     //! @return 他のコンポーネントも含めた位置
-    virtual const matrix GetOldWorldMatrix() const override { return old_transform_; }
+    virtual const matrix GetOldWorldMatrix() const override
+    {
+        return old_transform_;
+    }
 
     //@}
 
 private:
     matrix transform_;
-    matrix old_transform_; //!< 1フレーム前の位置
+    matrix old_transform_;  //!< 1フレーム前の位置
 
-    bool                is_guizmo_       = false;               //!< ギズモ使用
-    ImGuizmo::OPERATION gizmo_operation_ = ImGuizmo::TRANSLATE; //!< Gizmo処理選択
-    ImGuizmo::MODE      gizmo_mode_      = ImGuizmo::LOCAL;     //!< Gizmo Local/Global設定
-    static Component*   select_component_;                      //!< どのTransformが処理されているか
+    bool                is_guizmo_ = false;  //!< ギズモ使用
+    ImGuizmo::OPERATION gizmo_operation_ =
+        ImGuizmo::TRANSLATE;                       //!< Gizmo処理選択
+    ImGuizmo::MODE gizmo_mode_ = ImGuizmo::LOCAL;  //!< Gizmo Local/Global設定
+    static Component* select_component_;  //!< どのTransformが処理されているか
 
 private:
     //--------------------------------------------------------------------

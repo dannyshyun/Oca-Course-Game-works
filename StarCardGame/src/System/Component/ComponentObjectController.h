@@ -11,14 +11,16 @@ public:
 
     void Update() override;
 
-    void [[deprecated( "SetSpeed()は古い形式です。SetMoveSpeed()を使用してください" )]] SetSpeed( const float speed )
+    void [[deprecated( "SetSpeed()は古い形式です。SetMoveSpeed()"
+                       "を使用してください" )]] SetSpeed( const float speed )
     {
         return SetMoveSpeed( speed );
     }
     void SetMoveSpeed( const float speed );
     void SetRotateSpeed( const float speed );
 
-    const float [[deprecated( "GetSpeed()は古い形式です。GetMoveSpeed()を使用してください" )]] GetSpeed() const
+    const float [[deprecated( "GetSpeed()は古い形式です。GetMoveSpeed()"
+                              "を使用してください" )]] GetSpeed() const
     {
         return GetMoveSpeed();
     }
@@ -60,12 +62,12 @@ private:
     float mouse_up_down_    = 10.0f;
     float mouse_left_right_ = 10.0f;
 
-    float limit_cam_up_   = 5.0f;   //!< 上を眺める
-    float limit_cam_down_ = -45.0f; //!< 下を見る
+    float limit_cam_up_   = 5.0f;    //!< 上を眺める
+    float limit_cam_down_ = -45.0f;  //!< 下を見る
 
     ObjectWeakPtr target_;
     float         target_cam_side_speed_ = 3.0f;  //!< ロックオン時のカーソル移動速度
-    float         target_cam_up_down     = 10.0f; //!< ターゲットを見る際の上下固定
+    float target_cam_up_down = 10.0f;  //!< ターゲットを見る際の上下固定
 
     //--------------------------------------------------------------------
     //! @name Cereal処理
@@ -103,12 +105,13 @@ private:
 
         if( ver >= 3 )
         {
-            arc( CEREAL_NVP( use_mouse_ ), //
+            arc( CEREAL_NVP( use_mouse_ ),  //
                  CEREAL_NVP( mouse_up_down_ ),
                  CEREAL_NVP( mouse_left_right_ ) );
         }
 
-        arc( cereal::make_nvp( "Component", cereal::base_class<Component>( this ) ) );
+        arc( cereal::make_nvp( "Component",
+                               cereal::base_class<Component>( this ) ) );
     }
 };
 

@@ -3,7 +3,8 @@
 #include "ItemCard.h"
 #include "ChanceCard.h"
 
-ChanceCard::ChanceCard( int image, u32 value, u32 part ) : ItemCard( image, value, part )
+ChanceCard::ChanceCard( int image, u32 value, u32 part ) :
+    ItemCard( image, value, part )
 {
 }
 void ChanceCard::Init()

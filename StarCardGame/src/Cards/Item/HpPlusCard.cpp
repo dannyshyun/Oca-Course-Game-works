@@ -3,7 +3,8 @@
 #include "ItemCard.h"
 #include "HpPlusCard.h"
 
-HpPlusCard::HpPlusCard( int image, u32 value, u32 part ) : ItemCard( image, value, part )
+HpPlusCard::HpPlusCard( int image, u32 value, u32 part ) :
+    ItemCard( image, value, part )
 {
 }
 void HpPlusCard::Init()

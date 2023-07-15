@@ -23,7 +23,7 @@ public:
     virtual void         Render( bool is_show );
     virtual void         Release() override;
     virtual unsigned int GetCardVal() const;
-    virtual u32     GetImage() const;
+    virtual u32          GetImage() const;
 
     bool is_select = false;
     bool is_touch  = false;

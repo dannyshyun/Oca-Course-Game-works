@@ -1,11 +1,6 @@
 ﻿#include "WinMain.h"
 #include "Game/GameMain.h"
 #include "BaseClass/Base.h"
-#include "Cards/Action/ActionCard.h"
-#include "Cards/Item/ItemCard.h"
-#include "Cards/Item/ChanceCard.h"
-#include "Cards/Item/CurseCard.h"
-#include "Cards/Item/HpPlusCard.h"
 #include "Deck.h"
 #include <nlohmann/json.hpp>
 #include <fstream>
@@ -36,14 +31,14 @@ void Deck::Update()
 {
     if( Turn != LOAD_TURN )
         // show card num in deck immediately
-        card_num = deck->size();
+        card_num = (u32)( deck->size() );
 }
 
 void Deck::Render( bool is_player )
 {
-    uint16_t y = is_player            //!< the position of deck
-                     ? WINDOW_H - 40  //!< player
-                     : 40;            //!< npc
+    u32 y = is_player            //!< the position of deck
+                ? WINDOW_H - 40  //!< player
+                : 40;            //!< npc
     // render image
     DrawRotaGraph( 60, y, 1, 0, image, true );
     // render num
@@ -54,7 +49,7 @@ void Deck::Release()
 {
 }
 
-uint16_t Deck::GetCardNum() const
+u32 Deck::GetCardNum() const
 {
     return card_num;
 }
@@ -82,16 +77,18 @@ bool Deck::Load()
 bool Deck::Shuffle()
 {
     // return true when shuffling is done
+    bool done = false;
     for( auto& card: *deck )
     {
         // index of container to swap
-        uint16_t rand = GetRand( deck->size() - 1 );
+        u32 rand = GetRand( u32( deck->size() ) - 1 );
         std::swap( card, *( deck->begin() + rand ) );
     }
-    return true;
+    done = true;
+    return done;
 }
 
-Cards Deck::Deal( uint16_t num )
+Cards Deck::Deal( u32 num )
 {
     // no card could be returned
     if( deck->empty() )
@@ -113,7 +110,7 @@ Cards Deck::Deal( uint16_t num )
         return temp;
     }
 }
-Card<CardBase> Deck::NewActionCard( std::string suit, u32 value )
+Card<ActionCard> Deck::NewActionCard( std::string suit, u32 value )
 {
     return std::make_shared<ActionCard>( IMGctrl.GetCardIMGdata( suit, value ),
                                          value,
@@ -121,21 +118,21 @@ Card<CardBase> Deck::NewActionCard( std::string suit, u32 value )
                                          suit );
 }
 
-Card<CardBase> Deck::NewChanceCard( std::string suit, u32 value )
+Card<ChanceCard> Deck::NewChanceCard( std::string suit, u32 value )
 {
     return std::make_shared<ChanceCard>( IMGctrl.GetCardIMGdata( suit, value ),
                                          value,
                                          0 );
 }
 
-Card<CardBase> Deck::NewHpPlusCard( std::string suit, u32 value )
+Card<HpPlusCard> Deck::NewHpPlusCard( std::string suit, u32 value )
 {
     return std::make_shared<HpPlusCard>( IMGctrl.GetCardIMGdata( suit, value ),
                                          value,
                                          0 );
 }
 
-Card<CardBase> Deck::NewCurseCard( std::string suit, u32 value )
+Card<CurseCard> Deck::NewCurseCard( std::string suit, u32 value )
 {
     return std::make_shared<CurseCard>( IMGctrl.GetCardIMGdata( suit, value ),
                                         value,

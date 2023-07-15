@@ -17,13 +17,13 @@
 #include <GameSystem/Random.h>
 #include <GameSystem/imageDatas.h>
 
-bool                 PushHitKey( int key );
-bool                 CheckMouseInput( int button = MOUSE_INPUT_LEFT | MOUSE_INPUT_RIGHT );
-bool                 PushMouseInput( int button = MOUSE_INPUT_LEFT | MOUSE_INPUT_RIGHT );
-int                  GetMouseX();
-int                  GetMouseY();
-int                  GetMouseMoveX();
-int                  GetMouseMoveY();
-float                TO_RADIAN( float degree );
-float                TO_DEGREE( float radian );
+bool  PushHitKey( int key );
+bool  CheckMouseInput( int button = MOUSE_INPUT_LEFT | MOUSE_INPUT_RIGHT );
+bool  PushMouseInput( int button = MOUSE_INPUT_LEFT | MOUSE_INPUT_RIGHT );
+int   GetMouseX();
+int   GetMouseY();
+int   GetMouseMoveX();
+int   GetMouseMoveY();
+float TO_RADIAN( float degree );
+float TO_DEGREE( float radian );
 typedef const TCHAR* TC;

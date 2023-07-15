@@ -19,17 +19,19 @@ void IMGcontroller::Init()
         // parse json object
         for( auto& obj: jfile )
         {
-            s16         max_value = obj["max_value"].template get<short>();
+            u32         max_value = obj["max_value"].template get<short>();
             std::string suit      = obj["suit"];
             // create suit name of list
             ( *card_IMG_list )[suit] = std::vector<int>();
-            for( s16 i = 0; i < max_value; i++ )
+            for( u32 i = 0; i < max_value; i++ )
             {
                 // get path from json file
-                std::string path = suit == "back"                                         // check
-                                       ? obj["path"].template get<std::string>() + ".jpg" // true
-                                       : obj["path"].template get<std::string>() +        // false
-                                             std::to_string( i + 1 ) + ".jpg";
+                std::string path =
+                    suit == "back"  // check
+                        ? obj["path"].template get<std::string>() +
+                              ".jpg"                                 // true
+                        : obj["path"].template get<std::string>() +  // false
+                              std::to_string( i + 1 ) + ".jpg";
                 // load image
                 int img = LoadGraph( (const TCHAR*)path.c_str() );
                 // push to the suit vector
@@ -59,7 +61,7 @@ void IMGcontroller::Release()
 {
 }
 
-int IMGcontroller::GetCardIMGdata( std::string suit, uint16_t value )
+int IMGcontroller::GetCardIMGdata( std::string suit, u32 value )
 {
     return ( *card_IMG_list )[suit][value - 1];
 }

@@ -11,10 +11,10 @@ public:
     void Render( bool is_player );
     void Release() override;
 
-    Cards    Fold( Cards cards );
-    void     Draw( Cards cards, bool is_player );
-    uint16_t GetHandNum() const;
-    Cards    GetHandCards() const;
+    Cards Fold( Cards cards );
+    void  Draw( Cards cards, bool is_player );
+    u32   GetHandNum() const;
+    Cards GetHandCards() const;
 
 private:
     ptr_cards hand;

@@ -28,7 +28,6 @@ void UI::Render()
         case NPC_ATTACK_TURN : break;
         case NPC_DEFESE_TURN : break;
         case RESULT_TURN : break;
-        case TURN_MAX : break;
         default :;
     }
 }
@@ -43,9 +42,15 @@ void UI::DrawMove()
     SetFontSize( 36 );
     const uint16_t height = 30;
     std::string    name   = "MOVE TURN";
-    uint16_t       n_x    = ( SCREEN_W - GetDrawStringWidth( (const TCHAR*)name.c_str(), -1 ) ) * 0.5;
+    u32            n_x =
+        ( SCREEN_W - GetDrawStringWidth( (const TCHAR*)name.c_str(), -1 ) ) / 2;
     SetDrawBlendMode( DX_BLENDMODE_ALPHA, 128 );
-    DrawBox( 0, SCREEN_H / 2 - height, SCREEN_W, SCREEN_H / 2 + height, WHITE, true );
+    DrawBox( 0,
+             SCREEN_H / 2 - height,
+             SCREEN_W,
+             SCREEN_H / 2 + height,
+             WHITE,
+             true );
     SetDrawBlendMode( DX_BLENDMODE_NOBLEND, -1 );
     DrawString( n_x, SCREEN_H / 2 - 20, (const TCHAR*)name.c_str(), WHITE );
     SetFontSize( 20 );

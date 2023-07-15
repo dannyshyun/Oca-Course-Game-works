@@ -33,7 +33,8 @@ void Npc::Update()
             if( hand->GetHandNum() < HAND_MAX )
             {
                 hand->Init();
-                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ), false );
+                hand->Draw( deck->Deal( HAND_MAX - hand->GetHandNum() ),
+                            false );
             }
             break;
     }

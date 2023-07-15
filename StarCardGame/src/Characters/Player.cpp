@@ -104,10 +104,12 @@ void Player::CheckTouch( std::shared_ptr<CardBase> card )
 {
     Vector2 mouse_pos( GetMouseX(), GetMouseY() );
     // check mouse in screen
-    if( mouse_pos.x < 0 || mouse_pos.x > WINDOW_W || mouse_pos.y < 0 || mouse_pos.y > WINDOW_H )
+    if( mouse_pos.x < 0 || mouse_pos.x > WINDOW_W || mouse_pos.y < 0 ||
+        mouse_pos.y > WINDOW_H )
         return;
     // check mouse in touchable card area
-    card->is_touch =
-        ( mouse_pos.x <= ( card->pos.x + card->size.x * 0.5 ) && mouse_pos.x >= ( card->pos.x - card->size.x * 0.5 ) &&
-          mouse_pos.y <= ( card->pos.y + card->size.y * 0.5 ) && mouse_pos.y >= ( card->pos.y - card->size.y * 0.5 ) );
+    card->is_touch = ( mouse_pos.x <= ( card->pos.x + card->size.x * 0.5 ) &&
+                       mouse_pos.x >= ( card->pos.x - card->size.x * 0.5 ) &&
+                       mouse_pos.y <= ( card->pos.y + card->size.y * 0.5 ) &&
+                       mouse_pos.y >= ( card->pos.y - card->size.y * 0.5 ) );
 }

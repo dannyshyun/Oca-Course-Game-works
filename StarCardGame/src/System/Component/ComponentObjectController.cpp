@@ -63,13 +63,15 @@ void ComponentObjectController::Update()
                 if( auto target = target_.lock() )
                 {
                     // 徐々に敵の方に向ける(1フレーム最大3度)
-                    owner->SetRotationToPositionWithLimit( target->GetTranslate(),
-                                                           target_cam_side_speed_ * GetDeltaTime60() );
+                    owner->SetRotationToPositionWithLimit(
+                        target->GetTranslate(),
+                        target_cam_side_speed_ * GetDeltaTime60() );
 
                     // カメラローテーションをロック方向にしておくと
                     // 戻った時に違和感がない
                     cam_ry_ = owner->GetRotationAxisXYZ().y;
-                    cam_rx_ = ( cam_rx_ + target_cam_up_down ) * 0.95f - target_cam_up_down;
+                    cam_rx_ = ( cam_rx_ + target_cam_up_down ) * 0.95f -
+                              target_cam_up_down;
 
                     arm->SetSpringArmRotate( { cam_rx_, 0, 0 } );
                 }
@@ -153,7 +155,10 @@ void ComponentObjectController::SetKeys( int up, int down, int left, int right )
     key_right_ = right;
 }
 
-void ComponentObjectController::SetCameraKeys( int up, int down, int left, int right )
+void ComponentObjectController::SetCameraKeys( int up,
+                                               int down,
+                                               int left,
+                                               int right )
 {
     cam_up_    = up;
     cam_down_  = down;

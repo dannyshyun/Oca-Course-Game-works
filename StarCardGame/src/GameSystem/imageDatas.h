@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <memory>
 #include <map>
 #include <vector>
@@ -9,7 +9,7 @@ public:
     IMGcontroller();
     void Init();
     void Release();
-    int  GetCardIMGdata( std::string suit, uint16_t value = 1 );
+    int  GetCardIMGdata( std::string suit, u32 value = 1 );
     int  GetUIIMGdata( std::string name );
 
 private:

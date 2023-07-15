@@ -8,7 +8,12 @@
 std::wstring convertTo( std::string_view string )
 {
     // 受け側の必要サイズを取得
-    u32 size = MultiByteToWideChar( CP_ACP, 0, string.data(), static_cast<int>( string.length() ), nullptr, 0 );
+    u32 size = MultiByteToWideChar( CP_ACP,
+                                    0,
+                                    string.data(),
+                                    static_cast<int>( string.length() ),
+                                    nullptr,
+                                    0 );
 
     // バッファの取得
     std::wstring wstring;

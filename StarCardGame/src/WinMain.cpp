@@ -22,8 +22,10 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
     // Game.iniから読み込む
     IniFileLib   ini( "Game.ini" );
     const bool   is_fullscreen = ini.GetBool( "System", "FullScreen" );
-    const float2 screen_size   = ini.GetFloat2( "System", "ScreenSize", { WINDOW_W, WINDOW_H } );
-    const auto   title_name    = ini.GetString( "System", "Title", "BaseProject2022" );
+    const float2 screen_size =
+        ini.GetFloat2( "System", "ScreenSize", { WINDOW_W, WINDOW_H } );
+    const auto title_name =
+        ini.GetString( "System", "Title", "BaseProject2022" );
 
     WINDOW_W = static_cast<int>( screen_size.x );
     WINDOW_H = static_cast<int>( screen_size.y );
@@ -42,7 +44,7 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
 
     SetBackgroundColor( 0, 0, 0 );
     SetMainWindowText( (TC)title_name.c_str() );
-    SetAlwaysRunFlag( true ); // ウィンドウメッセージを常に実行
+    SetAlwaysRunFlag( true );  // ウィンドウメッセージを常に実行
 
     // DirectX11を使用するようにする(DxLib_Init関数前) - Effekseer対応
     SetUseDirect3DVersion( DX_DIRECT3D_11 );
@@ -83,7 +85,7 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
     InputKeyInit();
     InputPadInit();
     InputMouseInit();
-    RenderInit(); // Render初期化
+    RenderInit();  // Render初期化
     SystemInit();
     GameInit();
     ImGuiInit();
@@ -93,7 +95,8 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
     //----------------------------------------------------------
     // メインループ
     //----------------------------------------------------------
-    while( ProcessMessage() == 0 && CheckHitKey( KEY_INPUT_ESCAPE ) == 0 && ! IsProcEnd() )
+    while( ProcessMessage() == 0 && CheckHitKey( KEY_INPUT_ESCAPE ) == 0 &&
+           ! IsProcEnd() )
     {
         // 1フレームの開始
         SystemBeginFrame();
@@ -110,7 +113,7 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
         InputMouseUpdate();
         ImGuiUpdate();
 
-        ShaderBase::updateFileWatcher(); // ファイル監視を更新
+        ShaderBase::updateFileWatcher();  // ファイル監視を更新
 
         // ---------------
         // 更新処理
@@ -147,10 +150,10 @@ int WINAPI WinMain( _In_ [[maybe_unused]] HINSTANCE     hInstance,
     InputMouseExit();
     GameExit();
     SystemExit();
-    RenderExit(); // Render終了
+    RenderExit();  // Render終了
 
     Effkseer_End();
-    WaitHandleASyncLoadAll(); // 非同期ロード中のハンドルを全て待つ
+    WaitHandleASyncLoadAll();  // 非同期ロード中のハンドルを全て待つ
     DxLib_End();
 
     return 0;

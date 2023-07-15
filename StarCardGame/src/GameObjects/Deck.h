@@ -1,5 +1,10 @@
 ﻿#pragma once
 #include "Cards/CardBase.h"
+#include "Cards/Action/ActionCard.h"
+#include "Cards/Item/ItemCard.h"
+#include "Cards/Item/ChanceCard.h"
+#include "Cards/Item/CurseCard.h"
+#include "Cards/Item/HpPlusCard.h"
 
 class Deck : public Base
 {
@@ -19,18 +24,18 @@ public:
     bool Shuffle();
 
     // deal cards from deck
-    Cards Deal( uint16_t num );
+    Cards Deal( u32 num );
     // get card num from deck
-    uint16_t GetCardNum() const;
+    u32 GetCardNum() const;
 
 private:
-    Card<CardBase> NewActionCard( std::string suit, u32 value );
-    Card<CardBase> NewChanceCard( std::string suit, u32 value );
-    Card<CardBase> NewHpPlusCard( std::string suit, u32 value );
-    Card<CardBase> NewCurseCard( std::string suit, u32 value );
-    void           LoadCardsIMG();
+    Card<ActionCard> NewActionCard( std::string suit, u32 value );
+    Card<ChanceCard> NewChanceCard( std::string suit, u32 value );
+    Card<HpPlusCard> NewHpPlusCard( std::string suit, u32 value );
+    Card<CurseCard>  NewCurseCard( std::string suit, u32 value );
+    void             LoadCardsIMG();
     // card container
     ptr_cards deck;
     // the number of card to render
-    uint16_t card_num;
+    u32 card_num;
 };

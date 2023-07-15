@@ -19,22 +19,27 @@ void CardBase::Init()
 
 void CardBase::Update()
 {
-    bool           is_player = pos.y > WINDOW_H * 0.5;
-    const uint16_t offset( 200 );
+    bool      is_player = pos.y > WINDOW_H / 2;
+    const u32 offset( 200 );
 
-    pos.y = is_select                           //
-                ? is_player                     //!< true
-                      ? WINDOW_H - offset       //!< true
-                      : WINDOW_H + offset       //!< false
-                                                //
-                : is_touch                      //!< false
-                      ? WINDOW_H - size.y * 0.5 //!< true
-                      : WINDOW_H;               //!< false
+    pos.y = is_select                          //
+                ? is_player                    //!< true
+                      ? WINDOW_H - offset      //!< true
+                      : WINDOW_H + offset      //!< false
+                                               //
+                : is_touch                     //!< false
+                      ? WINDOW_H - size.y / 2  //!< true
+                      : WINDOW_H;              //!< false
 }
 
 void CardBase::Render( bool is_show )
 {
-    DrawRotaGraph( pos.x, pos.y, 1, 0, is_show ? image : IMGctrl.GetCardIMGdata( "back" ), true );
+    DrawRotaGraph( pos.x,
+                   pos.y,
+                   1,
+                   0,
+                   is_show ? image : IMGctrl.GetCardIMGdata( "back" ),
+                   true );
 }
 
 void CardBase::Release()
