@@ -39,6 +39,8 @@ void Deck::Render( bool is_player )
     u32 y = is_player            //!< the position of deck
                 ? WINDOW_H - 40  //!< player
                 : 40;            //!< npc
+    // font type
+    ChangeFontType( DX_FONTTYPE_EDGE );
     // render image
     DrawRotaGraph( 60, y, 1, 0, image, true );
     // render num
@@ -148,10 +150,10 @@ void Deck::LoadCardsIMG()
     for( auto& obj: jfile )
     {
         std::string suit  = obj["suit"];
-        uint16_t    value = obj["value"];
-        uint16_t    num   = obj["num"];
+        u32         value = obj["value"];
+        u32         num   = obj["num"];
         // insert the card * num times
-        for( uint16_t i = 0; i < num; i++ )
+        for( u32 i = 0; i < num; i++ )
         {
             // check suit and new class
             ( suit == "sword" || suit == "gun" || suit == "shield" ||

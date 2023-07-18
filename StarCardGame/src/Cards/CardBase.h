@@ -18,12 +18,12 @@ class CardBase : public Base
 public:
     CardBase( int image, u32 value, u32 part );
     ~CardBase();
-    virtual void         Init() override;
-    virtual void         Update() override;
-    virtual void         Render( bool is_show );
-    virtual void         Release() override;
-    virtual unsigned int GetCardVal() const;
-    virtual u32          GetImage() const;
+    virtual void Init() override;
+    virtual void Update() override;
+    virtual void Render( bool is_show );
+    virtual void Release() override;
+    virtual u32  GetCardVal() const;
+    virtual u32  GetImage() const;
 
     bool is_select = false;
     bool is_touch  = false;

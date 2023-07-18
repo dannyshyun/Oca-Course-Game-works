@@ -46,12 +46,12 @@ void CardBase::Release()
 {
 }
 
-unsigned int CardBase::GetCardVal() const
+u32 CardBase::GetCardVal() const
 {
     return this->value;
 }
 
-uint32_t CardBase::GetImage() const
+u32 CardBase::GetImage() const
 {
     return this->image;
 }

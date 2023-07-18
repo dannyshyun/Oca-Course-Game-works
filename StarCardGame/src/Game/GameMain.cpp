@@ -3,13 +3,7 @@
 //! @brief	ゲームメイン
 //---------------------------------------------------------------------------
 #include "GameMain.h"
-#include "Characters/Player.h"
-#include "Characters/Npc.h"
-#include "UI/UI.h"
-
 #include "BaseClass/Base.h"
-#include "Cards/Action/ActionCard.h"
-#include "Cards/Environment/EnvironmentCard.h"
 
 IMGcontroller IMGctrl;
 int           Turn;

@@ -53,5 +53,5 @@ void UI::DrawMove()
              true );
     SetDrawBlendMode( DX_BLENDMODE_NOBLEND, -1 );
     DrawString( n_x, WINDOW_H / 2 - 20, (const TCHAR*)name.c_str(), WHITE );
-    SetFontSize( 20 );
+    SetFontSize( 16 );
 }
