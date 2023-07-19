@@ -5,7 +5,7 @@
 #include "CardTest.h"
 
 BP_OBJECT_IMPL( CardTest, "CardTest" );
-CardTestPtr CardTest::Create(float3 pos)
+CardTestPtr CardTest::Create( float3 pos )
 {
     auto card = Scene::CreateObjectPtr<CardTest>();
     card->SetName( "CardTest" );
@@ -16,7 +16,8 @@ CardTestPtr CardTest::Create(float3 pos)
 bool CardTest::Init()
 {
     __super::Init();
-    auto model = AddComponent<ComponentModel>( "data/Sample/Coin/GoldCoin.mv1" );
+    auto model = AddComponent<ComponentModel>(
+        "data/Sample/Coin/GoldCoin.mv1" );
     return true;
 }
 

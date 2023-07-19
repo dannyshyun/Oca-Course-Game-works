@@ -12,7 +12,7 @@ BP_CLASS_IMPL( SceneSample, u8"サンプル" )
 bool SceneSample::Init()
 {
     // 仮モデルの読み込み
-    model_ = MV1LoadModel( (TC)"data/Sample/Player/model.mv1" );
+    model_ = MV1LoadModel( ( TC ) "data/Sample/Player/model.mv1" );
 
     return true;
 }

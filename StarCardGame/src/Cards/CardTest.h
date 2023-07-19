@@ -6,7 +6,7 @@ class CardTest : public Object
 {
 public:
     BP_OBJECT_TYPE( CardTest, Object );
-    static CardTestPtr Create(float3 pos = {0.f, 0.f, 0.f});
+    static CardTestPtr Create( float3 pos = { 0.f, 0.f, 0.f } );
     virtual bool       Init() override;
     virtual void       Update() override;
     virtual void       Render( bool is_show );

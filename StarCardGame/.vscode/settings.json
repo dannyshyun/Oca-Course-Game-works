@@ -21,7 +21,8 @@
     },
     "explorer.fileNesting.patterns": {
         "*.sln": "${capture}.vcxproj,${capture}.vcxproj.filters,${capture}.vcxproj.user",
-        "premake5.lua" : "*.bat,README.md"
+        "premake5.lua" : "*.bat,README.md",
+        ".gitignore" : ".gitattributes"
     },
     "favorites.groupsFirst": false,
     "workbench.tree.indent": 20,
@@ -119,4 +120,5 @@
         "unordered_set": "cpp",
         "variant": "cpp"
     },
+    "cmake.configureOnOpen": false,
 }

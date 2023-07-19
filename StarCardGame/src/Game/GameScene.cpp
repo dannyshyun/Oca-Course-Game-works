@@ -16,7 +16,7 @@ bool TestScene::Init()
         auto obj = Scene::CreateObjectPtr<Object>()->SetName( "ground" );
         obj->AddComponent<ComponentModel>(
             "data/Sample/SwordBout/Stage/Stage00.mv1" );
-        obj->SetScaleAxisXYZ( float3( 0.01f, 0.01f, 0.01f ) );
+        obj->SetScaleAxisXYZ( f32(0.01f) );
     }
     // camera
     {
@@ -32,7 +32,7 @@ bool TestScene::Init()
     npc->Init();
     player->Init();
     auto card = CardTest::Create()->SetName( "Card" );
-    card->SetScaleAxisXYZ( float3( 0.01f, 0.01f, 0.01f ) );
+    card->SetScaleAxisXYZ( f32(0.01f) );
     return true;
 }
 
