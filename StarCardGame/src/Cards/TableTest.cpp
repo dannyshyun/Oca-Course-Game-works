@@ -2,25 +2,24 @@
 #include "WinMain.h"
 #include "Game/GameMain.h"
 #include "BaseClass/Base.h"
-#include "CardTest.h"
+#include "TableTest.h"
 
-BP_OBJECT_IMPL( CardTest, "CardTest" );
-CardTestPtr CardTest::Create( float3 pos )
+BP_OBJECT_IMPL( TableTest, "TableTest" );
+TableTestPtr TableTest::Create( float3 pos )
 {
-    auto card = Scene::CreateObjectPtr<CardTest>();
-    card->SetName( "CardTest" );
+    auto card = Scene::CreateObjectPtr<TableTest>();
+    card->SetName( "TableTest" );
     card->SetTranslate( pos );
-    card->SetScaleAxisXYZ( f32( 0.1f ) );
     return card;
 }
 
-bool CardTest::Init()
+bool TableTest::Init()
 {
     __super::Init();
 
     if( auto model = AddComponent<ComponentModel>() )
     {
-        model->Load( "data/Models/Card_Club2.mv1" );
+        model->Load( "data/Models/CardTable.mv1" );
         // mat
         {
             Material mat{};
@@ -58,23 +57,21 @@ bool CardTest::Init()
                     model_card->renderByMesh( 0 );
                 }
             },
-            ProcTiming::Draw ); 
+            ProcTiming::Draw );
     }
 
-    AddRotationAxisXYZ( float3( 90.f, 0.f, 0.f ) );
     return true;
 }
 
-void CardTest::Update()
-{
-    // AddRotationAxisXYZ( float3( 0.f, 1.f, 0.f ) );
-}
-
-void CardTest::Render( bool is_show )
+void TableTest::Update()
 {
 }
 
-void CardTest::GUI()
+void TableTest::Render()
+{
+}
+
+void TableTest::GUI()
 {
     __super::GUI();
     ImGui::Begin( GetName().data() );
@@ -84,16 +81,6 @@ void CardTest::GUI()
     ImGui::End();
 }
 
-void CardTest::Exit()
+void TableTest::Exit()
 {
-}
-
-u32 CardTest::GetCardVal() const
-{
-    return this->value;
-}
-
-u32 CardTest::GetImage() const
-{
-    return this->image;
 }
