@@ -28,7 +28,8 @@ bool TestScene::Init()
 
     // card
     {
-        auto card = CardTest::Create(float3(0.f, 2.f, 0.f))->SetName( "Card" );
+        auto card =
+            CardTest::Create( float3( 0.f, 2.f, 0.f ) )->SetName( "Card" );
     }
 
     // camera

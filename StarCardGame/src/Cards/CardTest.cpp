@@ -58,7 +58,7 @@ bool CardTest::Init()
                     model_card->renderByMesh( 0 );
                 }
             },
-            ProcTiming::Draw ); 
+            ProcTiming::Draw );
     }
 
     AddRotationAxisXYZ( float3( 90.f, 0.f, 0.f ) );
