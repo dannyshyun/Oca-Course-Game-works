@@ -5,10 +5,11 @@
 #include "CardTest.h"
 
 BP_OBJECT_IMPL( CardTest, "CardTest" );
-CardTestPtr CardTest::Create( float3 pos )
+CardTestPtr CardTest::Create( CardParam param, float3 pos )
 {
-    auto card = Scene::CreateObjectPtr<CardTest>();
+    auto card = Scene::CreateObjectDelayInitialize<CardTest>();
     card->SetName( "CardTest" );
+    card->param = param;
     card->SetTranslate( pos );
     card->SetScaleAxisXYZ( f32( 0.1f ) );
     return card;
@@ -20,8 +21,13 @@ bool CardTest::Init()
 
     if( auto model = AddComponent<ComponentModel>() )
     {
-        model->Load( "data/Models/Card_Club2.mv1" );
-        // mat
+        // load model
+        {
+            const std::string path = "data/Models/" + param.suit +
+                                     std::to_string( param.value ) + ".mv1";
+            model->Load( path );
+        }
+        // material
         {
             Material mat{};
             mat.AO = makeSptr<Texture>(
@@ -60,14 +66,13 @@ bool CardTest::Init()
             },
             ProcTiming::Draw );
     }
+    SetRotationAxisXYZ( float3( 90.f, 0.f, 0.f ) );
 
-    AddRotationAxisXYZ( float3( 90.f, 0.f, 0.f ) );
     return true;
 }
 
 void CardTest::Update()
 {
-    // AddRotationAxisXYZ( float3( 0.f, 1.f, 0.f ) );
 }
 
 void CardTest::Render( bool is_show )
@@ -88,9 +93,9 @@ void CardTest::Exit()
 {
 }
 
-u32 CardTest::GetCardVal() const
+CardParam CardTest::GetCardParam() const
 {
-    return this->value;
+    return this->param;
 }
 
 u32 CardTest::GetImage() const
