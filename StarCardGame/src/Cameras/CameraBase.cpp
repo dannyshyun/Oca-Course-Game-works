@@ -29,10 +29,10 @@ void CameraBase::Update()
 {
     auto spring_arm = GetComponent<ComponentSpringArm>();
 
-            // SprintArm‚Ì‰ñ“]‚Éƒ}ƒEƒX‚ÌˆÚ“®—Ê‚ð‘«‚µ‚±‚Þ
-            rot += { GetMouseMoveY(), GetMouseMoveX(), 0 };
+    // SprintArm‚Ì‰ñ“]‚Éƒ}ƒEƒX‚ÌˆÚ“®—Ê‚ð‘«‚µ‚±‚Þ
+    rot += { GetMouseMoveY(), GetMouseMoveX(), 0 };
 
-            // ‘«‚µ‚±‚ñ‚¾‰ñ“]‚ð—˜—p‚·‚é
-            spring_arm->SetSpringArmRotate( rot );
+    // ‘«‚µ‚±‚ñ‚¾‰ñ“]‚ð—˜—p‚·‚é
+    spring_arm->SetSpringArmRotate( rot );
 }
 #endif

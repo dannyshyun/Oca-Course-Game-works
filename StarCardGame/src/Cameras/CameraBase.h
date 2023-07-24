@@ -17,4 +17,3 @@ protected:
     float3 target{};
     float3 rot{ -20, 0, 0 };
 };
-

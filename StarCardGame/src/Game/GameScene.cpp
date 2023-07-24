@@ -21,8 +21,9 @@ bool TestScene::Init()
 
     // card
     {
-        auto card =
-            CardTest::Create( CardParam("Sword", 2), float3( 0.f, 1.3f, 0.f ) )->SetName( "Card" );
+        auto card = CardTest::Create( CardParam( "Sword", 2 ),
+                                      float3( 0.f, 1.3f, 0.f ) )
+                        ->SetName( "Card" );
     }
 #if 1
     // camera
