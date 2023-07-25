@@ -2,92 +2,99 @@
 #include "GameMain.h"
 #include "GameScene.h"
 #include "Cards/CardTest.h"
-#include "Cards/TableTest.h"
+#include "GameObjects/Table.h"
+#include "GameObjects/Dice.h"
 #include "Cameras/CameraBase.h"
 
 #include <System/Component/ComponentModel.h>
 #include <System/Component/ComponentCamera.h>
-using namespace MainScene;
 
-BP_CLASS_IMPL( TestScene, u8"Test" );
+#include "System/Component/ComponentCollisionModel.h"
 
-bool TestScene::Init()
+BP_CLASS_IMPL( MainScene::Scene3D::TestScene, u8"Test" );
+namespace MainScene
 {
-    // table
+    namespace Scene3D
     {
-        auto table = TableTest::Create()->SetName( "Table" );
-        table->SetScaleAxisXYZ( f32( 0.1f ) );
-    }
+        bool TestScene::Init()
+        {
+            // // ground
+            // {
+            //     auto obj = Scene::CreateObjectPtr<Object>()->SetName( "Ground" );
+            //     obj->AddComponent<ComponentModel>(
+            //         "data/Sample/SwordBout/Stage/Stage00.mv1" );
+            //     obj->SetScaleAxisXYZ( f32( 0.1f ) );
+            //     auto col = obj->AddComponent<ComponentCollisionModel>();
+            //     col->AttachToModel( true );
+            // }
+            // table
+            {
+                auto table = Table::Create()->SetName( "Table" );
+            }
 
-    // card
+            // card
+            {
+                auto card = CardTest::Create( CardParam( "Sword", 2 ),
+                                              float3( 0.f, 1.3f, 0.f ) );
+            }
+            // dice
+            {
+                auto dice0 = Dice::Create( "Red" );
+                auto dice1 = Dice::Create( "Blue", float3( 0, 1.3f, 0 ) );
+            }
+            // camera
+            {
+                float3 pos( 0, 37.5f, 40.3f );
+                float3 target( 0, 0.8f, -0.5f );
+                auto   cam =
+                    CameraBase::Create( pos, target )->SetName( "PlayCamera" );
+                cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
+            }
+            // camera
+            {
+                auto   table = Scene::GetObjectPtr<Object>( "Table" );
+                float3 pos( 0, 80, 0.1f );
+                float3 target( table->GetTranslate() );
+                auto   cam =
+                    CameraBase::Create( pos, target )->SetName( "TopCamera" );
+                cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
+            }
+            IMGctrl.Init();
+            Turn = LOAD_TURN;
+            npc->Init();
+            player->Init();
+            return true;
+        }
+        void TestScene::Update()
+        {
+            if( IsKeyOn( KEY_INPUT_1 ) )
+                Scene::SetCurrentCamera( "TopCamera" );
+
+            if( IsKeyOn( KEY_INPUT_2 ) )
+                Scene::SetCurrentCamera( "PlayCamera" );
+            counter++;
+            npc->Update();
+            player->Update();
+        }
+
+        void TestScene::Draw()
+        {
+            npc->Render();
+            player->Render();
+            ui->Render();
+        }
+
+        void TestScene::Exit()
+        {
+        }
+
+        void TestScene::GUI()
+        {
+            ImGui::InputInt( "Counter", &counter );
+        }
+    }
+    namespace Scene2D
     {
-        auto card = CardTest::Create( CardParam( "Sword", 2 ),
-                                      float3( 0.f, 1.3f, 0.f ) )
-                        ->SetName( "Card" );
+        
     }
-#if 1
-    // camera
-    {
-        float3 pos( 0, 37.5f, 40.3f );
-        float3 target( 0, 0.8f, -0.5f );
-        auto   cam = CameraBase::Create( pos, target )->SetName( "PlayCamera" );
-        cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
-    }
-    // camera
-    {
-        auto   table = Scene::GetObjectPtr<Object>( "Table" );
-        float3 pos( 0, 80, 0.1f );
-        float3 target( table->GetTranslate() );
-        auto   cam = CameraBase::Create( pos, target )->SetName( "TopCamera" );
-        cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
-    }
-#else
-    // camera
-    {
-        auto obj = Scene::CreateObjectPtr<Object>();
-        obj->SetName( "camera" );
-        auto cam = obj->AddComponent<ComponentCamera>();
-        cam->SetPositionAndTarget(
-            float3( 50.f, 140.f, -100.f ),
-            Scene::GetObjectPtr<Object>( u8"Table" )->GetTranslate() );
-        cam->SetPerspective( 60.0f * DegToRad );
-    }
-#endif
-    IMGctrl.Init();
-    Turn = LOAD_TURN;
-    npc->Init();
-    player->Init();
-    return true;
-}
-
-void TestScene::Update()
-{
-    if( IsKeyOn( KEY_INPUT_1 ) )
-        Scene::SetCurrentCamera( "TopCamera" );
-
-    if( IsKeyOn( KEY_INPUT_2 ) )
-        Scene::SetCurrentCamera( "PlayCamera" );
-    counter++;
-    npc->Update();
-    player->Update();
-}
-
-void TestScene::Draw()
-{
-    auto   table = Scene::GetObjectPtr<Object>( "Table" );
-    auto   card  = Scene::GetObjectPtr<Object>( "Card" );
-    float1 h     = card->GetTranslate().y - table->GetTranslate().y;
-    DrawFormatStringF( 16, 16, WHITE, ( TC ) "%f", (float)( h ) );
-    // npc->Render();
-    // player->Render();
-    // ui->Render();
-}
-
-void TestScene::Exit()
-{
-}
-
-void TestScene::GUI()
-{
-    ImGui::InputInt( "Counter", &counter );
 }

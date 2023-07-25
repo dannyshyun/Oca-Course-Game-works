@@ -8,8 +8,12 @@ BP_OBJECT_IMPL( CardTest, "CardTest" );
 CardTestPtr CardTest::Create( CardParam param, float3 pos )
 {
     auto card = Scene::CreateObjectDelayInitialize<CardTest>();
-    card->SetName( "CardTest" );
-    card->param = param;
+    auto mat  = HelperLib::Math::CreateMatrixByFrontVector( float3( 0, -1, 0 ),
+                                                           float3( 0, 0, 1 ) );
+    card->SetMatrix( mat );
+    card->param      = param;
+    std::string name = "Card" + param.suit + std::to_string( param.value );
+    card->SetName( name );
     card->SetTranslate( pos );
     card->SetScaleAxisXYZ( f32( 0.1f ) );
     return card;
@@ -23,23 +27,20 @@ bool CardTest::Init()
     {
         // load model
         {
-            const std::string path = "data/Models/" + param.suit +
+            const std::string path = "data/Models/Cards/" + param.suit +
                                      std::to_string( param.value ) + ".mv1";
             model->Load( path );
         }
         // material
         {
+            const std::string path =
+                "data/Textures/CardsAndTables/CardsAndTables_";
             Material mat{};
-            mat.AO = makeSptr<Texture>(
-                "data/Textures/CardsAndTables_Mixed_AO.png" );
-            mat.albedo = makeSptr<Texture>(
-                "data/Textures/CardsAndTables_Base_color.png" );
-            mat.normal = makeSptr<Texture>(
-                "data/Textures/CardsAndTables_Normal_OpenGL.png" );
-            mat.roughness = makeSptr<Texture>(
-                "data/Textures/CardsAndTables_Roughness.png" );
-            mat.metalness = makeSptr<Texture>(
-                "data/Textures/CardsAndTables_Metallic.png" );
+            mat.AO        = makeSptr<Texture>( path + "Mixed_AO.png" );
+            mat.albedo    = makeSptr<Texture>( path + "Base_color.png" );
+            mat.normal    = makeSptr<Texture>( path + "Normal_OpenGL.png" );
+            mat.roughness = makeSptr<Texture>( path + "Roughness.png" );
+            mat.metalness = makeSptr<Texture>( path + "Metallic.png" );
             materials.push_back( mat );
         }
         model->SetProc(
@@ -66,13 +67,20 @@ bool CardTest::Init()
             },
             ProcTiming::Draw );
     }
-    SetRotationAxisXYZ( float3( 90.f, 0.f, 0.f ) );
 
     return true;
 }
 
 void CardTest::Update()
 {
+    if( IsKeyOn( KEY_INPUT_Z ) )
+    {
+        const auto mat_body = GetMatrix();
+        auto       mat      = matrix::identity();
+        mat                 = mul( mat, matrix::rotateY( D2R( 180.f ) ) );
+        mat                 = mul( mat, mat_body );
+        SetMatrix( mat );
+    }
 }
 
 void CardTest::Render( bool is_show )

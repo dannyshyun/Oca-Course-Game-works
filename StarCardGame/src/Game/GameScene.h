@@ -5,23 +5,30 @@
 #include <UI/UI.h>
 namespace MainScene
 {
-    class TestScene : public Scene::Base
+    namespace Scene3D
     {
-    public:
-        BP_CLASS_TYPE( TestScene, Scene::Base );
+        class TestScene : public Scene::Base
+        {
+        public:
+            BP_CLASS_TYPE( TestScene, Scene::Base );
 
-        bool Init() override;
-        void Update() override;
-        void Draw() override;
-        void Exit() override;
+            bool Init() override;
+            void Update() override;
+            void Draw() override;
+            void Exit() override;
 
-        void GUI() override;
+            void GUI() override;
 
-    private:
-        int counter = 0;
+        private:
+            int counter = 0;
 
-        std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
-        std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
-        std::unique_ptr<UI>     ui     = std::make_unique<UI>( 0 );
+            std::unique_ptr<Player> player = std::make_unique<Player>( 0 );
+            std::unique_ptr<Npc>    npc    = std::make_unique<Npc>( 0 );
+            std::unique_ptr<UI>     ui     = std::make_unique<UI>( 0 );
+        };
+    }
+    namespace Scene2D
+    {
+
     };
 }
