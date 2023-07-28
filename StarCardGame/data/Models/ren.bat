@@ -1,1 +1,0 @@
-﻿FOR /d /r . %%d IN Card_Club*.fbx DO REN %%d Star*.fbx

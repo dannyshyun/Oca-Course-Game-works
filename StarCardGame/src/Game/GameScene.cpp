@@ -2,59 +2,99 @@
 #include "GameMain.h"
 #include "GameScene.h"
 #include "Cards/CardTest.h"
+#include "GameObjects/Table.h"
+#include "GameObjects/Dice.h"
+#include "Cameras/CameraBase.h"
 
 #include <System/Component/ComponentModel.h>
 #include <System/Component/ComponentCamera.h>
-using namespace MainScene;
 
-BP_CLASS_IMPL( TestScene, u8"Test" );
+#include "System/Component/ComponentCollisionModel.h"
 
-bool TestScene::Init()
+BP_CLASS_IMPL( MainScene::Scene3D::TestScene, u8"Test" );
+namespace MainScene
 {
-    // ground
+    namespace Scene3D
     {
-        auto obj = Scene::CreateObjectPtr<Object>()->SetName( "ground" );
-        obj->AddComponent<ComponentModel>(
-            "data/Sample/SwordBout/Stage/Stage00.mv1" );
-        obj->SetScaleAxisXYZ( f32(0.01f) );
+        bool TestScene::Init()
+        {
+            // // ground
+            // {
+            //     auto obj = Scene::CreateObjectPtr<Object>()->SetName( "Ground" );
+            //     obj->AddComponent<ComponentModel>(
+            //         "data/Sample/SwordBout/Stage/Stage00.mv1" );
+            //     obj->SetScaleAxisXYZ( f32( 0.1f ) );
+            //     auto col = obj->AddComponent<ComponentCollisionModel>();
+            //     col->AttachToModel( true );
+            // }
+            // table
+            {
+                auto table = Table::Create()->SetName( "Table" );
+            }
+
+            // card
+            {
+                auto card = CardTest::Create( CardParam( "Sword", 2 ),
+                                              float3( 0.f, 1.3f, 0.f ) );
+            }
+            // dice
+            {
+                auto dice0 = Dice::Create( "Red" );
+                auto dice1 = Dice::Create( "Blue", float3( 0, 1.3f, 0 ) );
+            }
+            // camera
+            {
+                float3 pos( 0, 37.5f, 40.3f );
+                float3 target( 0, 0.8f, -0.5f );
+                auto   cam =
+                    CameraBase::Create( pos, target )->SetName( "PlayCamera" );
+                cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
+            }
+            // camera
+            {
+                auto   table = Scene::GetObjectPtr<Object>( "Table" );
+                float3 pos( 0, 80, 0.1f );
+                float3 target( table->GetTranslate() );
+                auto   cam =
+                    CameraBase::Create( pos, target )->SetName( "TopCamera" );
+                cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
+            }
+            IMGctrl.Init();
+            Turn = LOAD_TURN;
+            npc->Init();
+            player->Init();
+            return true;
+        }
+        void TestScene::Update()
+        {
+            if( IsKeyOn( KEY_INPUT_1 ) )
+                Scene::SetCurrentCamera( "TopCamera" );
+
+            if( IsKeyOn( KEY_INPUT_2 ) )
+                Scene::SetCurrentCamera( "PlayCamera" );
+            counter++;
+            npc->Update();
+            player->Update();
+        }
+
+        void TestScene::Draw()
+        {
+            npc->Render();
+            player->Render();
+            ui->Render();
+        }
+
+        void TestScene::Exit()
+        {
+        }
+
+        void TestScene::GUI()
+        {
+            ImGui::InputInt( "Counter", &counter );
+        }
     }
-    // camera
+    namespace Scene2D
     {
-        auto obj = Scene::CreateObjectPtr<Object>();
-        obj->SetName( "camera" );
-        auto cam = obj->AddComponent<ComponentCamera>();
-        cam->SetPositionAndTarget( float3( 0.f, 100.f, -15.f ),
-                                   float3( 0.f, 5.f, 0.f ) );
-        cam->SetPerspective( 60.0f * DegToRad );
+        
     }
-    IMGctrl.Init();
-    Turn = LOAD_TURN;
-    npc->Init();
-    player->Init();
-    auto card = CardTest::Create()->SetName( "Card" );
-    card->SetScaleAxisXYZ( f32(0.01f) );
-    return true;
-}
-
-void TestScene::Update()
-{
-    counter++;
-    npc->Update();
-    player->Update();
-}
-
-void TestScene::Draw()
-{
-    // npc->Render();
-    // player->Render();
-    // ui->Render();
-}
-
-void TestScene::Exit()
-{
-}
-
-void TestScene::GUI()
-{
-    ImGui::InputInt( "Counter", &counter );
 }
