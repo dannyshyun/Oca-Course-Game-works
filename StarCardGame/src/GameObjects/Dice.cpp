@@ -6,7 +6,7 @@
 #include "Dice.h"
 
 BP_OBJECT_IMPL( Dice, "Dice" );
-DicePtr Dice::Create( std::string color,float3 pos )
+DicePtr Dice::Create( std::string color, float3 pos )
 {
     auto dice   = Scene::CreateObjectDelayInitialize<Dice>();
     dice->color = color;
@@ -66,9 +66,9 @@ bool Dice::Init()
     // dice collision
     {
         auto col = AddComponent<ComponentCollisionModel>();
-        col->AttachToModel(true);
+        col->AttachToModel( true );
         col->SetCollisionGroup( ComponentCollisionModel::CollisionGroup::ITEM );
-        col->UseGravity();
+        //col->UseGravity();
     }
 
     return true;

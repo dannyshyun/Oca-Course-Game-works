@@ -6,7 +6,7 @@ class Dice : public Object
 {
 public:
     BP_OBJECT_TYPE( Dice, Object );
-    static DicePtr Create( std::string color , float3 pos = {0.f, 1.5f, 0.f});
+    static DicePtr Create( std::string color, float3 pos = { 0.f, 1.5f, 0.f } );
     virtual bool   Init() override;
     virtual void   Update() override;
     virtual void   Render();

@@ -11,11 +11,11 @@
 
 #include "System/Component/ComponentCollisionModel.h"
 
-BP_CLASS_IMPL( MainScene::Scene3D::TestScene, u8"Test" );
 namespace MainScene
 {
     namespace Scene3D
     {
+        BP_CLASS_IMPL( TestScene, u8"Test" );
         bool TestScene::Init()
         {
             // // ground
@@ -79,9 +79,7 @@ namespace MainScene
 
         void TestScene::Draw()
         {
-            npc->Render();
-            player->Render();
-            ui->Render();
+            
         }
 
         void TestScene::Exit()
@@ -91,10 +89,13 @@ namespace MainScene
         void TestScene::GUI()
         {
             ImGui::InputInt( "Counter", &counter );
+            npc->Render();
+            player->Render();
+            ui->Render();
         }
     }
     namespace Scene2D
     {
-        
+
     }
 }
