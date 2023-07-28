@@ -27,7 +27,7 @@ void IMGcontroller::Init()
             {
                 // get path from json file
                 std::string path =
-                    suit == "back"  // check
+                    suit == "Back"  // check
                         ? obj["path"].template get<std::string>() +
                               ".jpg"                                 // true
                         : obj["path"].template get<std::string>() +  // false

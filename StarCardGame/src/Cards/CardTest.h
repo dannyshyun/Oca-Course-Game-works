@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <System/Scene.h>
 #include <utility>
+#include "UI/Image.h"
 
 struct CardParam
 {
@@ -23,14 +24,15 @@ class CardTest : public Object
 public:
     BP_OBJECT_TYPE( CardTest, Object );
     static CardTestPtr              Create( CardParam param,
-                                            float3    pos = { 0.f, 0.f, 0.f } );
+                                            float3    model_pos = { 0.f, 0.f, 0.f },
+                                            float2    img_pos = { 0.f, 0.f } );
     virtual bool                    Init() override;
     virtual void                    Update() override;
     virtual void                    Render( bool is_show );
+    void                            LateDraw() override;
     virtual void                    GUI() override;
     virtual void                    Exit() override;
     [[nodiscard]] virtual CardParam GetCardParam() const;
-    [[nodiscard]] virtual u32       GetImage() const;
 
     bool is_player = true;
     bool is_select = false;
@@ -38,8 +40,8 @@ public:
 
 protected:
     // 2D image data
-    int    image = -1;
-    float2 image_size{ 0.f, 0.f };
+    Image frontImg;
+    Image backImg;
     // materials
     struct Material
     {

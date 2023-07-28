@@ -5,17 +5,21 @@
 #include "CardTest.h"
 
 BP_OBJECT_IMPL( CardTest, "CardTest" );
-CardTestPtr CardTest::Create( CardParam param, float3 pos )
+CardTestPtr CardTest::Create( CardParam param, float3 model_pos, float2 img_pos )
 {
+    // 3d
     auto card = Scene::CreateObjectDelayInitialize<CardTest>();
     auto mat  = HelperLib::Math::CreateMatrixByFrontVector( float3( 0, -1, 0 ),
                                                            float3( 0, 0, 1 ) );
     card->SetMatrix( mat );
     card->param      = param;
-    std::string name = "Card" + param.suit + std::to_string( param.value );
-    card->SetName( name );
-    card->SetTranslate( pos );
+    std::string name = param.suit + std::to_string( param.value );
+    card->SetName( "Card" + name );
+    card->SetTranslate( model_pos );
     card->SetScaleAxisXYZ( f32( 0.1f ) );
+    // 2d
+    card->frontImg = Image(img_pos,IMGctrl.GetCardIMGdata( param.suit, param.value ));
+    card->backImg = Image( img_pos, IMGctrl.GetCardIMGdata( "Back" ) );
     return card;
 }
 
@@ -87,6 +91,10 @@ void CardTest::Render( bool is_show )
 {
 }
 
+void CardTest::LateDraw()
+{
+}
+
 void CardTest::GUI()
 {
     __super::GUI();
@@ -104,9 +112,4 @@ void CardTest::Exit()
 CardParam CardTest::GetCardParam() const
 {
     return this->param;
-}
-
-u32 CardTest::GetImage() const
-{
-    return this->image;
 }

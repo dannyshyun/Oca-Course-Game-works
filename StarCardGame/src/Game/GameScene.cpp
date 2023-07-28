@@ -18,6 +18,7 @@ namespace MainScene
         BP_CLASS_IMPL( TestScene, u8"Test" );
         bool TestScene::Init()
         {
+            IMGctrl.Init();
             // // ground
             // {
             //     auto obj = Scene::CreateObjectPtr<Object>()->SetName( "Ground" );
@@ -35,14 +36,14 @@ namespace MainScene
             // card
             {
                 auto card = CardTest::Create( CardParam( "Sword", 2 ),
-                                              float3( 0.f, 1.3f, 0.f ) );
+                                              float3( 0.f, 1.3f, 0.f ),
+                                              float2( WINDOW_W / 2, WINDOW_H / 2 ) );
             }
             // dice
             {
-                auto dice0 = Dice::Create( "Red" );
-                auto dice1 = Dice::Create( "Blue", float3( 0, 1.3f, 0 ) );
-            }
-            // camera
+                // auto dice0 = Dice::Create( "Red" );
+                // auto dice1 = Dice::Create( "Blue", float3( 0, 1.3f, 0 ) );
+            }  // camera
             {
                 float3 pos( 0, 37.5f, 40.3f );
                 float3 target( 0, 0.8f, -0.5f );
@@ -59,10 +60,9 @@ namespace MainScene
                     CameraBase::Create( pos, target )->SetName( "TopCamera" );
                 cam->SetRotationAxisXYZ( float3( 0, 180, 0 ) );
             }
-            IMGctrl.Init();
-            Turn = LOAD_TURN;
-            npc->Init();
-            player->Init();
+            //Turn = LOAD_TURN;
+            // npc->Init();
+            // player->Init();
             return true;
         }
         void TestScene::Update()
@@ -73,13 +73,15 @@ namespace MainScene
             if( IsKeyOn( KEY_INPUT_2 ) )
                 Scene::SetCurrentCamera( "PlayCamera" );
             counter++;
-            npc->Update();
-            player->Update();
+            // npc->Update();
+            // player->Update();
         }
 
         void TestScene::Draw()
         {
-            
+            auto card = Scene::GetObjectPtr<Object>( "CardSword2" );
+            // todo
+            if( Scene::GetObjectPtr<Object>("PlayCamera"))
         }
 
         void TestScene::Exit()
@@ -89,9 +91,9 @@ namespace MainScene
         void TestScene::GUI()
         {
             ImGui::InputInt( "Counter", &counter );
-            npc->Render();
-            player->Render();
-            ui->Render();
+            // npc->Render();
+            // player->Render();
+            // ui->Render();
         }
     }
     namespace Scene2D
